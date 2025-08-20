@@ -95,6 +95,6 @@ ol, li, ul {
 }
 .cycle p strong {
     font-weight: 800;
-    color: #85a877;
+    color: red;
     text-decoration: underline;
 }
