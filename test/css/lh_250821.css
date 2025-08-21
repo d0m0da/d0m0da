@@ -27,7 +27,7 @@
     height: 260px;
     color: white;
     border-radius: 15px;
-    padding: 37px 22px 0 22px;
+    padding: 37px 24px 0 24px;
 }
 /* li.bg1 (띄어쓰지 않음) - li 태그중에 bg1이라는 클래스명을 갖은 li를 가져오는 것
    li .bg1 (띄어씀) - li 태그 안에 bg1이라는 클래스명을 갖은 다른 요소 */
