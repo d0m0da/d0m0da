@@ -1,0 +1,197 @@
+@import url(common.css);
+.color {
+    margin: 142px 0 0 0 ;
+}
+.color .tit h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+}
+.color .list {
+    margin: 64px 0 0 0;
+}
+.color .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.color .list ul li {
+    width: 297px;
+    height: 400px;
+    color: #fff;
+    border-radius: 15px;
+    padding: 44px 40px 0 40px;
+}
+/* 순서를 바꾸면 순서에 맞게 색이 변경되지 않기 때문에 class자로 이름을 주는게 좋음
+순서와 상관없는 컨텐츠를 할 때 사용
+.color .list ul li:first-child {
+    background-color: #00ad1d;
+}
+.color .list ul li:nth-child(2) {
+    background-color: #008233;
+}
+.color .list ul li:nth-child(3) {
+    background-color: #003087;
+}
+.color .list ul li:last-child {
+    background-color: #002554;
+} */
+.color .list ul li.bg1 {
+    background-color: #00ad1d;
+}
+.color .list ul li.bg2 {
+    background-color: #008233;
+}
+.color .list ul li.bg3 {
+    background-color: #003087;
+}
+.color .list ul li.bg4 {
+    background-color: #002554;
+}
+.color .list ul li h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 18px 0;
+}
+.recruit {
+    margin: 279px 0 0 0;
+}
+.recruit .wrapper {
+    display: flex; /* tit과 photo를 좌우로 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+.recruit .tit strong {
+    font-size: 22px;
+    font-weight: 700;
+    color: #008233;
+}
+.recruit .tit h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 7px 0 48px 0;
+}
+.recruit .tit a {
+    border: 1px solid #555;
+    padding: 14px 30px;
+    display: block;
+    border-radius: 50px;
+}
+.recruit .photo {
+    overflow: hidden;
+    border-radius: 15px;
+    width: 832px;
+    height: 558px;
+}
+.recruit .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.overview {
+    margin: 212px 0 0 0;
+    background-color: #f7f7f7;
+    padding: 155px 0 156px 0;
+}
+.overview .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.overview h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+}
+.overview .inner {
+    width: 832px;
+}
+.overview .inner .tit h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 29px 0;
+}
+.overview .inner .list {
+    margin: 57px 0 0 0;
+}
+.overview .inner .list ul li {
+    border-top: 1px solid #ededed;
+    padding: 27px 0 27px 0;
+    display: flex; /* h3-p 좌우배치 */
+}
+/* li중에 마지막 li에만 스타일을 줌 */
+.overview .inner .list ul li:last-child {
+    border-bottom: 1px solid #ededed;
+}
+.overview .inner .list ul li h3 {
+    font-weight: 700;
+    color: #1d1d1d;
+    width: 215px;
+}
+.ship {
+    margin: 166px 0 0 0;
+}
+.ship h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d
+}
+.ship .list {
+    margin: 42px 0 0 0;
+}
+.ship .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 24px;
+}
+.ship .list ul li {
+    width: 297px;
+    height: 176px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ship .list ul li.bg1 {
+    background-image: url(../images/ci_ship08.jpg);
+}
+.ship .list ul li.bg2 {
+    background-image: url(../images/ci_ship07.jpg);
+}
+.ship .list ul li.bg3 {
+    background-image: url(../images/ci_ship06.jpg);
+}
+.ship .list ul li.bg4 {
+    background-image: url(../images/ci_ship05.jpg);
+}
+.ship .list ul li.bg5 {
+    background-image: url(../images/ci_ship04.jpg);
+}
+.ship .list ul li.bg6 {
+    background-image: url(../images/ci_ship03.jpg);
+}
+.ship .list ul li.bg7 {
+    background-image: url(../images/ci_ship02.jpg);
+}
+.ship .list ul li.bg8 {
+    background-image: url(../images/ci_ship01.jpg);
+}
+.ship .list ul li.bg1 {
+    background-image: url(../images/ci_ship08.jpg);
+}
+body {
+    margin: 0 0 200px 0;
+}
