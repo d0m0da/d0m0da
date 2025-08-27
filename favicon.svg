@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <g id="그룹_5" data-name="그룹 5" transform="translate(1219 -9508)">
+    <circle id="타원_1" data-name="타원 1" cx="2" cy="2" r="2" transform="translate(-1201 9512)" fill="#ebc080"/>
+    <text id="썬" transform="translate(-1219 9528)" fill="#c24c20" font-size="20" font-family="Cafe24ClassicType-Regular-OTF, Cafe24 ClassicType OTF"><tspan x="0" y="0">썬</tspan></text>
+    <rect id="사각형_44" data-name="사각형 44" width="26" height="23" transform="translate(-1219 9508)" fill="none"/>
+    <line id="선_1" data-name="선 1" y2="1" transform="translate(-1199 9510.561)" fill="none" stroke="#ebc080" stroke-width="0.2"/>
+    <line id="선_6" data-name="선 6" y2="1" transform="translate(-1199 9516.561)" fill="none" stroke="#ebc080" stroke-width="0.2"/>
+    <line id="선_2" data-name="선 2" y2="1" transform="translate(-1196.5 9511.646) rotate(45)" fill="none" stroke="#ebc080" stroke-width="0.2"/>
+    <line id="선_4" data-name="선 4" y1="1" transform="translate(-1200.793 9512.268) rotate(135)" fill="none" stroke="#ebc080" stroke-width="0.2"/>
+    <line id="선_5" data-name="선 5" y1="1" transform="translate(-1196.293 9516.354) rotate(135)" fill="none" stroke="#ebc080" stroke-width="0.2"/>
+    <line id="선_3" data-name="선 3" y2="1" transform="translate(-1195.5 9514) rotate(90)" fill="none" stroke="#ebc080" stroke-width="0.2"/>
+  </g>
+</svg>
