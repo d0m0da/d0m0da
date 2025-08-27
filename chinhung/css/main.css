@@ -109,5 +109,5 @@ header .gnb ul li a {
 footer {
     background-color: #f0f0f0;
     padding: 65px 0 65px 0;
-    color: rgba(255, 255, 255, 0.8)
+    color: rgba(255, 255, 255, 0.8) /* 투명한 글자 */
 }
