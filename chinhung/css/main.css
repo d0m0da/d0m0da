@@ -115,6 +115,9 @@ footer .f_nav ul {
     display: flex; /* li를 좌우 배치 */
     gap: 0 46px; /* 첫번째 값 : 위아래, 두번째 값 : 좌우 여백값 */
 }
+footer .f_nav ul strong {
+    font-weight: 700;
+}
 footer .f_info {
     margin: 20px 0 20px 0;
     display: flex; /* address-span 태그 좌우 배치 */
