@@ -89,7 +89,7 @@ header .gnb ul li a {
 }
 .brand strong {
     font-weight: 700;
-    color: #E8BEBA;
+    color: #e8beba;
     padding: 382px 0 5px 0;
     display: block;
 }
@@ -109,17 +109,20 @@ header .gnb ul li a {
 footer {
     background-color: #f0f0f0;
     padding: 65px 0 65px 0;
-    color: rgba(85, 85, 85, 0.8) /*투명한 글자 */
+    color: rgba(85, 85, 85, 0.8); /*투명한 글자 */
 }
 footer .f_nav ul {
     display: flex; /* li를 좌우 배치 */
     gap: 0 46px; /* 첫번째 값 : 위아래, 두번째 값 : 좌우 여백값 */
 }
-footer .f_nav ul strong {
+footer .f_nav ul li.privacy a {
     font-weight: 700;
 }
 footer .f_info {
     margin: 20px 0 20px 0;
     display: flex; /* address-span 태그 좌우 배치 */
     gap: 0 25px;
+}
+footer .copyright {
+    color: rgba(85, 85, 85, 0.6); /*투명한 글자 */
 }
