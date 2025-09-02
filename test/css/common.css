@@ -49,6 +49,16 @@ a {
 ol, li, ul {
     list-style: none; /* 앞에 도형, 숫자 삭제 */
 }
+button {
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit; /* inherit - 브라우저가 주는 스타일 무시 */
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    cursor: pointer;
+}
 * { /* 모든태그 */
     margin: 0; /* 여백 삭제 */
     padding: 0;
