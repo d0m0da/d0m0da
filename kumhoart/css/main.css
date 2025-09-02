@@ -81,6 +81,7 @@ header .gnb ul li a {
     color: #C10808;
     padding: 11px 28px 11px 28px;
     border-radius: 30px;
+    transition: 0.5s;
 }
 /* a에 마우스 올렸을 때 */
 .biz .txt .btn_wrap a:hover {
@@ -129,6 +130,11 @@ header .gnb ul li a {
     padding: 11px 39px 11px 39px;
     border-radius: 40px;
     margin: 40px 0 0 0;
+    transition: 0.5s;
+}
+.community .news .tit a:hover {
+    background-color: #fff;
+    color: #2C2323;
 }
 .community .news .list {
     width: 729px;
@@ -149,6 +155,9 @@ header .gnb ul li a {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.community .news .list ul li a:hover h3 {
+    font-weight: 800;
 }
 .community .news .list ul li a span {
     color: rgba(255, 255, 255, 0.8);
@@ -172,6 +181,11 @@ header .gnb ul li a {
     border: 1px solid #fff;
     padding: 11px 39px 11px 39px;
     border-radius: 40px;
+    transition: 0.5s;
+}
+.community .media .tit a:hover {
+    background-color: #fff;
+    color: #2C2323;
 }
 .community .media .list {
     margin: 40px 0 0 0;
@@ -196,6 +210,10 @@ header .gnb ul li a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.community .media .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
 }
 .community .media .list ul li a h3 {
     font-size: 20px;
@@ -211,6 +229,9 @@ header .gnb ul li a {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+.community .media .list ul li a:hover h3 {
+    text-decoration: underline;
+}
 
 footer {
     margin: 119px 0 0 0;
@@ -218,4 +239,41 @@ footer {
 footer .wrapper {
     border-top: 1px solid #ccc;
     padding: 83px 0 85px 0;
+    display: flex;
+    justify-content: space-between;
+    color: #666
+}
+footer .inner .f_nav ul {
+    display: flex;
+    gap: 0 45px;
+}
+footer .inner .f_nav ul li.privacy a {
+    font-weight: 800;
+}
+footer .inner .f_nav ul li a {
+    display: block;
+}
+footer .inner .f_nav ul li a:hover {
+    text-decoration: underline;
+}
+footer .inner .f_info {
+    margin: 18px 0 18px 0;
+}
+footer .inner .f_info .info_wrap {
+    display: flex;
+    gap: 0 36px;
+}
+footer .inner .copyright {
+    color: #888;
+}
+footer .family_site button {
+    width: 208px;
+    line-height: 48px;
+    /* 행간으로 높이를 주면 글자는 위아래 가운데로 들어감 */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #666;
+    display: block;
+    text-align: left;
+    padding: 0 0 0 30px;
 }
