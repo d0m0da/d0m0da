@@ -101,11 +101,21 @@ header .gnb ul li a {
 }
 
 .community {
-    background: url(../images/community_bg.jpg) no-repeat center top / auto 979px;
     margin: 175px 0 0 0;
     /* height: 979px; - 콘텐츠가 배경보다 더 길어서 배경의 높이를 지정하면 안됨 
        background 높이 값을 줘야한다 꼭 센터 센터가 들어가지 않음 */
     color: #fff;
+    position: relative; /* before 정렬의 기준 */
+}
+.community::before {
+    content: ""; /* 필수 값 */
+    position: absolute; /* community를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 979px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover
 }
 .community .news {
     padding: 133px 0 0 0;
@@ -113,6 +123,7 @@ header .gnb ul li a {
 .community .news .wrapper {
     display: flex;
     justify-content: space-between;
+    position: relative; /* more 정렬의 기준 */
 }
 .community .news .tit h2 {
     font-size: 40px;
@@ -123,18 +134,6 @@ header .gnb ul li a {
 }
 .community .news .tit p {
     font-size: 20px;
-}
-.community .news .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 11px 39px 11px 39px;
-    border-radius: 40px;
-    margin: 40px 0 0 0;
-    transition: 0.5s;
-}
-.community .news .tit a:hover {
-    background-color: #fff;
-    color: #2C2323;
 }
 .community .news .list {
     width: 729px;
@@ -162,8 +161,25 @@ header .gnb ul li a {
 .community .news .list ul li a span {
     color: rgba(255, 255, 255, 0.8);
 }
+.community .news a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 11px 39px 11px 39px;
+    border-radius: 40px;
+    transition: 0.5s;
+    position: absolute; /* wrapper를 기준으로 */
+    left: 0;
+    top: 204px;
+}
+.community .news a.more:hover {
+    background-color: #fff;
+    color: #2C2323;
+}
 .community .media {
     margin: 191px 0 0 0;
+}
+.community .media .wrapper {
+    position: relative; /* more 정렬의 기준 */
 }
 .community .media .tit {
     display: flex;
@@ -175,17 +191,6 @@ header .gnb ul li a {
     font-weight: 800;
     line-height: 1.3;
     letter-spacing: -0.02em;
-}
-.community .media .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 11px 39px 11px 39px;
-    border-radius: 40px;
-    transition: 0.5s;
-}
-.community .media .tit a:hover {
-    background-color: #fff;
-    color: #2C2323;
 }
 .community .media .list {
     margin: 40px 0 0 0;
@@ -232,6 +237,20 @@ header .gnb ul li a {
 .community .media .list ul li a:hover h3 {
     text-decoration: underline;
 }
+.community .media a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 11px 39px 11px 39px;
+    border-radius: 40px;
+    transition: 0.5s;
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 4px;
+}
+.community .media a.more:hover {
+    background-color: #fff;
+    color: #2C2323;
+}
 
 footer {
     margin: 119px 0 0 0;
@@ -247,14 +266,41 @@ footer .inner .f_nav ul {
     display: flex;
     gap: 0 45px;
 }
+footer .inner .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .inner .f_nav ul li::after {
+    content: ""; /* 필수 */
+    position: absolute;
+    right: -23px;
+    top: 6px;
+    width: 1px;
+    height: 11px;
+    background-color: #ccc;
+}
+/* 마지막 li의 after 숨김 처리 */
+footer .inner .f_nav ul li:last-child::after {
+    display: none;
+}
 footer .inner .f_nav ul li.privacy a {
     font-weight: 800;
 }
 footer .inner .f_nav ul li a {
     display: block;
+    position: relative; /* a::after의 기준 */
 }
-footer .inner .f_nav ul li a:hover {
-    text-decoration: underline;
+footer .inner .f_nav ul li a::after {
+    content: "";
+    position: absolute; /* a를 기준 */
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 1px;
+    background-color: #ccc;
+    transition: 0.5s;
+}
+footer .inner .f_nav ul li a:hover::after {
+    width: 100%; /* 기준이 되는 a의 100% */
 }
 footer .inner .f_info {
     margin: 18px 0 18px 0;
@@ -276,6 +322,19 @@ footer .family_site button {
     display: block;
     text-align: left;
     padding: 0 0 0 30px;
+    position: relative; /* btn::after의 기준 */
+}
+footer .family_site button::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-color: #888;
+    border-style: solid;
+    border-width: 0 0 2px 2px;
+    position: absolute;
+    right: 25px;
+    top: 19px;
+    transform: rotate(-45deg);
 }
 /* footer .family_site button:hover {
     border-color: #191919;
