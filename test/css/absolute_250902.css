@@ -200,6 +200,7 @@ header .gnb ul {
     border-color: #C10808;
     background-color: #C10808;
     color: #fff;
+    /* 텍스트와 아이콘이 같이 변경됨 */
 }
 
 body {
