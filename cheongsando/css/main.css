@@ -25,6 +25,57 @@ header .gnb ul a {
     line-height: 90px; /* header의 높이와 같은 값 */
     margin: 0 31px 0 31px;
 }
+header .util {
+    display: flex; /* util 좌우 정렬 */
+    align-items: center;
+    gap: 0 26px;
+}
+header .util .weather {
+    padding: 0 0 0 36px; /* 아이콘이 들어갈 자리를 내부여백으로 마련 */
+    line-height: 1.1;
+    position: relative; /* before 기준 */
+}
+header .util .weather::before {
+    content: "";
+    position: absolute; /* weather를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background: url(../images/util_weather.svg) no-repeat left center;
+}
+header .util .weather strong {
+    display: block; /* strong 줄 바꿈 */
+    font-weight: 700;
+}
+header .util .weather span {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+header .util .sea,
+header .util .flow {
+    padding: 25px 0 0 0;
+    position: relative;
+    font-size: 14px;
+}
+header .util .sea::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 22px;
+    background: url(../images/util_sea.svg) no-repeat center top;
+}
+header .util .flow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 100%;
+    height: 22px;
+    background: url(../images/util_flow.svg) no-repeat center top;  
+}
 
 .visual {
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
@@ -55,6 +106,7 @@ header .gnb ul a {
     position: absolute; /* before 정렬 기준 */
     right: -100px;
     bottom: -100px;
+    z-index: 1;
     transition: 0.5s;
 }
 .visual .life::before {
@@ -73,6 +125,322 @@ header .gnb ul a {
 }
 .visual .life:hover::before {
     background: url(../images/life_icon_over.svg) no-repeat center top;
+}
+
+.culture {
+    position: relative;
+    padding: 189px 0 104px 0;
+    background-color: #F0F0F0;
+}
+.culture::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -250px;
+    z-index: -1;
+    width: 100%;
+    height: calc(100% + 250px);
+    background-color: #F0F0F0;  
+}
+.culture .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #111;
+    margin: 0 0 9px 0;
+}
+.culture .list {
+    margin: 33px 0 0 0;
+}
+.culture .list ul {
+    display: flex; /* li 좌우 정렬 */
+    justify-content: space-between;
+}
+.culture .list ul li {
+    /* 감싸고 있는 ul의 넓이에 n개가 정렬 n=4 > 25% 
+       100% / 한줄의 li의 갯수(n) = 100% / 4(n) = 25% 
+       한줄의 사이 여백의 합 24*3=72 / 한줄의 li의 갯수(n) = 18px */
+    width: calc(25% - 18px);
+}
+.culture .list ul li a {
+    display: block;
+}
+.culture .list ul li a .photo {
+    overflow: hidden;
+    height: 205px;
+    border-radius: 10px;
+}
+.culture .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.culture .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.culture .list ul li a h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #111;
+    margin: 23px 0 6px 0;
+}
+.culture .more {
+    margin: 190px 0 0 0;
+    text-align: center;
+}
+.culture .more a {
+    padding: 43px 0 0 0;
+    display: inline-block;
+    font-weight: 700;
+    color: #111;
+    position: relative;
+}
+.culture .more a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 37px;
+    background: url(../images/culture_more.svg) no-repeat center top;
+}
+.culture .more a:hover::before {
+    animation-name: more;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes more {
+   /* 0% { height: 37px; }
+    50% { height: 0; }
+    100% { height: 37px; } */
+   /* 0% {transform: translate(0,0);}
+    50% {transform: translate(0,10px);}
+    100% {transform: translate(0,0);} */
+    0%   { transform: translate(0, -5px); }   /* 위로 5px */
+    25%  { transform: translate(0, 0); }       /* 원위치 */
+    50%  { transform: translate(0, 5px); }    /* 아래로 5px */
+    75%  { transform: translate(0, 0); }       /* 원위치 */
+    100% { transform: translate(0, -5px); }   /* 다시 위로 */
+}
+
+.tour {
+    margin: 184px 0 0 0;
+}
+.tour .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #111;
+    margin: 0 0 9px 0;
+}
+.tour .list {
+    margin: 33px 0 0 0;
+}
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.tour .list ul li {
+    width: 15%;
+    /* li 한개의 넓이 189px, ul의 넓이 1260px
+       전체의 15% */  
+}
+
+.tour .list ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 0 56px 0 ;
+    height: 520px; 
+    /* li와 a의 사이즈를 같게해야함
+       li가 넓이를 갖고 a가 높이를 가짐*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.tour .list ul li.bg1 a {
+    background-image: url(../images/tour01.jpg);
+}
+.tour .list ul li.bg2 a {
+    background-image: url(../images/tour02.jpg);
+}
+.tour .list ul li.bg3 a {
+    background-image: url(../images/tour03.jpg);
+}
+.tour .list ul li.bg4 a {
+    background-image: url(../images/tour04.jpg);
+}
+.tour .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.tour .list ul li a p {
+    display: none; /* 숨김 */
+}
+/* li에 on클래스가 들어갔을때*/
+.tour .list ul li.on {
+    width: 52.14%;
+} 
+.tour .list ul li.on a {
+    align-items: flex-start;
+    padding: 0 0 50px 45px ;
+}
+.tour .list ul li.on h3 {
+    font-size: 32px;
+    margin: 0 0 6px 0;
+}
+.tour .list ul li.on p {
+    display: block;
+    /* none으로 숨긴 요소는 none 빼고 어떤 것을 줘도 나타남
+       기본적으론 block을 주는 편*/
+}
+.tour .wrapper {
+    position: relative; /* 기준 요소 */
+}
+  
+.tour .more {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.tour .more a {
+    display: block;
+    padding: 60px 35px 0 0;
+    font-weight: 700;
+    color: #111;
+}
+.tour .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 9px;
+    width: 28px;
+    height: 100%;
+    background: url(../images/tour_more.svg) no-repeat center bottom;
+}
+.tour .more a:hover:after {
+    animation-name: tour_more;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes tour_more {
+    0% { width: 28px; }
+    50% { width: 0; }
+    100% { width: 28px; }
+}
+
+.community {
+    margin: 182px 0 0 0;
+    height: 800px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
+    padding: 225px 0 0 0;
+    color: #fff;
+}
+.community .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.community .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 9px 0;
+}
+.community .inner {
+    display: flex;
+    gap: 0 12px;
+}
+.community .inner .notice {
+    backdrop-filter: blur(4px);
+    background-color: rgba(17, 17, 17, 0.3);
+    width: 533px;
+    height: 380px;
+    border-radius: 10px;
+    padding: 39px 40px 0 40px;
+    position: relative; /* more 정렬의 기준 */
+}
+.community .inner .notice h3 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.community .inner .notice ul {
+    margin: 26px 0 0 0;
+}
+.community .inner .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 12px 0;
+}
+.community .inner .notice ul li a h4 {
+    width: calc(100% - 101px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .inner .notice ul li a span {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.community .inner .notice .more {
+    position: absolute;
+    right: 41px;
+    top: 45px;
+}
+.community .inner .notice .more a {
+    display: block;
+    padding: 0 35px 0 0;
+    font-weight: 700;
+    color: #fff;
+    background: url(../images/community_more.svg) no-repeat right center;
+}
+
+/* notice over 스타일 */
+.community .inner .notice:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #111;
+}
+.community .inner .notice:hover ul li a span,
+.community .inner .notice:hover .more a {
+    color: #444;
+}
+.community .inner .notice:hover .more a {
+    background-image: url(../images/community_more_over.svg);
+}
+.community .inner .notice ul li a:hover h4 {
+    font-weight: 700;
+}
+.community .inner .service {
+    width: 311px;
+}
+.community .inner .service ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 12px;
+}
+.community .inner .service ul li {
+    width: calc(50% - 6px);
+    /*100%  / 한줄에 나오는 li 갯수 2 = 50%
+      한줄 여백의 합 12px / 한줄에 나오는  li 갯수 2 = 6px */
+}
+.community .inner .service ul li a {
+    display: block;
+    height: 150px;
+    backdrop-filter: blur(4px);
+    background-color: rgba(29, 19, 19, 0.5);
+    border-radius: 10px;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 26px 0 0 22px;
 }
 
 footer {
