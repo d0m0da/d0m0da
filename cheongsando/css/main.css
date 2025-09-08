@@ -418,6 +418,7 @@ header .util .flow::before {
 .community .inner .notice ul li a:hover h4 {
     font-weight: 700;
 }
+
 .community .inner .service {
     width: 311px;
 }
