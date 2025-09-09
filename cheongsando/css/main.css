@@ -310,8 +310,8 @@ header .util .flow::before {
     right: 0;
 }
 .tour .more a {
-    display: block;
-    padding: 60px 35px 0 0;
+    display: inline-block;
+    padding: 0 35px 0 0;
     font-weight: 700;
     color: #111;
 }
@@ -405,19 +405,28 @@ header .util .flow::before {
 
 /* notice over 스타일 */
 .community .inner .notice:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #111;
-}
-.community .inner .notice:hover ul li a span,
-.community .inner .notice:hover .more a {
+    background-color: rgba(255, 255, 255, 0.2);
     color: #444;
+}
+.community .inner .notice:hover h3,
+.community .inner .notice:hover .more a {
+    color: #111;
 }
 .community .inner .notice:hover .more a {
     background-image: url(../images/community_more_over.svg);
 }
+.community .inner .notice:hover .more a:hover {
+    color: #724973;
+    background-image: url(../images/commu_moreover\ .svg);
+}
+.community .inner .notice:hover ul li a span {
+    color: #444;
+}
 .community .inner .notice ul li a:hover h4 {
     font-weight: 700;
+    color: #724973;
 }
+
 
 .community .inner .service {
     width: 311px;
@@ -442,8 +451,216 @@ header .util .flow::before {
     font-weight: 700;
     line-height: 1.3;
     padding: 26px 0 0 22px;
+    position: relative; /* after 기준 */
+}
+.community .inner .service ul li a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 18px;
+    bottom: 17px;
+    width: 36px;
+    height: 35px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.community .inner .service ul li.icon1 a::after {
+    background-image: url(../images/service01.svg);
+}
+.community .inner .service ul li.icon2 a::after {
+    background-image: url(../images/service02.svg);
+}
+.community .inner .service ul li.icon3 a::after {
+    background-image: url(../images/service03.svg);
+}
+.community .inner .service ul li.icon4 a::after {
+    background-image: url(../images/service03-1.svg);
+}
+/* service 오버 시 */
+.community .inner .service ul li a:hover {
+    background-color: rgba(114, 73, 115, 0.8);
+    box-shadow: -4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.community .inner .service ul li.icon1 a:hover::after {
+    background-image: url(../images/service_over01.svg);
+}
+.community .inner .service ul li.icon2 a:hover::after {
+    background-image: url(../images/service_over02.svg);
+}
+.community .inner .service ul li.icon3 a:hover::after {
+    background-image: url(../images/service_over03.svg);
+}
+.community .inner .service ul li.icon4 a:hover::after {
+    background-image: url(../images/service_over04.svg);
 }
 
 footer {
-    margin: 1000px 0 0 0;
+    background-color: #111;
+    padding: 57px 0 68px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+footer .left_area .f_nav ul {
+    display: flex;
+    gap: 0 38px;
+}
+footer .left_area .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .left_area .f_nav ul li::after {
+    content: "";
+    position: absolute; /* li 기준으로 정렬 */
+    right: -20px;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+footer .left_area .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .left_area .f_nav ul li.privacy a {
+    font-weight: 700;
+}
+footer .left_area .f_nav ul li a::after {
+    content: "";
+    position: absolute; /* li를 기준으로 정렬 */
+    left: 0;
+    bottom: 2px;
+    width: 100%; /* 100%로 하고 opacity를 0으로 하고 오버 시 1로 바뀌게 함 나타나는 형식 */
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.5s;
+    opacity: 0;
+    /* width: 0; 왼쪽에서 오른쪽으로 그리는 형식 */
+}
+footer .left_area .f_nav ul li a:hover::after {
+    opacity: 1;
+    /* width: 100%; */
+}
+footer .left_area .f_info {
+    margin: 16px 0 37px 0;
+    display: flex;
+    gap: 0 24px;
+}
+footer .left_area .copyright {
+    color: rgba(255, 255, 255, 0.6);
+}
+footer .left_area .copyright .no {
+    font-size: 14px;
+    margin: 9px 0 0 0;
+}
+footer .left_area .copyright .no span {
+    position: relative; /* after정렬의 기준 */
+}
+footer .left_area .copyright .no span::after {
+    content: "";
+    position: absolute; /* span 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+footer .right_area {
+    display: flex; /* famliy-top 좌우 정렬 */
+    align-items: flex-start;
+    gap: 0 12px;
+}
+footer .right_area .family_site {
+    position: relative; /* family_detail 기준 */
+}
+footer .right_area .family_site button {
+    width: 157px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #333;
+    text-align: left;
+    padding: 0 0 0 18px;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative; /* after 정렬 기준 */
+}
+footer .right_area .family_site button::after {
+    content: "";
+    position: absolute; /* button을 기준으로 정렬 */
+    right: 18.5px;
+    bottom: 15.5px;
+    width: 13px;
+    height: 13px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+footer .right_area .family_site button.open::after {
+    background-image: url(../images/family_site_open.svg);
+} 
+footer .right_area .family_site button.close::after {
+    background-image: url(../images/family_site_close.svg);
+}
+footer .right_area .family_site button.close {
+    display: none; /* 맨처음에는 안보임 */
+}
+footer .right_area .family_site .family_detail {
+    position: absolute; /* family_site를 기준으로 정렬 */
+    left: 0;
+    bottom: 47px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #444;
+    padding: 18px 0 18px 18px;
+    display: none; /* 맨처음에는 안보임 */
+}
+footer .right_area .family_site .family_detail ul li a {
+    display: block;
+    padding: 2px 0 2px 0;
+}
+footer .right_area .family_site .family_detail ul li a:hover {
+    font-weight: 700;
+}
+footer .right_area .family_site .family_detail ul li a span {
+    position: relative
+}
+footer .right_area .family_site .family_detail ul li a span::after {
+    content: "";
+    position: absolute;
+    right: -26px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: url(../images/family_new.svg) no-repeat center center;
+}
+
+/* family_site가 열렸을 때 -- open 클래스가 추가되었을 때 */
+footer .right_area .family_site.open .family_detail {
+    display: block; /* none으로 숨겼다가 나타낼 때 display의 아무 값이나 줘도 되지만 block을 주는게 적당함*/
+}
+footer .right_area .family_site.open button.close {
+    display: block;
+}
+footer .right_area .family_site.open button.open {
+    display: none;
+}
+footer .right_area .top {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #724973;
+    position: relative; /* before의 기준 */
+}
+footer .right_area .top span {
+    display: none;
+}
+footer .right_area .top::before {
+    content: "";
+    position: absolute; /* top을 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/top.svg) no-repeat center center;
+}
+footer .right_area .top:hover::before {
+    background-image: url(../images/top\ over.svg);
 }
