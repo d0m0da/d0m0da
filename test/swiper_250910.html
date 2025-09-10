@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 라이브러리는 상단에 호출 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!-- 내가 직접 수정하는 파일 -->
+    <script src="js/swiper_250910.js"></script>
+    <link rel="stylesheet" href="css/swiper_250910.css">
+    <title>swiper 테스트</title>
+</head>
+<body>
+    <div class="visual">
+        <div class="swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide bg1">
+                    <div class="wrapper">
+                        <h2>같이 고민하고 설계하는<br>
+                            우리의 꿈과 미래</h2>
+                        <p>입출금자유예금서부터 다양한 목돈운용, 목돈마련상품까지</p>
+                    </div>
+                </li>
+                <li class="swiper-slide bg2">
+                    <div class="wrapper">
+                        <h2>계획적으로 이용하는<br>
+                            우리 금융서비스</h2>
+                        <p>단 한번의 조회로 내게 꼭 필요한 대출상품 신청</p>
+                    </div>
+                </li>
+                <li class="swiper-slide bg3">
+                    <div class="wrapper">
+                        <h2>오늘의 혁신으로<br>
+                            내일의 가치를 만드는</h2>
+                        <p>고객 마음속 첫번째 저축은행, 우리금융저축은행</p>
+                    </div>
+                </li>
+            </ul>
+        </div><!-- swiper -->
+        <div class="ctrl_btn">
+            <button class="btn_prev"><span class="blind">이전버튼</span></button>
+            <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+            <button class="btn_play"><span class="blind">재생</span></button>
+            <button class="btn_stop"><span class="blind">정지</span></button>
+            <button class="btn_next"><span class="blind">다음버튼</span></button>
+        </div><!-- ctrl_btn -->
+    </div><!-- visual -->
+    <div class="news">
+        <div class="wrapper">
+            <div class="tit">
+                <h2>PR Center</h2>
+                <p>새로운 소식을 알려드립니다.</p>
+            </div><!-- tit -->
+            <div class="list">
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="https://www.samsungsdi.co.kr/upload/editor/images/000001/20250909082332265_7GLI3KVE.jpg" alt=""></div>
+                                <h3>삼성SDI, 고용량·안전성 확보 SBB 신제품 전격 공개…북미 최대 에너지산업 전시회 'RE+ 2025' 참가</h3>
+                                <p>삼성SDI가 9일(현지시간) 미국 라스베이거스에서 개막한 북미 최대 에너지산업 전시회 'RE+(Renewable Energy Plus) 2025'에 참가해 미국 에너지저장장치(ESS) 시장에 최적화된 차세대 배터리 제품 라인업을 전격 공개했다.</p>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="https://www.samsungsdi.co.kr/upload/editor/images/000001/20250901091829742_OUSQRA31.jpg" alt=""></div>
+                                <h3>"미국 ESS 시장 집중 공략"…삼성SDI, 'RE+ 2025'서 SBB 신제품 전격 공개</h3>
+                                <p>삼성SDI는 9월 9일(화)부터 11일(목)까지 사흘간 미국 라스베이거스의 '베네치안 엑스포 앤 시저스 포럼(THE Venetian EXPO & CAESARS FORUM)'에서 개최되는 'RE+(Renewable Energy Plus) 2025'에 참가한다고 31일 밝혔다.</p>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="https://www.samsungsdi.co.kr/upload/editor/images/000001/20250826154758922_ZT0OOZFZ.jpg" alt=""></div>
+                                <h3>삼성SDI 배터리 탑재 차량, 세계 최장 주행으로 기네스북 등재</h3>
+                                <p>삼성SDI는 고객사인 미국의 전기차 전문 생산업체 루시드 모터스의 '루시드 에어 그랜드 투어링' 모델이 최근 1회 충전 주행 테스트에서 세계 신기록을 갈아치웠다고 7일 밝혔다.</p>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="https://www.samsungsdi.co.kr/upload/editor/1749596729633.jpg" alt=""></div>
+                                <h3>삼성SDI, 유럽 최대 상업용 ESS업체에 'SBB' 공급</h3>
+                                <p>삼성SDI는 독일의 상업용 ESS(에너지저장장치) 전문 제조업체인 테스볼트(Tesvolt)와 ESS용 배터리 공급 계약을 최근 체결했다고 11일 밝혔다. 이번 계약에 따라 삼성SDI는 이달 말까지 자사의 일체형 배터리 제품인 'SBB(Samsung Battery Box)'를 테스볼트 측에 공급하며, 테스볼트는 여기에 전력변환장치(PCS)와 사이버 보안시스템 등을 결합한 자체 ESS 솔루션을 생산, 설치할 예정이다.</p>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="https://www.samsungsdi.co.kr/upload/editor/1745795104865.jpg" alt=""></div>
+                                <h3>언제나 연결된 배터리 기술, Always ON… 삼성SDI, 인터배터리 유럽서 혁신 기술 소개</h3>
+                                <p>삼성SDI가 한 차원 진보한 에너지저장장치(ESS)용 배터리로 유럽을 비롯한 글로벌 시장 진출에 박차를 가한다. 삼성SDI는 다음 달 7일(수)부터 9일(금)까지 사흘간 독일 뮌헨의 '메쎄 뮌헨(Messe Munich)'에서 개최되는 '인터배터리 유럽 2025'에 참가한다고 28일 밝혔다.</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn_wrap">
+                <button class="btn_prev"><span>이전버튼</span></button>
+                <button class="btn_next"><span>다음버튼</span></button>
+                <a href="#n" class="more"><span>더보기</span></a>
+            </div>
+        </div><!-- wrapper -->
+    </div><!-- news -->
+</body>
+</html>
