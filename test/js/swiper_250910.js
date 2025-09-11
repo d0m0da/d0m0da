@@ -62,8 +62,8 @@ $(document).ready(function(){
         //     disableOnInteraction: true,
         // },
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.news .btn_wrap button.btn_next',
+            prevEl: '.news .btn_wrap button.btn_prev',
         },
     });
 
