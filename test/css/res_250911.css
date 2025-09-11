@@ -1,0 +1,201 @@
+@import url(common.css);
+
+.asia {
+    margin: 172px 0 0 0;
+}
+.asia .wrapper {
+    display: flex; /* tit-photo 좌우 정렬 */
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    gap: 0 24px;
+}
+.asia .tit h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 0 0 5px 0;
+}
+@media screen and (max-width:768px){
+                    .asia {
+                        margin: 101px 0 0 0;
+                    }
+                    .asia .wrapper {
+                        display: block; /* tit-photo 위아래 정렬 */
+                        /* flex-direction: row-reverse;
+                        align-items: flex-end;
+                        gap: 0 24px; 
+                        display: flex가 아니면 적용 안됨 */
+                    }
+                    .asia .tit h2 {
+                        font-size: 32px;
+                        font-weight: 700;
+                        line-height: 1.3;
+                        color: #1d1d1d;
+                        margin: 0 0 5px 0;
+                    }
+                    .asia .tit h2 {
+                        font-size: 24px;
+                    }
+                    .asia .photo {
+                        margin: 20px 0 0 0;
+                    }
+                    .asia .photo img {
+                        width: 100%;
+                    }
+}/* meaia */
+
+.photo_wrap {
+    margin: 50px 0 0 0;
+}
+.photo_wrap .photo {
+    overflow: hidden;
+    width: 832px;
+    height: 515px;
+}
+.photo_wrap .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:768px){
+                    .photo_wrap {
+                        margin: 30px 0 0 0;
+                    }
+                    .photo_wrap .photo {
+                        width: auto;
+                        height: 198px;
+                    }
+}/* media */
+
+.mission {
+    margin: 170px 0 100px 0;
+    text-align: center;
+}
+.mission strong {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7AA9BB;
+    margin: 0 0 3px 0;
+}
+.mission h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 0 0 30px 0;
+}
+.mission h2 br.mo_only {
+    display: none;
+}
+@media screen and (max-width:768px){
+                    .mission {
+                        margin: 123px 0 50px 0;
+                    }
+                    .mission strong {
+                        font-size: 16px;
+                    }
+                    .mission h2 {
+                        font-size: 30px;
+                        margin: 0 0 20px 0;
+                    }
+                    .mission h2 br.mo_only {
+                        display: block; /* 줄 바꿈 함 */
+                    }
+                    .mission h2 br.pc_only {
+                        display: none; /* 줄 바꿈 안함 */
+                    }
+                    .mission p br {
+                        display: none; /* 줄 바꿈 안함 */
+                    }
+}/* media */
+
+.winner {
+    margin: 180px 0 100px 0;
+}
+.winner .tit strong {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7AA9BB;
+}
+.winner .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 5px 0 0 0;
+}
+.winner .list {
+    margin: 30px 0 0 0;
+}
+.winner .list .swiper-slide a {
+    display: block;
+}
+.winner .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 208px;
+}
+.winner .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.winner .list .swiper-slide a h3 {
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 12px 0 0 0;
+    position: relative; /* before 정렬의 기준 */
+    padding: 3px 5px 3px 5px;   
+
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.5s;
+}
+.winner .list .swiper-slide a h3::before {
+    content: "";
+    position: absolute; /* h3를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 0;
+    height: 100%;
+    background-color: #1E5970;
+    transition: 0.5s;
+}
+.winner .list .swiper-slide a:hover h3 {
+    color: #fff;
+}
+.winner .list .swiper-slide a:hover h3::before {
+    width: 100%;
+}
+@media screen and (max-width:768px){
+                    .winner {
+                        margin: 160px 0 100px 0;
+                    }
+                    .winner .tit strong {
+                        font-size: 16px;
+                    }
+                    .winner .tit h2 {
+                        font-size: 30px;
+                    }
+                    .winner .list {
+                        margin: 20px 0 0 0;
+                    }
+                    .winner .list .swiper-slide {
+                        width: 200px;
+                    }
+                    .winner .list .swiper-slide a .photo {
+                        height: 208px;
+                    }
+                    .winner .list .swiper-slide a h3 {
+                        margin: 8px 0 0 0;
+                    
+                        /* 1줄 제한 해제 */
+                        white-space: wrap;
+                        overflow: visible;
+                        /*text-overflow: ellipsis;
+                        transition: 0.5s;*/
+                    }
+}
