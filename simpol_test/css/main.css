@@ -62,11 +62,12 @@ header .inner .shop::before {
 }
 
 
+
 .biz {
     margin: 136px 0 0 0;
 }
 .biz .wrapper {
-    position: relative;
+    position: relative; /* more의 기준 */
 }
 .biz .tit strong {
     color: #00AC47;
@@ -82,12 +83,12 @@ header .inner .shop::before {
     margin: 38px 0 0 0;
 }
 .biz .list ul {
-    display: flex;
+    display: flex; /* 사진 좌우 정렬 */
     justify-content: space-between;
 }
 .biz .list ul li {
     width: 297px;
-    position: relative;
+    position: relative; /* p의 기준 */
 }
 .biz .list ul li a {
     display: block;
@@ -113,7 +114,7 @@ header .inner .shop::before {
     margin: 13px 0 0 0;
 }
 .biz .list ul li p {
-    position: absolute;
+    position: absolute; /* li를 기준으로 정렬 */
     left: 0;
     top: 0;
     padding: 4px 16px 4px 16px;
@@ -136,20 +137,20 @@ header .inner .shop::before {
     background-color: #5D4037;
 }
 .biz .more {
-    position: absolute;
+    position: absolute; /* wrapper를 기준으로 정렬 */
     right: 0;
     top: 0;
     margin: 105px 0 0 0;
 }
 .biz .more a {
-    display: block;
+    display: inline-block;
     padding: 0 27px 0 0 ;
     font-weight: 800;
     color: #1d1d1d;
 }
 .biz .more a::after {
     content: "";
-    position: absolute;
+    position: absolute; /* wrapper를 기준으로 정렬*/
     right: -28px;
     top: -2px;
     width: 100%;
@@ -165,7 +166,7 @@ header .inner .shop::before {
 }
 .order .wrapper {
     height: 684px;
-    position: relative;
+    position: relative; /* shipping 기준 */
 }
 .order h2 {
     font-size: 60px;
@@ -184,7 +185,7 @@ header .inner .shop::before {
     text-align: center;
     padding: 125px 0 0 0;
     box-shadow: -2px 3px 4.7px 0 rgba(0, 0, 0, 0.25);
-    position: absolute;
+    position: absolute; /* wrapper를 기준으로 정렬 */
     right: -100px;
     bottom: -100px;
     z-index: 1;
@@ -192,7 +193,7 @@ header .inner .shop::before {
 }
 .order .shipping::before {
     content: "";
-    position: absolute;
+    position: absolute; /* wrapper를 기준으로 정렬 */
     left: 0;
     top: 44px;
     width: 100%;
@@ -207,10 +208,6 @@ header .inner .shop::before {
 .order .shipping:hover::before {
     background-image: url(../images/popup_icon_over.svg);
 }
-
-
-
-
 
 
 
