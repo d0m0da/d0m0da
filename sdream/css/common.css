@@ -1,0 +1,18 @@
+/* 모든페이지에서 중복되는 스타일 */
+/* css와 html은 큰따옴표, js와 개발자는 작은따옴표 */
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #444;
+    word-break: keep-all; /* 단어별로 줄바꿈 */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데정렬 */
+}
+#wrap {
+    min-width: 1460px; /* 1260 + 100(여백) + 100(여백) = 1460 */
+    position: relative; /* position 정렬 기준 */
+}
