@@ -72,7 +72,6 @@
                     }
                     .visual .swiper-slide p {
                         display: none;
-                        margin: 0;
                     }
                     .visual .btn_wrap {
                         left: auto;
@@ -87,6 +86,73 @@
                     }
 }/* @media */
 
+
+.biz {
+    margin: 239px 0 0 0;
+}
+.biz .wrapper {
+    display: flex; /* tit - list 좌우정렬 */
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.biz .tit {
+    position: sticky;
+    top: 16px;
+}
+.biz .tit h3 {
+    color: #111;
+}
+.biz .tit span {
+    color: #3356AA;
+}
+.biz .list {
+    width: 792px;
+    padding: 0 0 320px 0;
+}
+.biz .list ul {
+    display: flex;
+    flex-wrap: wrap; /* 여러줄 허용 */
+    gap: 72px 72px;
+}
+.biz .list ul li {
+    width: calc(50% - 36px);
+    /*
+        100 / 한줄에 나오는 li의 갯수(2) = 50%
+        한줄의 여백의 합(72) / 한줄에 나오는 li의 갯수(2) = 36px
+    */   
+}
+/* 홀수, 짝수 선택자 odd - 홀수, even - 짝수 */
+.biz .list ul li:nth-child(even) {
+    transform: translateY(320px);
+}
+.biz .list ul li a {
+    display: block;
+    position: relative; /* txt 정렬 기준 */
+}
+.biz .list ul li a .photo {
+    overflow: hidden;
+    height: 500px;
+    border-radius: 20px 50px 20px 20px;
+}
+.biz .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.biz .list ul li a .txt {
+    position: absolute;
+    left: 43px;
+    width: calc(100% - 86px);
+    bottom: 43px;
+    color: #fff;
+}
+.biz .list ul li a .txt h4 {
+    font-size: 32px;
+}
+.biz .list ul li a .txt p {
+    display: none;
+}
+
 footer {
-    margin: 500px 0 0 0
+    margin: 1500px 0 0 0
 }
