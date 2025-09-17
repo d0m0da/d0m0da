@@ -11,3 +11,12 @@ h2 {
     color: #111;
     margin: 0 0 42px 0;
 }
+.txt {
+    width: 300px;
+}
+h3 {
+    margin: 50px 0 10px 0;
+    font-weight: "GMarketSans";
+    font-size: 24px;
+    font-weight: 700;
+}
