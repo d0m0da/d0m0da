@@ -6,7 +6,7 @@
     position: relative; /* btn 정렬 기준 */
 }
 .visual .swiper-slide {
-    height: 100vh; /* 브라우저 높이와 동일 */
+    height: 100dvh; /* 브라우저 높이와 동일 */
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,7 +67,6 @@
                     .visual .swiper-slide h3 {
                         font-size: 44px;
                         margin: 0 0 91px 0;
-                        text-align: top;
                     }
                     .visual .swiper-slide p {
                         display: none;
