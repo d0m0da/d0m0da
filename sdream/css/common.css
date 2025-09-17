@@ -7,6 +7,7 @@ body {
     line-height: 1.5;
     color: #444;
     word-break: keep-all; /* 단어별로 줄바꿈 */
+    word-wrap: break-word; /* 단어가 너무 길때 강제로 줄 바꿈 */
 }
 .wrapper {
     width: 1260px;
