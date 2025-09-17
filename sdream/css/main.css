@@ -51,6 +51,7 @@
 }
 .visual .btn_wrap button.btn_play {
     background-image: url(../images/visual_play.svg);
+    display: none;
 }
 .visual .btn_wrap button.btn_stop {
     background-image: url(../images/visual_stop.svg);
@@ -62,39 +63,27 @@
 
 @media screen and (max-width:768px) {
                     /* .visual .swiper-slide {
-                        align-items: center;
+                        align-items: flex-start;
                     } */
                     .visual .swiper-slide h3 {
                         font-size: 44px;
                         margin: 0 0 91px 0;
+                        /* margin: 581px 0 0 0; */
                     }
                     .visual .swiper-slide p {
                         display: none;
                         margin: 0;
                     }
                     .visual .btn_wrap {
-                        left: inherit;
+                        left: auto;
                         right: 16px;
                         bottom: 21px;
+                        /* bottom: 40px; */
                     }
                     .visual .btn_wrap button {
-                        width: 35px;
-                        height: 35px;
-                        background-position: right center;
-                        background-repeat: no-repeat;
-                    }
-                    .visual .btn_wrap button.btn_prev {
-                        background-image: url(../images/visual_arrow.svg);
-                    }
-                    .visual .btn_wrap button.btn_play {
-                        background-image: url(../images/visual_play.svg);
-                    }
-                    .visual .btn_wrap button.btn_stop {
-                        background-image: url(../images/visual_stop.svg);
-                    }
-                    .visual .btn_wrap button.btn_next {
-                        background-image: url(../images/visual_arrow.svg);
-                        transform: rotate(180deg);
+                        width: 27px;
+                        height: 27px;
+                        background-size: cover;
                     }
 }/* @media */
 

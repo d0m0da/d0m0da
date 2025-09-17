@@ -7,20 +7,9 @@ $(document).ready(function(){
             disableOnInteraction: true,
         },
 
-        effect: "fade", /* fade 효과 */
+        // effect: "fade", /* fade 효과 */
 
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-
-        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-            el: '.swiper-pagination', /* 해당 요소의 class명 */
-            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-            type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
-            renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
-                return '<span class="' + className + '">' + (index + 1) + "</span>";
-            },
-        },
-        
-
         navigation: {  /* 이전, 다음 버튼 */
             nextEl: '.visual .btn_wrap .btn_next',  /* 다음 버튼의 클래스명 */
             prevEl: '.visual .btn_wrap .btn_prev',
@@ -30,9 +19,13 @@ $(document).ready(function(){
     $('.visual .btn_wrap .btn_play').on('click', function(){
         console.log('실행버튼클릭')
         visual_swiper.autoplay.start();  /* 재생 기능 */
+        $(this).hide()
+        $('.visual .btn_wrap .btn_stop').show()
     })
     $('.visual .btn_wrap .btn_stop').on('click', function(){
         console.log('정지버튼클릭')
         visual_swiper.autoplay.stop();  /* 일시정지 기능 */
+        $(this).hide()
+        $('.visual .btn_wrap .btn_play').show()
     })
 }) //맨끝
