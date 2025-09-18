@@ -2,6 +2,81 @@
 @import url(default.css);
 @import url(fonts.css);
 
+header {
+    height: 100px;
+    position: absolute; /* wrap을 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    color: #fff;
+    display: flex; /* logo-gnb-util 좌우정렬 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 30px;
+}
+header .logo a {
+    display: block;
+    width: 178px;
+    height: 59px;
+    background: url(../images/logo.svg) no-repeat center center / contain;
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none; /* 모바일에서만 나옴 */
+}
+header .gnb .gnb_wrap ul {
+    display: flex; /* li 좌우정렬 */
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0 33px 0 33px;
+}
+header .util {
+    display: flex;
+    gap: 0 5px;
+}
+header .util .mypage,
+header .util .lang .lang_open {
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+header .util .mypage {
+    background-image: url(../images/util_mypage.svg);
+}
+header .util .lang .lang_open {
+    background-image: url(../images/util_language.svg);
+}
+
+@media screen and (max-width:768px) {
+                    header {
+                        height: 60px;
+                        padding: 0 0 0 16px;
+                    }
+                    header .logo a {
+                        width: 92px;
+                        height: 30px;
+                    }
+                    header .gnb .gnb_open {
+                        display: block; /* 모바일에서만 나옴 */
+                        width: 60px;
+                        height: 60px;
+                        background: url(../images/gnb_menu.svg) no-repeat center center;
+                    }
+                    header .gnb .gnb_wrap {
+                        display: none; /* 모바일에서 숨김 */
+                    }
+                    header .util {
+                        display: none; /* 모바일에서 숨김 */
+                    }
+                    
+}/* @media */
+
 .visual {
     position: relative; /* btn 정렬 기준 */
 }
@@ -136,10 +211,7 @@
     top: 24px;
     width: 40px;
     height: 40px;
-    background: url(../images/biz_more.svg) center center / cover;
-}
-.biz .list ul li a:hover::after {
-    background-image: url(../images/biz_more_over.svg);
+    background: url(../images/biz_more.svg) no-repeat center center / contain
 }
 .biz .list ul li a .photo {
     overflow: hidden;
@@ -158,9 +230,7 @@
     opacity: 0;
     transition: 0.5s;
 }
-.biz .list ul li a:hover .photo::before {
-    opacity: 0.85;
-}
+
 .biz .list ul li a .photo img {
     width: 100%;
     height: 100%;
@@ -174,9 +244,7 @@
     color: #fff;
     transition: 0.5s;
 }
-.biz .list ul li a:hover .txt {
-    bottom: 43px;
-} 
+
 .biz .list ul li a .txt h4 {
     font-size: 32px;
 }
@@ -185,11 +253,23 @@
     opacity: 0;
     transition: 0.5s;
 }
-.biz .list ul li a:hover .txt p {
-    opacity: 1;
-}
 
-@media screen and (max-width:768px) {
+@media screen and (min-width:769px) { /* 769이상에 적용 */
+                    .biz .list ul li a:hover::after {
+                        background-image: url(../images/biz_more_over.svg);
+                    }
+                    .biz .list ul li a:hover .photo::before {
+                        opacity: 0.85;
+                    }
+                    .biz .list ul li a:hover .txt {
+                        bottom: 43px;
+                    }
+                    .biz .list ul li a:hover .txt p {
+                        opacity: 1;
+                    }
+
+}/* @media */
+@media screen and (max-width:768px) { /* 768이하에 적용 */
                     .biz {
                         margin: 120px 0 0 0;
                     }
@@ -251,6 +331,140 @@
                     }
                     .biz .list ul li a .txt p {
                         display: none;
+                    }
+}/* @media */
+
+.notice {
+    margin: 118px 0 0 0;
+    background-color: #252525;
+    color: #fff;
+    padding: 172px 0 237px 0;
+}
+.notice .wrapper {
+    position: relative; /* more 기준 정렬 */
+}
+.notice .tit strong {
+    color: #A8F9FF;
+}
+.notice .list {
+    margin: 36px 0 0 0;
+}
+.notice .list ul li {
+    margin: 0 0 12px 0;
+}
+.notice .list ul li:last-child {
+    margin-bottom: 0; /* 마지막 하단 여백만 0 처리*/
+}
+
+.notice .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 23px 40px 22px 40px;
+}
+.notice .list ul li a:hover {
+    background-color: #F7F8FA;
+    border: 1px solid #F7F8FA;
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.notice .list ul li a .inner {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    gap: 0 24px;
+    width: calc(100% - 198px); /* 오른쪽에 날짜 들어갈 공간 빼고 나머지 전부 */
+}
+.notice .list ul li a .inner strong {
+    padding: 4px 11px 2px 11px;
+    background-color: #3356AA;
+    border-radius: 5px;
+}
+.notice .list ul li.cate_sch a .inner strong {
+    background-color: #427B42;
+}
+.notice .list ul li a .inner h4 {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 3px 0 0 0;
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice .list ul li a:hover .inner h4 {
+    color: #111;
+    font-weight: 700;
+}
+.notice .list ul li a span {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.notice .list ul li a:hover span {
+    color: #444;
+}
+.notice .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 41px;
+}
+.notice .more a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url(../images/biz_more.svg) no-repeat center center / contain;
+    transition: 0.5s;
+}
+.notice .more a:hover {
+    background-image: url(../images/biz_more_over.svg);
+}
+@media screen and (max-width:768px) {
+                    .notice {
+                        margin: 100px 0 0 0;
+                        padding: 120px 0 100px 0;
+                    }
+                    .notice .tit {
+                        width: calc(100% - 45px);
+                    }
+                    .notice .list {
+                        margin: 32px 0 0 0;
+                    }
+                    .notice .list ul li {
+                        margin: 0;
+                    }
+                    .notice .list ul li a {
+                        display: block;
+                        border: 0;
+                        border-radius: 0;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                        padding: 27px 16px 24px 16px;
+                    }
+                    .notice .list ul li:first-child a {
+                        border-top: 1px solid rgba(255, 255, 255, 0.2);
+                    }
+                    .notice .list ul li a .inner {
+                        display: block;
+                        font-size: 16px;
+                        gap: 0;
+                        width: auto;
+                    }
+                    .notice .list ul li a .inner h4 {
+                        font-size: 16px;
+                        margin: 16px 0 27px 0;
+                        /* 1줄제한 */
+                        white-space: wrap;
+                        display: -webkit-box;              /* Flexbox와 비슷한 역할을 함 */
+                        -webkit-line-clamp: 2;             /* 최대 줄 수 */
+                        -webkit-box-orient: vertical;      /* 세로로 줄을 쌓을 수 있게 설정 */
+                        word-break: break-all;
+                    }
+                    .notice .more {
+                        top: 32px;
+                    }
+                    .notice .more a {
+                        width: 35px;
+                        height: 35px;
                     }
 }/* @media */
 
