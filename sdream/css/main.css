@@ -14,6 +14,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 30px 0 30px;
+    transition: 0.3s;
 }
 header .logo a {
     display: block;
@@ -53,6 +54,23 @@ header .util .lang .lang_open {
     background-image: url(../images/util_language.svg);
 }
 
+/* header에 fixed 클래스가 추가되었을때 */
+header.fixed {
+    position: fixed; /* 무조건 body랑만 정렬 */
+    background-color: #fff;
+    border-bottom: 1px solid #ededed;
+    color: #111;
+}
+header.fixed .logo a {
+    background-image: url(../images/logo_bl.svg);
+}
+header.fixed .util .mypage {
+    background-image: url(../images/util_mypage_bl.svg);
+}
+header.fixed .util .lang .lang_open {
+    background-image: url(../images/util_language_bl.svg);
+}
+
 @media screen and (max-width:768px) {
                     header {
                         height: 60px;
@@ -73,6 +91,9 @@ header .util .lang .lang_open {
                     }
                     header .util {
                         display: none; /* 모바일에서 숨김 */
+                    }
+                    header.fixed .gnb .gnb_open {
+                        background-image: url(../images/gnb_menu_bl.svg);
                     }
                     
 }/* @media */
@@ -173,7 +194,7 @@ header .util .lang .lang_open {
 .biz .tit {
     position: sticky;
     /* 감싸는 요소중에서 단 한개라도 overflow:hidden을 주면 작동이 안됨 */
-    top: 16px;
+    top: 100px;
 }
 .biz .tit h3 {
     color: #111;

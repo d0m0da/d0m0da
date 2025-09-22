@@ -51,4 +51,39 @@ $(document).ready(function(){
         }, 300)
     })
 
+
+    $('header').on('mouseenter', function(){
+        $(this).addClass('fixed')
+        // console.log('오버함')
+    })
+    $('header').on('mouseleave', function(){
+        // 브라우저 스크롤 값이 0보다 크면 작동하면 x
+        // 0이거나 0보다 작을 때 실행
+        // console.log('오버안함')
+        if(scrolling <= 0){
+            $(this).removeClass('fixed')
+            console.log('스크롤 값은 0이거나 0보다 작다')
+        }
+    })
+
+    // 문서가 로딩된 이후 단 1번 실행
+    let scrolling
+    scroll_chk()
+
+    function scroll_chk(){
+        scrolling = $(window).scrollTop()
+        // 스크롤 값이 0보다 크면 header에 fixed 클래스를 부여
+        if(scrolling > 0){
+            // console.log('0보다 크다')
+            $('header').addClass('fixed')
+        }else{
+            // console.log('0임')
+            $('header').removeClass('fixed')
+        }
+    }
+    // console.log(scrolling)
+    $(window).scroll(function(){
+        // 스크롤 할 때마다 1번 실행 (스크롤 하지 않으면 실행 안함)
+        scroll_chk()
+    })
 }) //맨끝
