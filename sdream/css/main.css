@@ -194,7 +194,7 @@ header.fixed .util .lang .lang_open {
 .biz .tit {
     position: sticky;
     /* 감싸는 요소중에서 단 한개라도 overflow:hidden을 주면 작동이 안됨 */
-    top: 150px;
+    top: 120px;
 }
 .biz .tit h3 {
     color: #111;
