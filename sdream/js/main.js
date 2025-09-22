@@ -62,7 +62,7 @@ $(document).ready(function(){
         // console.log('오버안함')
         if(scrolling <= 0){
             $(this).removeClass('fixed')
-            console.log('스크롤 값은 0이거나 0보다 작다')
+            // console.log('스크롤 값은 0이거나 0보다 작다')
         }
     })
 
