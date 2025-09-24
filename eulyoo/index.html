@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 라이브러리 파일 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- 내 파일 -->
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>을유문화사</title>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 브라우저 스크롤을 내리면 header에 fixed 클래스 추가 -->
+        <header>
+            <h1 class="logo"><a href="index.html"><span class="blind">을유문화사</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <div class="gna_wrap">
+                    <ul>
+                        <li><a href="#n"><span>을유문화사</span></a></li>
+                        <li><a href="#n"><span>콘텐츠</span></a></li>
+                        <li><a href="#n"><span>을유소식</span></a></li>
+                        <li><a href="#n"><span>독자참여</span></a></li>
+                    </ul>
+                </div>
+                <button class="gnb_close"><span>메뉴닫기</span></button>
+            </nav>
+            <div class="util">
+                <a href="#n" class="mypage"><span class="blind">마이페이지</span></a>
+                <div class="search">
+                    <button class="search_open"><span class="blind">검색열기</span></button>
+                    <button class="search_close"><span class="blind">검색닫기</span></button>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide popup1">
+                            <div class="wrapper">
+                                <h3>광복과 함께 시작된 출판의 길, <br class="mb_only"> 을유문화사</h3>
+                                <p>1945년 첫걸음 이후, 한국 출판의 역사를 함께 써왔습니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup2">
+                            <div class="wrapper">
+                                <h3>책으로 세상을, <br class="mb_only">세상으로 책을</h3>
+                                <p>시대의 흐름을 담고 미래를 여는 출판의 길을 걷습니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup3">
+                            <div class="wrapper">
+                                <h3>깊이를 더하는 책, <br class="mb_only">넓이를 여는 출판</h3>
+                                <p>한 권의 책이 삶을 풍요롭게, 세상을 넓게 만듭니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ctrl_btn">
+                    <button class="btn_prev"><span class="blind">이전버튼</span></button>
+                    <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <button class="btn_stop"><span class="blind">일시정지</span></button>
+                    <button class="btn_play"><span class="blind">재생버튼</span></button>
+                    <button class="btn_next"><span class="blind" >다음버튼</span></button>
+                </div>
+            </section><!-- visual -->
+            <section class="book">
+                <div class="book_wrap">
+                    <div class="tit">
+                        <h2>오늘의 책, <br>
+                            한 권의 지혜</h2>
+                    </div>
+                    <div class="list"></div>
+                </div>
+            </section><!-- book -->
+            <section class="interview">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>월간 을터뷰</h2>
+                        <p>책에서 시작해 세상으로 이어지는 대화</p>
+                    </div>
+                    <div class="list"></div>
+                </div>
+            </section><!-- interview -->
+            <section class="story">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>을유 시리즈</h2>
+                        <p>작가와 독자를 연결하는 다양한 소식과 이야기</p>
+                    </div>
+                    <div class="list"></div>
+                </div>
+            </section><!-- story -->
+        </main>
+        <footer></footer>
+    </div><!-- wrap -->
+</body>
+</html>

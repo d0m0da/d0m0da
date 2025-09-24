@@ -1,15 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-
+/* 서체 */
 @font-face {
-    font-family: "GMarketSans";
-    src: url('../fonts/GmarketSansMedium.woff') format('woff');
-    font-weight: 500;
-    font-display: swap;
+	font-family: "Pretendard";
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: url("../fonts/PretendardVariable.woff2") format("woff2-variations");
 }
 
 @font-face {
-    font-family: "GMarketSans";
-    src: url('../fonts/GmarketSansBold.woff') format('woff');
+    font-family: "Eulyoo1945";
+	font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/Eulyoo1945-Regular.eot');
+    src:url('../fonts/Eulyoo1945-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Eulyoo1945-Regular.woff2') format('woff2'),
+    url('../fonts/Eulyoo1945-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: "Eulyoo1945";
+	font-style: normal;
     font-weight: 700;
-    font-display: swap;
+    src: url('../fonts/Eulyoo1945-SemiBold.eot');
+    src:url('../fonts/Eulyoo1945-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Eulyoo1945-SemiBold.woff2') format('woff2'),
+    url('../fonts/Eulyoo1945-SemiBold.woff') format('woff');
 }
