@@ -158,5 +158,11 @@ section h2 {
     display: block;
     height: 150px;
     background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
 }
-.util .service ul
+.util .service ul li a span {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
