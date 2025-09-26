@@ -141,7 +141,7 @@ section h2 {
     justify-content: space-between;
 }
 .util .tit h2 {
-    margin: 0 0 13px 0;
+    margin: 13px 0 0 0;
 }
 .util .service {
     width: 700px;
