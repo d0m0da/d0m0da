@@ -1,0 +1,158 @@
+@import url(common.css);
+@import url(default.css);
+@import url(fonts.css);
+
+section h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+@media screen and (max-width:768px) {
+    section h2 {
+        font-size: 24px;
+    }
+}
+
+.community {
+    margin: 171px 0 0 0;
+}
+.community .wrapper {
+    position: relative; /* more 기준 */
+}
+.community .tit strong {
+    color: #004EA2;
+}
+.community .tit h2 {
+    color: #1d1d1d;
+    margin: 13px 0 0 0;
+}
+.community .list {
+    margin: 46px 0 0 0;
+}
+.community .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.community .list ul li {
+    width: calc(33.33% - 16px);
+    /*  100% / li개수(3) = 33.33% 
+        여백 전체 합(24*2) / li개수(3) = 16px*/
+}
+.community .list ul li a {
+    display: block;
+}
+.community .list ul li a .photo {
+    overflow: hidden;
+    height: 250px;
+}
+.community .list ul li a .photo .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.community .list ul li a .txt h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 14px 0 5px 0;
+    color: #1d1d1d;
+}
+.community .more {
+    position: absolute; /* wrapper 기준 정렬 */
+    right: 0;
+    top: 93px;
+    color: #004EA2;
+}
+.community .more a {
+    display: block;
+    padding: 0 18px 0 0;
+}
+.community .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 7px;
+    width: 8.75px;
+    height: 8.75px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.875 5.125H0.75C0.572917 5.125 0.424479 5.0651 0.304688 4.94531C0.184896 4.82552 0.125 4.67708 0.125 4.5C0.125 4.32292 0.184896 4.17448 0.304688 4.05469C0.424479 3.9349 0.572917 3.875 0.75 3.875H3.875V0.75C3.875 0.572917 3.9349 0.424479 4.05469 0.304688C4.17448 0.184896 4.32292 0.125 4.5 0.125C4.67708 0.125 4.82552 0.184896 4.94531 0.304688C5.0651 0.424479 5.125 0.572917 5.125 0.75V3.875H8.25C8.42708 3.875 8.57552 3.9349 8.69531 4.05469C8.8151 4.17448 8.875 4.32292 8.875 4.5C8.875 4.67708 8.8151 4.82552 8.69531 4.94531C8.57552 5.0651 8.42708 5.125 8.25 5.125H5.125V8.25C5.125 8.42708 5.0651 8.57552 4.94531 8.69531C4.82552 8.8151 4.67708 8.875 4.5 8.875C4.32292 8.875 4.17448 8.8151 4.05469 8.69531C3.9349 8.57552 3.875 8.42708 3.875 8.25V5.125Z' fill='%23004EA2'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:768px) {
+    .community {
+        margin: 97px 0 0 0;
+    }
+    .community .tit h2 {
+        margin: 8px 0 0 0;
+    }
+    .community .list ul {
+        display: block;
+    }
+    .community .list ul li {
+        width: auto;
+    }
+    .community .list ul li a {
+        padding: 17px 0;
+        border-top: 1px solid #ededed;
+    }
+    .community .list ul li:last-child a {
+        border-bottom: 1px solid #ededed;
+    }
+    .community .list ul li a .photo {
+        display: none;
+    }
+    .community .list ul li a .txt h3 {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 0;
+    }
+    .community .list ul li a .txt p {
+        display: none;
+    }
+    .community .more {
+        position: absolute; /* wrapper 기준 정렬 */
+        right: 50%;
+        top: 93px;  
+        color: #004EA2;
+    }
+    .community .more a {
+        padding: 4px 18px 5px 22px;
+        border: 1px solid #004EA2;
+        border-radius: 50px;
+    }
+    .community .more a::after {
+        right: 18px;
+        top: 11px;
+    }
+}/* @media */
+
+.util {
+    margin: 96px 0 0 0;
+    padding: 154px 0 133px 0;
+    background: url(../images/util_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.util .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.util .tit h2 {
+    margin: 0 0 13px 0;
+}
+.util .service {
+    width: 700px;
+}
+.util .service ul {
+    display: flex;
+}
+.util .service ul li {
+    width: calc(25% - 15px);
+    /* 100% / 4 = 25%
+        60 / 4 = 15px*/
+}
+.util .service ul li a {
+    display: block;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
