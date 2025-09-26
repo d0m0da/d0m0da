@@ -145,6 +145,9 @@ section h2 {
 }
 .util .service ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px 0;
 }
 .util .service ul li {
     width: calc(25% - 15px);
