@@ -110,16 +110,20 @@ section h2 {
         display: none;
     }
     .community .more {
-        position: absolute; /* wrapper 기준 정렬 */
-        right: 50%;
-        top: 93px;  
-        color: #004EA2;
+        position: static; /* 기본 흐름대로 위치 */
+        margin-top: 20px;  /* 콘텐츠와의 간격 추가 */
+        text-align: center; /* 가운데 정렬 */
+        margin: 30px 0 0 0;
     }
+    
     .community .more a {
-        padding: 4px 18px 5px 22px;
+        display: inline-block;
+        padding: 4px 38px 5px 22px;
         border: 1px solid #004EA2;
         border-radius: 50px;
+        position: relative;
     }
+    
     .community .more a::after {
         right: 18px;
         top: 11px;
@@ -134,7 +138,6 @@ section h2 {
 }
 .util .wrapper {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 .util .tit h2 {
@@ -163,8 +166,9 @@ section h2 {
 .util .service ul li a::after {
     content: "";
     position: absolute;
-    right: 57px;
-    top: 43px;
+    top: 45%;
+    right: 50%;
+    transform: translate(50%, -50%);
     width: 45px;
     height: 45px;
     background-position: center center;
@@ -200,3 +204,30 @@ section h2 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+@media screen and (max-width:768px) {
+    .util {
+        margin: 77px 0 0 0;
+        padding: 102px 0 102px 0;
+    }
+    .util .wrapper {
+        display: block;
+    }
+    .util .tit h2 {
+        margin: 0 0 8px 0;
+    }
+    .util .service {
+        width: auto;
+        margin: 44px 0 0 0;
+    }
+    .util .service ul {
+        gap: 16px 0;
+    }
+    .util .service ul li {
+        width: calc(50% - 8px);
+        /* 100% / 2 = 50%
+            16 / 2 = 8px */
+    }
+    .util .service ul li a {
+        height: 145px;
+    }
+}/* @media */
