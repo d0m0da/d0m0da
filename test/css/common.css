@@ -29,6 +29,7 @@ body {
     color: #555555;
     line-height: 1.5;
     word-break: keep-all; /* 문단 별로 띄어쓰기 */
+    word-wrap: break-word; /* 단어가 너무 길때 강제로 줄 바꿈 */
 }
 /* html태그의 기본스타일을 리셋 시킴
    body에서 선언한 기본 스타일로 적용 */
@@ -64,6 +65,10 @@ button {
     padding: 0;
     box-sizing: border-box;
 }
+#wrap {
+    /* 최소넓이 없음 */
+    position: relative; /* header 정렬 기준 */
+}
 .wrapper {
     width: 1260px;
     margin: 0 auto;
@@ -76,6 +81,28 @@ button {
     margin: -1px;
     overflow: hidden;
 }
+
+.photo {
+    overflow: hidden;
+}
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*
+    계속(태블릿, 모바일) 좌우여백을 16px을 적용
+    1260 + 16 + 16 = 1292
+
+    좌우의 여백을 가변 %로 적용
+    1260 * 0.06(3% + 3%) = 75.6 + 1260 = 1336
+*/
+@media screen and (max-width:1336px){
+                    .wrapper {
+                        width: auto;
+                        margin: 0 3%;
+                    }
+}/* media */
 @media screen and (max-width:768px){
     /* 브라우저 사이즈 768px 부터 그 이하의 사이즈에서만 적용 */
                     body {
