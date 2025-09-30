@@ -1,0 +1,284 @@
+@import url(common.css);
+
+.test {
+    margin: 50px 0 0 0;
+    font-size: 10px;
+}
+.test h2 {
+    font-size: 40px
+}
+.test h2 strong {
+    font-size: 20px;
+}
+.test h3 {
+    font-size: 2.5em;
+}
+.test h3 strong {
+    font-size: 2em;
+}
+.test h4 {
+    font-size: 2.5rem;
+}
+.test h4 strong {
+    font-size: 2rem;
+}
+.test h5 {
+    font-size: 2vw;
+}
+.test h5 strong {
+    font-size: 1vw;
+}
+.test h6 {
+    font-size: clamp(24px, 3vw, 40px);
+}
+
+.news {
+    margin: 173px 0 0 0;
+}
+.news .wrapper {
+    display: flex; /* tit - list 좌우 정렬 */
+    position: relative; /* more의 기준 */
+}
+.news .tit {
+    width: 32.07%;
+}
+.news .tit h2 {
+    font-size: var(--tit-font-size);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 14px 0;
+}
+.news .tit h2 span {
+    display: block; /* span태그와 다른 글자가 줄바꿈이 발생 */
+}
+.news .list {
+    width: 67.93%;
+    /* 856px가 1260에서 몇 %를 차지하는가 */
+}
+.news .list ul li {
+    border-bottom: 1px solid #ddd;
+}
+.news .list ul li:first-child {
+    border-top: 1px solid #ddd;
+}
+.news .list ul li a {
+    display: flex; /* h3 - span 좌우 정렬 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 0 34px 0;
+}
+.news .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+   
+    width: calc(100% - 107px); /* 날짜는 길이변경이 되지 않기 때문에 날짜를 제외한 넓이를 지정해줌*/
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.news .list ul li a span {
+    color: rgba(102, 102, 102, 0.8);
+}
+.news .more {
+    position: absolute; /* wrapper 기준 정렬 */
+    left: 0;
+    bottom: 0;
+}
+.news .more a {
+    display: flex; /* span - i 좌우 정렬 */
+    align-items: center;
+    gap: 0 7px;
+}
+.news .more a i {
+    width: 6px;
+}
+.news .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:768px){
+    .news {
+        margin: 108px 0 0 0;
+    }
+    .news .wrapper {
+        display: block;
+    }
+    .news .tit {
+        width: auto;
+    }
+    .news .tit h2 {
+        margin: 0;
+    }
+    .news .tit p {
+        display: none;
+    }
+    .news .tit h2 span {
+        display: none; /* 모바일에서 글자 숨김 */
+    }
+    .news .list {
+        width: auto;
+        margin: 31px 0 0 0;
+    }
+    .news .list ul li a {
+        display: block;
+        padding: 23px 0 20px 0;
+    }
+    .news .list ul li a h3 {
+        width: auto;
+        /* 1줄 제한 -> 무제한 */
+        white-space: wrap;
+        overflow: visible;
+        margin: 0 0 9px 0;
+    }
+    .news .more {
+        position: absolute; /* wrapper 기준 정렬 */
+        left: auto;
+        bottom: auto;
+        right: 0;
+        top: 0;
+    }
+    .news .more a {
+        justify-content: center; /* flex를 유지해서 i를 가운데로 */
+        gap: 0;
+        width: 31px;
+        height: 31px;
+        border: 1px solid #555;
+        border-radius: 50%;
+    }
+    .news .more a span {
+        display: none;
+    }
+}
+
+
+.notice {
+    margin: 104px 0 0 0;
+    background-color: #1d1d1d;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 173px 0 104px 0;
+}
+.notice .wrapper {
+    display: flex; /* tit - list 좌우 정렬 */
+    justify-content: space-between;
+    position: relative; /* more의 기준 */
+}
+.notice .tit h2 {
+    font-size: var(--tit-font-size);
+    color: #fff;
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 14px 0;
+}
+.notice .tit h2 span {
+    display: block; 
+    /* span태그와 다른 글자가 줄바꿈이 발생 
+        span태그가 block요소가 되면 다른 태그가 글자가 옆에 존재할 수 없음
+        자동으로 다음 글자는 줄이 바뀌게 됨 */
+}
+/* tit 넓이 안줌 */
+.notice .list {
+    max-width: 856px; /* 최대 넓이 */
+    width: calc(100% - 214px);
+}
+.notice .list ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.notice .list ul li:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.notice .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 36px 0 34px 0;
+}
+.notice .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    line-height: var(--tit-line-height);
+    color: #fff;
+    
+    width: calc(100% - 107px); /* 날짜는 길이변경이 되지 않기 때문에 날짜를 제외한 넓이를 지정해줌*/
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice .list ul li a span {
+    color: rgba(255, 255, 255, 0.5);
+}
+.notice .more {
+    position: absolute; /* wrapper 기준 정렬 */
+    left: 0;
+    bottom: 0;
+}
+.notice .more a {
+    display: flex; /* span - i 좌우 정렬 */
+    align-items: center;
+    gap: 0 7px;
+}
+.notice .more a i {
+    width: 6px;
+}
+.notice .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+.notice .more a i svg path {
+    fill: rgba(255, 255, 255, 0.8);
+}
+@media screen and (max-width:768px){
+    .notice {
+        margin: 72px 0 0 0;
+        padding: 108px 0 72px 0;
+    }
+    .notice .wrapper {
+        flex-direction: column; /* flex를 유지하고 방향을 세로로 변경*/
+        gap: 31px 0;
+    }
+    .notice .tit h2 {
+        margin: 0;
+    }
+    .notice .tit h2 span {
+        display: none; 
+    }
+    .notice .tit p {
+        display: none;
+    }
+    /* tit 넓이 안줌 */
+    .notice .list {
+        max-width: 100%; /* 최대 넓이 해제 */
+        width: auto;
+    }
+    .notice .list ul li a {
+        flex-direction: column;
+        padding: 22px 0 23px 0;
+        gap: 9px 0;
+    }
+    .notice .list ul li a h3 {
+        width: auto;
+        /* 1줄 제한 해제 */
+        white-space: wrap;
+        overflow: visible;
+    }
+    .notice .more {
+        position: relative; /* wrapper 기준 정렬 */
+        left: auto;
+        bottom: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .notice .more a {
+        padding: 5px 22px 5px 22px;
+        background-color: #ededed;
+        border-radius: 30px;
+    }
+    .notice .more a span {
+        color: #555;
+    }
+    .notice .more a i svg path {
+        fill: #555;
+    }
+}

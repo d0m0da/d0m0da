@@ -22,9 +22,9 @@
     url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), 
     url(../fonts/Pretendard-ExtraBold.woff) format('woff');
 }
-body {
+html, body {
     font-family: 'Pretendard';
-    font-size: 17px;
+    font-size: var(--base-font-size);
     font-weight: 400;
     color: #555555;
     line-height: 1.5;
@@ -91,25 +91,49 @@ button {
     object-fit: cover;
 }
 /*
-    계속(태블릿, 모바일) 좌우여백을 16px을 적용
+    계속(태블릿, 모바일) 좌우여백을 고정 값(px)을 적용
     1260 + 16 + 16 = 1292
+    1260 + 50 + 50 = 1360
 
     좌우의 여백을 가변 %로 적용
-    1260 * 0.06(3% + 3%) = 75.6 + 1260 = 1336
+    1260 * 0.1(5% + 5%) = 126 + 1260 = 1386
+    1260 * 0.06(3% + 3%) = 75.6 + 1260 = 1335.6
 */
-@media screen and (max-width:1336px){
+@media screen and (max-width:1335.6px){
                     .wrapper {
                         width: auto;
                         margin: 0 3%;
                     }
-}/* media */
+}
 @media screen and (max-width:768px){
     /* 브라우저 사이즈 768px 부터 그 이하의 사이즈에서만 적용 */
-                    body {
-                        font-size: 16px;
-                    }
                     .wrapper {
-                        width: auto;
                         margin: 0 16px;
                     }
+}/* media */
+
+
+/* css변수 - 값은 media를 이용해 수치 변경가능
+    선언한 변수를 css에서 사용방법은 font-size: var(--base-font-size); 
+    앞에 -- 두개는 반드시 포함되어야함 */
+:root {
+    --base-font-size: 17px;
+    --tit-color: #1d1d1d;
+    --tit-font-size: 40px;
+    --h3-font-size: 20px;
+    --tit-line-height: 1.2;
+    --bold-weight: 700;
+}
+@media screen and (max-width:1024px){
+    :root {
+        --tit-font-size: 32px;
+        --h3-font-size: 18px;
+    }
+}
+@media screen and (max-width:768px){
+    :root {
+        --base-font-size: 16px;
+        --tit-font-size: 28px;
+        --h3-font-size: 18px;
+    }
 }/* media */
