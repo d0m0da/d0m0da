@@ -228,8 +228,8 @@ header .util .search .search_open i {
     }
     header .gnb .gnb_close i {
         display: block;
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
     }
     header .util {
         position: absolute; /* header를 기준으로 정렬 */
