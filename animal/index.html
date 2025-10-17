@@ -16,8 +16,9 @@
 <body>
     <div id="wrap">
         <!-- pc버전에서 메뉴에 오버하면 menu_pc 클래스 추가
-            mobile버전에서 메뉴를 열면 menu_mo 클래스 추가 -->
-        <header class="menu_mo">
+            mobile버전에서 메뉴를 열면 menu_mo 클래스 추가 
+            header가 상단에 고정될때 fixed 클래스 추가 -->
+        <header>
             <h1 class="logo"><a href="index.html"><span class="blind">유기동물 보호센터</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open">
@@ -29,12 +30,12 @@
                     </i>
                 </button>
                 <div class="gnb_wrap">
-                    <div class="gnb_logo"><span>유기동물 보호센터</span></div>
+                    <div class="gnb_logo"><span class="blind">유기동물 보호센터</span></div>
                     <ul class="depth1">
                         <!-- pc버전 : 오버한 li에 over를 추가
                             mobile버전 : 메뉴 열리면 li에 open을 추가 -->
                         <li>
-                            <a href="#n"><span>찾습니다</span></a>
+                            <a href="https://yoksel.github.io/url-encoder/"><span>찾습니다</span></a>
                             <ul class="depth2">
                                 <li><a href="#n"><span>반려동물 실종신고</span></a></li>
                                 <li><a href="#n"><span>유기동물 보호</span></a></li>
@@ -72,7 +73,7 @@
                         </li>
                     </ul>
                     <button class="gnb_close">
-                        <span>메뉴닫기</span>
+                        <span class="blind">메뉴닫기</span>
                         <i>
                             <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 10.75L2.875 16.875C2.64583 17.1042 2.35417 17.2188 2 17.2188C1.64583 17.2188 1.35417 17.1042 1.125 16.875C0.895833 16.6458 0.78125 16.3542 0.78125 16C0.78125 15.6458 0.895833 15.3542 1.125 15.125L7.25 9L1.125 2.875C0.895833 2.64583 0.78125 2.35417 0.78125 2C0.78125 1.64583 0.895833 1.35417 1.125 1.125C1.35417 0.895833 1.64583 0.78125 2 0.78125C2.35417 0.78125 2.64583 0.895833 2.875 1.125L9 7.25L15.125 1.125C15.3542 0.895833 15.6458 0.78125 16 0.78125C16.3542 0.78125 16.6458 0.895833 16.875 1.125C17.1042 1.35417 17.2188 1.64583 17.2188 2C17.2188 2.35417 17.1042 2.64583 16.875 2.875L10.75 9L16.875 15.125C17.1042 15.3542 17.2188 15.6458 17.2188 16C17.2188 16.3542 17.1042 16.6458 16.875 16.875C16.6458 17.1042 16.3542 17.2188 16 17.2188C15.6458 17.2188 15.3542 17.1042 15.125 16.875L9 10.75Z">
@@ -148,7 +149,586 @@
                     </button>
                 </div>
             </section><!-- visual -->
-            <section class="find"></section><!-- find -->
+            <section class="find">
+                <div class="wrapper">
+                    <h2>찾습니다</h2>
+                    <div class="tap_list">
+                        <ul>
+                            <!-- 선택된 탭에는 active 클래스 추가
+                            button 안에 span태그에게는 선택됨이라고 글자를 써줌 -->
+                            <li class="item1 active"><button>가족을 <span class="blind">선택됨</span></button></li>
+                            <li class="item2 "><button>주인을 <span></span></button></li>
+                        </ul>
+                    </div><!-- tap_list -->
+                    <div class="tap_content">
+                        <!-- 선택된 tab_item은 active 클래스가 추가 tit에 선택됨이라고 써줌 -->
+                        <div class="tab_item item1 active" title="선택됨">
+                            <h3 class="blind">가족을</h3>
+                            <div class="list">
+                                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_01.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-16</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경기 송산면 천등리</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>사람을 잘 따르고 겁이 많아요.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_02.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>코리안 숏헤어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-13</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>울산 중구</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>만 여덟살이고 사진처럼 한쪽볼에 황색 점마냥 보이며
+                                                                한살때 중성화로 한쪽귀가 살짝 잘렸습니다.
+                                                                지맘대로 돌아다니다 꼭 집에 들어오는 놈이있고
+                                                                붙임성이 좋아 낯익으면 아무한테나 달라붙어요.
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_03.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>진돗개</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경남 거제시</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>귀도 안들립니다 치아상태도 안좋고 눈도 안좋아요</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_04.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>비숑</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-14</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경기 산남동</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>사람을 아주 좋아하고 잘 따릅니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_05.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>아메리칸 숏헤어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-12</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경남 함양군</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>고양이가 원래 마당에 나가 놀다가 다시 집에 잘 들어오는데 며칠 째
+                                                                들어오지 않습니다. 속초 영랑동 대명아파트, 양우아파트, 영랑골 인
+                                                                근입니다. 보신분 연락부탁드려요. 감사합니다
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_06.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>시츄</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>충남 금산군</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>금산에 벌초하러갔다가 잃어버렸는데 발견되시면 꼭좀 연락부탁드립니다...
+                                                                강아지가 사람을 되게 좋아하고 이름은 촐랑이입니다
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_07.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>코리안 숏헤어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-10</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>세종 반곡동</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>호기심 많고 사람을 좋아합니다
+                                                                동그랗게 생겼고 집에서 미용해서 반정도 털찐 상태며
+                                                                지금은 아기펭귄같은 느낌입니다
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find01_08.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>골든 리트리버</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-09-13</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경남 김해시</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>엄청 순하고 사람을 좋아해요
+                                                                먹는거 진짜 좋아하구요 성격좋습니다
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="prev">
+                                <span class="blind">이전 팝업 보기</span>
+                                <i>
+                                    <svg viewBox="0 0 23 40" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.39583 19.9999L21.7083 35.3124C22.2292 35.8332 22.4809 36.4408 22.4635 37.1353C22.4462 37.8297 22.1771 38.4374 21.6563 38.9582C21.1354 39.479 20.5278 39.7394 19.8333 39.7394C19.1389 39.7394 18.5313 39.479 18.0104 38.9582L1.96875 22.9686C1.55208 22.5519 1.23958 22.0832 1.03125 21.5624C0.822917 21.0415 0.71875 20.5207 0.71875 19.9999C0.71875 19.479 0.822917 18.9582 1.03125 18.4374C1.23958 17.9165 1.55208 17.4478 1.96875 17.0311L18.0104 0.989447C18.5313 0.468614 19.1476 0.216877 19.8594 0.234238C20.5712 0.2516 21.1875 0.520697 21.7083 1.04153C22.2292 1.56236 22.4896 2.17 22.4896 2.86445C22.4896 3.55889 22.2292 4.16653 21.7083 4.68736L6.39583 19.9999Z">
+                                    </svg>                                        
+                                </i>
+                            </button>
+                            <button class="next">
+                                <span class="blind">다음 팝업 보기</span>
+                                <i>
+                                    <svg viewBox="0 0 23 40" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.6042 19.9999L1.29167 35.3124C0.770832 35.8332 0.519096 36.4408 0.536457 37.1353C0.553818 37.8297 0.822914 38.4374 1.34375 38.9582C1.86458 39.479 2.47222 39.7394 3.16666 39.7394C3.86111 39.7394 4.46875 39.479 4.98958 38.9582L21.0312 22.9686C21.4479 22.5519 21.7604 22.0832 21.9687 21.5624C22.1771 21.0415 22.2812 20.5207 22.2812 19.9999C22.2812 19.479 22.1771 18.9582 21.9687 18.4374C21.7604 17.9165 21.4479 17.4478 21.0312 17.0311L4.98958 0.989447C4.46875 0.468614 3.85243 0.216877 3.14062 0.234238C2.42882 0.2516 1.8125 0.520697 1.29167 1.04153C0.770832 1.56236 0.510416 2.17 0.510416 2.86445C0.510416 3.55889 0.770832 4.16653 1.29167 4.68736L16.6042 19.9999Z">
+                                    </svg>                                        
+                                </i>
+                            </button>
+                                <a href="#n" class="more">
+                                    <span>more</span>
+                                    <i>
+                                        <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.16699 6.83317H1.00033C0.764214 6.83317 0.566298 6.75331 0.406576 6.59359C0.246853 6.43387 0.166992 6.23595 0.166992 5.99984C0.166992 5.76373 0.246853 5.56581 0.406576 5.40609C0.566298 5.24637 0.764214 5.1665 1.00033 5.1665H5.16699V0.999837C5.16699 0.763726 5.24685 0.565809 5.40658 0.406087C5.5663 0.246365 5.76421 0.166504 6.00033 0.166504C6.23644 0.166504 6.43435 0.246365 6.59408 0.406087C6.7538 0.565809 6.83366 0.763726 6.83366 0.999837V5.1665H11.0003C11.2364 5.1665 11.4344 5.24637 11.5941 5.40609C11.7538 5.56581 11.8337 5.76373 11.8337 5.99984C11.8337 6.23595 11.7538 6.43387 11.5941 6.59359C11.4344 6.75331 11.2364 6.83317 11.0003 6.83317H6.83366V10.9998C6.83366 11.2359 6.7538 11.4339 6.59408 11.5936C6.43435 11.7533 6.23644 11.8332 6.00033 11.8332C5.76421 11.8332 5.5663 11.7533 5.40658 11.5936C5.24685 11.4339 5.16699 11.2359 5.16699 10.9998V6.83317Z">
+                                        </svg>                                        
+                                    </i>
+                                </a>
+                        </div><!-- tab_item1 -->
+                        <div class="tab_item item2">
+                            <h3 class="blind">주인을</h3>
+                            <div class="list">
+                                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_01.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-09-01</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>부산</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>앉아’, ‘손’ 등 기본 훈련이 되어 있습니다.
+                                                                리드줄로 산책도 잘하고, 차도 무리 없이 탑니다.
+                                                                사람 손길을 좋아해 배도 보여주며 믿음을 줍니다.
+                                                                병원 진료·주사 때도 얌전히 있을 만큼 순합니다.
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_02.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>말티즈</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>인천 계양구</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>인천 계양구 계양산 부근에서 발견했습니다.
+                                                                병원검사결과 5살추정 암컷입니다.
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_03.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>코리안 숏헤어</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경남 창원시</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>화단에 버려져있는 아기고양이 데려왔는데 얌전하고 말을 잘 들어요
+                                                                사정이 여의치 않아 데려가실 분 구합니다
+                                                                화장실이랑 집만 만들어주니까 알아서 화장실 사용하네요
+                                                                고양이집, 장난감, 화장실, 고양이 우유 있습니다
+                                                                많은 사랑 주실 분 구해요
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_04.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>먼치킨</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-07</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>강원 원주시</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>이름 : 토미
+                                                                나이 : 1달미만
+                                                                성별 : 남아추정!
+                                                                현재 상태 : 병원에서 전염병검사 및 기본검사 완료!
+                                                                전염병 이상없음!
+                                                                눈꼽이 처음엔 많이 껴있긴했으나 세정했고! 멀쩡!
+                                                                귀에 진드기 알 추정이 되는 것 들이 있어서 병원에서도 확실하지 않
+                                                                고 어려서 조금만 더 지켜보자 하셨어요!
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_05.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>아메리칸 숏헤어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-10-03</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경기 고양시</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>3개월령 여자 아이입니다
+                                                                어미 없이 아파트가 떠나가도록 울고 있다가 구조되었습니다.
+                                                                아주 똥꼬발랄하고 건강해요.
+                                                                좋은 가족이 되어 주실 분 연락을 간절히 찾습니다!
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_06.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>노르웨이 숲고양이</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-09-27</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>제주 서귀포시</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>이쁘고 품종있는 고양이라 길고양이는 아닌거 같아요 사람도 안피하고 애교 많아요 집에도 몇번 따라 들어와서 간식 조금 먹이니 금방 또 사라졌네요 어제 오늘 이틀째 보이는거 보니 이 주변에 있던 애 같은데 서귀포시 대포동입니다 혹시 잃어버리셨거나 이 아이 아시는분 꼭 연락주세요ㅜ
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_07.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>웰시코기</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-07-31</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>인천 서구</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>밥풀이는 2025년 7월 길에서 그냥 조용히 살고있었는데, 어떤 이의 신
+                                                                고로 포획되어 시보호소로 들어오게 되었습니다.
+                                                                길 생활을 오래한 듯 털도 엉망이고, 눈물자국도 심하고 경계심이 있
+                                                                엇어요..ㅠㅠ
+                                                                역시나 믹스중형견은 입양 문의가 없었고, 그렇게 3개월동안 철장에서
+                                                                한번도 못나오고 살다가, 안락사 명단에 올랐습니다.
+                                                                
+                                                                그런데 보호소 직원분의 노력으로 밥풀이의 치료비를 모두 지원해준단
+                                                                후원자가 생겼고,
+                                                                그래서 임보처를 구해서 밥풀이를 살려보려고 합니다.
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/find02_08.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>푸들</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종일자</strong>
+                                                            <strong class="mo_only">일자</strong>
+                                                            <span>2025-09-17</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>충북 대소 삼호교</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>사람을 많이 좋아하는지 와서 부비부비하고 껌딱지처럼 따라댕겨요. 근데 저희 강아지 한마리가 워낙 까칠해서 쫌 치이는부분이 많아요. 주인이 나타날때까지 데리고있으려고 했는데 지금 거의 일주일째 아무 소식이 없어서 이렇게 글올립니다.
+                                                                보호해주실분 찾아요. 아이는 정말 순하고 훈련은 잘되있는듯 합니다. 전, 후 사진 올려드려요. 혹시나 미용으로 주인분이 못알아보실까봐..
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="prev">
+                                <span class="blind">이전 팝업 보기</span>
+                                <i>
+                                    <svg viewBox="0 0 23 40" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.39583 19.9999L21.7083 35.3124C22.2292 35.8332 22.4809 36.4408 22.4635 37.1353C22.4462 37.8297 22.1771 38.4374 21.6563 38.9582C21.1354 39.479 20.5278 39.7394 19.8333 39.7394C19.1389 39.7394 18.5313 39.479 18.0104 38.9582L1.96875 22.9686C1.55208 22.5519 1.23958 22.0832 1.03125 21.5624C0.822917 21.0415 0.71875 20.5207 0.71875 19.9999C0.71875 19.479 0.822917 18.9582 1.03125 18.4374C1.23958 17.9165 1.55208 17.4478 1.96875 17.0311L18.0104 0.989447C18.5313 0.468614 19.1476 0.216877 19.8594 0.234238C20.5712 0.2516 21.1875 0.520697 21.7083 1.04153C22.2292 1.56236 22.4896 2.17 22.4896 2.86445C22.4896 3.55889 22.2292 4.16653 21.7083 4.68736L6.39583 19.9999Z">
+                                    </svg>                                        
+                                </i>
+                            </button>
+                            <button class="next">
+                                <span class="blind">다음 팝업 보기</span>
+                                <i>
+                                    <svg viewBox="0 0 23 40" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.6042 19.9999L1.29167 35.3124C0.770832 35.8332 0.519096 36.4408 0.536457 37.1353C0.553818 37.8297 0.822914 38.4374 1.34375 38.9582C1.86458 39.479 2.47222 39.7394 3.16666 39.7394C3.86111 39.7394 4.46875 39.479 4.98958 38.9582L21.0312 22.9686C21.4479 22.5519 21.7604 22.0832 21.9687 21.5624C22.1771 21.0415 22.2812 20.5207 22.2812 19.9999C22.2812 19.479 22.1771 18.9582 21.9687 18.4374C21.7604 17.9165 21.4479 17.4478 21.0312 17.0311L4.98958 0.989447C4.46875 0.468614 3.85243 0.216877 3.14062 0.234238C2.42882 0.2516 1.8125 0.520697 1.29167 1.04153C0.770832 1.56236 0.510416 2.17 0.510416 2.86445C0.510416 3.55889 0.770832 4.16653 1.29167 4.68736L16.6042 19.9999Z">
+                                    </svg>                                        
+                                </i>
+                            </button>
+                            <a href="more" class="more">
+                                <span>more</span>
+                                <i>
+                                    <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.16699 6.83317H1.00033C0.764214 6.83317 0.566298 6.75331 0.406576 6.59359C0.246853 6.43387 0.166992 6.23595 0.166992 5.99984C0.166992 5.76373 0.246853 5.56581 0.406576 5.40609C0.566298 5.24637 0.764214 5.1665 1.00033 5.1665H5.16699V0.999837C5.16699 0.763726 5.24685 0.565809 5.40658 0.406087C5.5663 0.246365 5.76421 0.166504 6.00033 0.166504C6.23644 0.166504 6.43435 0.246365 6.59408 0.406087C6.7538 0.565809 6.83366 0.763726 6.83366 0.999837V5.1665H11.0003C11.2364 5.1665 11.4344 5.24637 11.5941 5.40609C11.7538 5.56581 11.8337 5.76373 11.8337 5.99984C11.8337 6.23595 11.7538 6.43387 11.5941 6.59359C11.4344 6.75331 11.2364 6.83317 11.0003 6.83317H6.83366V10.9998C6.83366 11.2359 6.7538 11.4339 6.59408 11.5936C6.43435 11.7533 6.23644 11.8332 6.00033 11.8332C5.76421 11.8332 5.5663 11.7533 5.40658 11.5936C5.24685 11.4339 5.16699 11.2359 5.16699 10.9998V6.83317Z">
+                                    </svg>                                        
+                                </i>
+                            </a>
+                        </div><!-- tab_item2 -->
+                    </div><!-- tap_content -->
+                </div><!-- wrapper -->
+            </section><!-- find -->
             <section class="slogan"></section><!-- slogan -->
             <section class="adopt"></section><!-- adopt -->
             <section class="review"></section><!-- review -->

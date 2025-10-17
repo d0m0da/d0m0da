@@ -28,6 +28,7 @@
     --color-white90: rgba(255, 255, 255, 0.9);
     --color-black: #000000;
     --header-h: 110px;
+    --header-var: clamp(60px, 10vw, 110px);
     --margie-h2: 157px 0 0 0;
     --letter-spacing-tit: -0.05em;
     --wrapper-magine: 40px;
@@ -52,6 +53,7 @@ html, body {
     color: var(--color-basic);
     word-break: keep-all; /* 단어별로 줄바꿈 */
     word-wrap: break-word; /* 단어가 너무 길때 강제로 줄 바꿈 */
+    overflow-x: hidden;
 }
 .wrapper {
     width: 1260px;
@@ -82,13 +84,13 @@ html, body {
     계속(태블릿, 모바일) 좌우여백을 고정 값(px)을 적용
     1260 + 16 + 16 = 1292
     1260 + 50 + 50 = 1360
-    1260 + 40 + 40 = 1340
-    1260 + 30 + 30 = 1320
+    /* 1260 + 40 + 40 = 1340 */
+/*  1260 + 30 + 30 = 1320
 
     좌우의 여백을 가변 %로 적용
     1260 * 0.1(5% + 5%) = 126 + 1260 = 1386
-    1260 * 0.06(3% + 3%) = 75.6 + 1260 = 1335.6
-*/
+    1260 * 0.06(3% + 3%) = 75.6 + 1260 = 1335.6 */
+
 @media screen and (max-width:1340px){
     .wrapper {
         width: auto;

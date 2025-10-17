@@ -22,12 +22,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 var(--wrapper-magine);
+    transition: background-color 0.3s, color 0.5s, fill 0.5s;
 }
 header .logo a {
     display: block;
     width: 174px;
     height: 45px;
     background: url(../images/logo_w.svg) no-repeat center center / contain;
+    transition: background-image 0.3s;
 }
 header .util {
     display: flex; /* search - mypage 좌우정렬 */
@@ -56,6 +58,18 @@ header .util .mypage i {
     display: block;
     width: 24px;
     margin: 5px 0 0 0;
+}
+
+/* header가 fixed 되었을때 */
+header.fixed {
+    background-color: var(--color-white80);
+    color: var(--color-tit);
+    fill: var(--color-tit);
+    backdrop-filter: blur(10px);
+}
+
+header.fixed .logo a {
+    background-image: url(../images/logo_bk.svg);
 }
 
 /*************************** 시작: pc 버전 메뉴 ******************************/
@@ -114,8 +128,6 @@ header .util .mypage i {
         backdrop-filter: blur(10px);
     }
     header.menu_pc .logo a {
-        width: 174px;
-        height: 49px;
         background-image: url(../images/logo_bk.svg);
     }
     header .gnb .gnb_wrap ul.depth1 > li.over > a {
@@ -153,7 +165,7 @@ header .util .mypage i {
 @media screen and (max-width:1024px) {
     header {
         padding-right: 0;
-        height: clamp(60px, 10vw, 110px);
+        height: var(--header-var);
     }
     header .logo a {
         /* width: 92px; */
@@ -167,8 +179,8 @@ header .util .mypage i {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: clamp(60px, 10vw, 110px);
-        height: clamp(60px, 10vw, 110px);
+        width: var(--header-var);
+        height: var(--header-var);
     }
     header .gnb .gnb_open i {
         display: block;
@@ -176,22 +188,105 @@ header .util .mypage i {
         margin: 5px 0 0 0;
     }
     header .gnb .gnb_wrap {
-        display: none;
+        /* display: none; */
         position: absolute; /* header 기준 정렬 */
-        right: 0;
+        right: -110%;
         top: 0;
         width: 100%;
         height: 100dvh;
         background-color: var(--color-white);
         color: var(--color-basic);
         fill: var(--color-tit);
+        transition: right 0.5s;
+    }
+    /* 메뉴가 열렸을때, header에 menu_mo 클래스 추가 */
+    header.menu_mo .gnb .gnb_wrap {
+        /* display: block; */
+        right: 0;
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        margin: var(--header-var) 0 0 0;
+        height: calc(100dvh - var(--header-var));
+        overflow-y: auto;
+        /* 주어진 높이보다 콘텐츠가 짧으면 스크롤바 X
+        콘텐츠가 더 긴 경우에만 스크롤바가 생김 */
+        padding: 24px 0 0 0;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        font-family: var(--font-family-tit);
+        font-size: 20px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--font-height-tit);
+        color: var(--color-tit);
+        padding: 18px 80px 18px var(--wrapper-magine);
+        position: relative; /* after 정렬 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.open > a {
+        color: var(--color-point-pk);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a::after {
+        content: "";
+        position: absolute;
+        right: var(--wrapper-magine);
+        top: 28px;
+        /* top: 50%; /* a 높이의 절반 */
+        /* transform: translateY(-50%); after 높이의 절반 */
+        width: 15px;
+        height: 9px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 9' fill='%23333333' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 8.71875C6.83333 8.71875 6.67708 8.69271 6.53125 8.64062C6.38542 8.58854 6.25 8.5 6.125 8.375L0.375 2.625C0.145833 2.39583 0.03125 2.10417 0.03125 1.75C0.03125 1.39583 0.145833 1.10417 0.375 0.875C0.604167 0.645833 0.895833 0.53125 1.25 0.53125C1.60417 0.53125 1.89583 0.645833 2.125 0.875L7 5.75L11.875 0.875C12.1042 0.645833 12.3958 0.53125 12.75 0.53125C13.1042 0.53125 13.3958 0.645833 13.625 0.875C13.8542 1.10417 13.9688 1.39583 13.9688 1.75C13.9688 2.10417 13.8542 2.39583 13.625 2.625L7.875 8.375C7.75 8.5 7.61458 8.58854 7.46875 8.64062C7.32292 8.69271 7.16667 8.71875 7 8.71875Z' /%3E%3C/svg%3E");
+        transition: 0.5s;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.open > a::after {
+        transform: rotate(180deg);
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 9' fill='%23DD7794' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 8.71875C6.83333 8.71875 6.67708 8.69271 6.53125 8.64062C6.38542 8.58854 6.25 8.5 6.125 8.375L0.375 2.625C0.145833 2.39583 0.03125 2.10417 0.03125 1.75C0.03125 1.39583 0.145833 1.10417 0.375 0.875C0.604167 0.645833 0.895833 0.53125 1.25 0.53125C1.60417 0.53125 1.89583 0.645833 2.125 0.875L7 5.75L11.875 0.875C12.1042 0.645833 12.3958 0.53125 12.75 0.53125C13.1042 0.53125 13.3958 0.645833 13.625 0.875C13.8542 1.10417 13.9688 1.39583 13.9688 1.75C13.9688 2.10417 13.8542 2.39583 13.625 2.625L7.875 8.375C7.75 8.5 7.61458 8.58854 7.46875 8.64062C7.32292 8.69271 7.16667 8.71875 7 8.71875Z' /%3E%3C/svg%3E");
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        padding: 12px var(--wrapper-magine) 12px var(--wrapper-magine);
+        display: none; /* 1차 메뉴를 클릭할 때만 나타남 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li {
+        border-bottom: 1px solid var(--color-line02);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:last-child {
+        border-bottom: none;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        padding: 12px 16px;
+    }
+    header .gnb .gnb_wrap .gnb_logo {
+        position: absolute; /* gnb_wrap 기준 정렬 */
+        left: var(--wrapper-magine);
+        top: 0;
+        width: clamp(92px, 16vw, 174px);
+        height: var(--header-var);
+        background: url(../images/logo_bk.svg) no-repeat center center / contain;
+    }
+    header .gnb .gnb_wrap .gnb_close {
+        position: absolute; /* gnb_wrap 기준 정렬 */
+        right: 0;
+        top: 0;
+        width: var(--header-var);
+        height: var(--header-var);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header .gnb .gnb_wrap .gnb_close i {
+        display: block;
+        width: 28%;
+        margin: 10px 0 0 0;
     }
 
-    /* 메뉴가 열렸을때 menu_mo가 추가 */
-    header.menu_mo .gnb .gnb_wrap {
-        display: block;
-    }
+    
 }
+/*************************** 끝: 모바일 버전 ******************************/
+
 
 .visual {
     position: relative; /* ctrl_btn 정렬 기준 */
@@ -341,6 +436,86 @@ header .util .mypage i {
         margin: 0 0 0 1px;
     }
 }
+
+.find {
+    background-color: var(--color-background-gy);
+    padding: 157px 0 114px 0;
+}
+.find h2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-tit);
+    text-align: center;
+}
+.find .tap_list {
+    margin: 40px 0 0 0;
+}
+.find .tap_list ul {
+    display: flex;
+    justify-content: center;
+    gap: 0 24px;
+}
+.find .tap_list ul li button {
+    display: block;
+    padding: 10px 35px;
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--font-height-tit);
+    border-radius: 40px;
+}
+.find .tap_list ul li.active button {
+    background-color: var(--color-point-br);
+    color: var(--color-white);
+}
+.find .tap_list ul li.item2.active button {
+    background-color: var(--color-point-gr);
+}
+.find .tap_content {
+    margin: 38px 0 0 0;
+}
+.find .tap_content .tab_item {
+    position: relative; /* 정렬의 기준 */
+}
+.find .tap_content .tab_item .prev {
+    position: absolute;
+    left: -60px;
+    top: 158px;
+    z-index: 10;
+}
+.find .tap_content .tab_item .next {
+    position: absolute;
+    right: -60px;
+    top: 158px;
+    z-index: 10;
+}
+.find .tap_content .tab_item .more {
+    position: absolute;
+    right: 0;
+    top: -45px;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 0 6px;
+}
+.find .tap_content .tab_item .prev,
+.find .tap_content .tab_item .next {
+    display: block;
+    width: 22px;
+    height: 40px;
+    fill: var(--color-arrow);
+}
+.find .tap_content .tab_item .prev i,
+.find .tap_content .tab_item .next i {
+    display: block;
+}
+.find .tap_content .tab_item .more i {
+    display: block;
+    width: 11px;
+    fill: #555;
+}
+
+
 
 footer {
     margin: 1500px 0 0 0;
