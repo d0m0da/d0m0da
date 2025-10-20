@@ -3,8 +3,12 @@
 :root {
     --font-family-tit: "Tmoney";
     --font-size-basic: 17px;
-    --font-size-h2: 40px;
-    --font-size-h3: 24px;
+    --font-size-h2: clamp(28px, 4vw, 40px);
+    --font-size-h3: clamp(18px, 1.6vw, 24px);
+    /* --font-size-h2: 40px;
+    /* --font-size-h2: 28px;
+    --font-size-h3: 20px; */
+    /* --font-size-h3: 24px; */
     --font-size-visual: 60px;
     --font-weight-basic: 400;
     --font-weight-bold: 700;
@@ -29,19 +33,20 @@
     --color-black: #000000;
     --header-h: 110px;
     --header-var: clamp(60px, 10vw, 110px);
-    --margie-h2: 157px 0 0 0;
+    --margie-h2: 157px 0 144px 0;
     --letter-spacing-tit: -0.05em;
     --wrapper-magine: 40px;
 }
 @media screen and (max-width:768px){
     :root {
         --font-size-basic: 16px;
-        --font-size-h2: 24px;
-        --font-size-h3: 20px;
         --font-size-visual: 32px;
         --header-h: 60px;
-        --margie-h2: 96px 0 0 0;
+        --margie-h2: 96px 0 67px 0;
         --wrapper-magine: 16px;
+    }
+    html, body {
+        overflow-x: hidden;
     }
 }
 
@@ -53,7 +58,6 @@ html, body {
     color: var(--color-basic);
     word-break: keep-all; /* 단어별로 줄바꿈 */
     word-wrap: break-word; /* 단어가 너무 길때 강제로 줄 바꿈 */
-    overflow-x: hidden;
 }
 .wrapper {
     width: 1260px;

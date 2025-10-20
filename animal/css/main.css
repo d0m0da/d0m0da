@@ -439,7 +439,8 @@ header.fixed .logo a {
 
 .find {
     background-color: var(--color-background-gy);
-    padding: 157px 0 114px 0;
+    /* padding: var(--margie-h2); */
+    padding: clamp(96px, 12vw, 157px) 0 clamp(67px, 11vw, 144px) 0;
 }
 .find h2 {
     font-size: var(--font-size-h2);
@@ -456,7 +457,7 @@ header.fixed .logo a {
 }
 .find .tap_list ul li button {
     display: block;
-    padding: 10px 35px;
+    padding: 0.4167em 1.4583em;
     font-family: var(--font-family-tit);
     font-size: var(--font-size-h3);
     font-weight: var(--font-weight-bold);
@@ -475,6 +476,70 @@ header.fixed .logo a {
 }
 .find .tap_content .tab_item {
     position: relative; /* 정렬의 기준 */
+    display: none; /* active 클래스가 있는 요소만 보임 */
+}
+.find .tap_content .tab_item.active {
+    display: block; /* active 클래스가 있는 요소만 보임 */
+}
+.find .tap_content .tab_item .list .swiper-slide {
+    width: 212px;
+}
+.find .tap_content .tab_item .list .swiper-slide a {
+    display: block;
+}
+.find .tap_content .tab_item .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 366px;
+    border-radius: 20px;
+}
+.find .tap_content .tab_item .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.find .tap_content .tab_item .list .swiper-slide a .txt h4 {
+    display: flex; /* strong - span 좌우정렬 */
+    align-items: flex-end;
+    gap: 0 9px;
+    margin: 17px 0 10px 0;
+}
+.find .tap_content .tab_item .list .swiper-slide a .txt h4 strong {
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--font-height-tit);
+    letter-spacing: var(--letter-spacing-tit);
+    color: var(--color-tit);
+
+    /* 1줄제한 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.find .tap_content .tab_item .list .swiper-slide a .txt h4 span {
+    font-size: 16px;
+}
+.find .tap_content .tab_item .list .swiper-slide a .txt ul {
+    margin: 10px 0 0 0;
+}
+.find .tap_content .tab_item .list .swiper-slide a .txt ul li {
+    display: flex; /* strong - span 좌우정렬 */
+    gap: 0 16px;
+    margin: 6px 0 0 0;
+}
+.find .tap_content .tab_item .list .swiper-slide a .txt ul li:first-child {
+    margin: 0;
+}
+.find .tap_content .tab_item .list .swiper-slide a .txt ul li strong.mo_only {
+    display: none; /* 모비일에서만 보임 */
+}
+.find .tap_content .tab_item .list .swiper-slide a .txt ul li span {
+    color: var(--color-tit);
+
+    /* 1줄제한 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .find .tap_content .tab_item .prev {
     position: absolute;
@@ -514,8 +579,263 @@ header.fixed .logo a {
     width: 11px;
     fill: #555;
 }
+@media screen and (max-width:768px) {
+    .find h2 {
+        text-align: left;
+    }
+    .find .tap_list {
+        margin: 26px 0 0 0;
+    }
+    .find .tap_list ul {
+        display: flex;
+        justify-content: flex-start;
+        gap: 0 10px;
+    }
+    .find .tap_list ul li button {
+        padding: 5px 17px 4px 16px;
+        font-size: 17px;
+    }
+    .find .tap_content {
+        margin: 16px 0 0 0;
+    }
+    .find .tap_content .tab_item .list .swiper-slide a .photo {
+        height: 261px;
+        border-radius: 15px;
+    }
+    .find .tap_content .tab_item .list .swiper-slide a .txt h4 {
+        gap: 0 7px;
+        margin: 14px 0 10px 0;
+    }
+    .find .tap_content .tab_item .list .swiper-slide a .txt h4 span {
+        font-size: 12px;
+    }
+    .find .tap_content .tab_item .list .swiper-slide a .txt ul li strong.mo_only {
+        display: block; /* 모비일에서만 보임 */
+    }
+    .find .tap_content .tab_item .list .swiper-slide a .txt ul li strong.pc_only {
+        display: none;
+    }
+    .find .tap_content .tab_item .prev,
+    .find .tap_content .tab_item .next {
+        display: none;
+    }
+    .find .tap_content .tab_item .more {
+        top: -40px;
+    }
+    .find .tap_content .tab_item .more span {
+        display: none;
+    }
+    .find .tap_content .tab_item .more i {
+        width: 16px;
+    }
+}/* @media */
 
+.slogan {
+    margin: clamp(114px, 15vw, 200px) 0 clamp(94px, 10vw, 134px) 0;
+    text-align: center;
+}
+.slogan h2 {
+    font-size: clamp(24px, 4vw, 60px);
+    line-height: 2;
+    color: var(--color-tit);
+}
+.slogan h2 br.mo_only {
+    display: none;
+}
+.slogan h2 strong {
+    display: inline-block;
+    vertical-align: middle;
 
+    position: relative; /* before 정렬의 기준*/
+}
+.slogan h2 strong::before {
+    content: "";
+    position: absolute; /* strong 기준 정렬 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%); /* 상하좌우 가운데 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 85%;
+    height: 2em;
+}
+.slogan h2 strong.place {
+    width: 3.3em;
+}
+.slogan h2 strong.place::before {
+    background-image: url(../images/slogan_place.png);
+    transform: translate(-50%, -60%); /* 상하좌우 가운데 */
+    height: 3em;
+}
+.slogan h2 strong.animal {
+    width: 3.3167em;
+}
+.slogan h2 strong.animal::before {
+    background-image: url(../images/slogan_animal.png);
+}
+.slogan h2 strong.center {
+    width: 3.3833em;
+}
+.slogan h2 strong.center::before {
+    background-image: url(../images/slogan_center.png);
+    transform: translate(-50%, -60%); /* 상하좌우 가운데 */
+}
+.slogan h2 strong.call {
+    width: 3.3em;
+}
+.slogan h2 strong.call::before {
+    background-image: url(../images/slogan_call.png);
+}
+.slogan p {
+    margin: 37px 0 0 0;
+}
+@media screen and (max-width:768px) {
+    .slogan h2 br.mo_only {
+        display: block;
+    }
+    .slogan p {
+        display: none;
+    }
+}/* @media */
+
+.adopt {
+    background-color: var(--color-background-br);
+    color: var(--color-white);
+    fill: var(--color-white);
+    padding: clamp(96px, 12vw, 157px) 0 clamp(119px, 11vw, 147px) 0 ;
+    position: relative;
+    overflow-x: hidden; /* rolling 가로스크롤바 삭제 */
+}
+.adopt .tit h2 {
+    font-size: var(--font-size-h2);
+    text-align: center;
+}
+.adopt .more {
+    text-align: center;
+    margin: 34px 0 0 0;
+}
+
+.adopt .more a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0 2px;
+    color: var(--color-basic);
+    fill: var(--color-basic);
+    padding: 6px 17px 6px 21px;
+    background-color: var(--color-background-gy);
+    border-radius: 30px;
+}
+.adopt .more a i {
+    width: 12px;
+}
+.adopt .list {
+    margin: 33px 0 0 0;
+}
+.adopt .list .swiper-slide {
+    width: clamp(266px, 27vw, 350px);
+}
+.adopt .list .swiper-slide a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.adopt .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: clamp(266px, 27vw, 350px);
+    border-radius: 50%;
+}
+.adopt .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.adopt .list .swiper-slide a h3 {
+    font-size: clamp(22px, 2vw, 28px);
+    margin: 0.7857em 0 0.5em 0;
+}
+.adopt .list .swiper-slide a p {
+    overflow: hidden;
+    line-height: 1.5;
+    height: 3em; /* 행간 * 줄수 = 높이 */
+    margin: 5px 15% 0 15%;
+    color: var(--color-white50);
+}
+.adopt .ctrl_btn {
+    margin: 32px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 24px;
+}
+.adopt .ctrl_btn .prev,
+.adopt .ctrl_btn .next {
+    display: block;
+    width: 30px;
+    height: 30px;
+    fill: #C4B59C;
+}
+.adopt .ctrl_btn .prev i,
+.adopt .ctrl_btn .next i {
+    display: block;
+    width: 16px;
+}
+.adopt .rolling {
+    position: absolute; /* adopt 기준 정렬 */
+    left: 0;
+    bottom: 2%;
+    width: 100%;
+    font-family: var(--font-family-tit);
+    font-size: clamp(55px, 6vw, 70px);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--font-height-tit);
+    color: var(--color-white10);
+    letter-spacing: var(--letter-spacing-tit);
+    white-space: nowrap;
+}
+.adopt .rolling p {
+    position: absolute; /* rolling 기준 정렬 */
+    left: 0;
+    bottom: 0;
+    transform: translateX(-50.12%);
+    animation: adopt_roll 25s linear infinite;
+    /* 애니메이션 이름 3초동안 가속도x 무한 */
+}
+@keyframes adopt_roll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50.12%);}
+}
+@media screen and (max-width:768px) {
+    .adopt .tit h2 {
+        text-align: left;
+    }
+    .adopt .more {
+        text-align: right;
+        margin: -35px 0 0 0;
+    }
+    .adopt .more a {
+        gap: 0;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        justify-content: center;
+    }
+    .adopt .more a span {
+        display: none;
+    }
+    .adopt .more a i {
+        width: 16px;
+        margin: 5px 0 0 0;
+    }
+    .adopt .list {
+        margin: 37px 0 0 0;
+    }
+    .adopt .ctrl_btn {
+        display: none;
+    }
+}/* @media */
 
 footer {
     margin: 1500px 0 0 0;
