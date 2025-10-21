@@ -362,6 +362,7 @@ header.fixed .logo a {
     display: flex;
     justify-content: center;
     align-items: center;
+    fill: var(--color-white);
 }
 .visual .ctrl_btn .play {
     display: none;
@@ -394,8 +395,6 @@ header.fixed .logo a {
         font-size: 32px;
         margin: 0 0 72px 0;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    
-        transform: translate(75px 0);
     }
     .visual .swiper-slide h3 span {
         display: none;
