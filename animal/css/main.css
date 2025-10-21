@@ -1000,7 +1000,7 @@ header.fixed .logo a {
         padding: 0 0 9px 0;
     }
     .review h2 span::before {
-        bottom: -11px;
+        bottom: -13px;
     }
     .review h2.mo_only {
         display: block;
