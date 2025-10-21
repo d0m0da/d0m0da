@@ -65,6 +65,7 @@ html, body {
 }
 #wrap {
     position: relative; /* header 정렬 기준 */
+    overflow: hidden;
 }
 /* html 문서 구조상 글자를 써야하는데 
    그 글자를 안보이게 하고 싶을 때 blind 클래스를 주면 사라짐 */
