@@ -1,4 +1,4 @@
-/* 태그 스타일의 초기화 */
+/* 태그 스타일의 초기화 default.css 또는 reset.css 라고 함 */
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: inherit;
