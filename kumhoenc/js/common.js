@@ -5,7 +5,7 @@ $(document).ready(function(){
     let device_status // 현재 pc인지 mobile인지 구분하는 값
 
     function device_chk(){
-        window_w = $(window).width()
+        window_w = $(window).outerWidth()
         if(window_w > mobile_size){
             device_status = 'pc'
         }else{
@@ -15,11 +15,11 @@ $(document).ready(function(){
     }
 
     device_chk() // 문서가 로딩되었을때 1번 실행
-    $(window).on('resize', function(){
+    $(window).resize(function(){
         device_chk() // 브라우저가 리사이즈 할때마다 1번씩 실행
     })
 
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
             $('header').addClass('menu_pc')
         }
