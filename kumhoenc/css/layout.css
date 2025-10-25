@@ -90,10 +90,12 @@ header.up:not(.menu_pc, .menu_mo) {
         line-height: var(--header-h);
         padding: 0 2.225em;
     }
-    header .gnb .gnb_wrap ul.depth1 > li:hover > a {
+    header .gnb .gnb_wrap ul.depth1 > li:hover > a,
+    header .gnb .gnb_wrap ul.depth1 > li > a:focus {
         color: var(--color-point);
     }
-    header .gnb .gnb_wrap ul.depth1 > li:hover > a > span::before {
+    header .gnb .gnb_wrap ul.depth1 > li:hover > a > span::before,
+    header .gnb .gnb_wrap ul.depth1 > li > a:focus > span::before {
         content: "";
         position: absolute;
         left: 0;
@@ -116,14 +118,16 @@ header.up:not(.menu_pc, .menu_mo) {
         color: var(--color-basic);
         white-space: nowrap;
     }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover,
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:focus {
         color: var(--color-tit);
         font-weight: 700;
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a > span {
         position: relative;
     }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover > span::before {
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover > span::before,
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:focus > span::before {
         content: "";
         position: absolute;
         left: -4px;
