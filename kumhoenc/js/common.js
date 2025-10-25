@@ -15,7 +15,7 @@ $(document).ready(function(){
     }
 
     device_chk() // 문서가 로딩되었을때 1번 실행
-    $(window).resize(function(){
+    $(window).on('resize', function(){
         device_chk() // 브라우저가 리사이즈 할때마다 1번씩 실행
     })
 
