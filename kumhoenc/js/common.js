@@ -67,13 +67,13 @@ $(document).ready(function(){
         prev_scroll = scrolling
         scrolling = $(window).scrollTop()
         diff_scroll = prev_scroll - scrolling
-        console.log(diff_scroll)
+        // console.log(diff_scroll)
         if(diff_scroll < 0){ // 아래로 스크롤
             $('header').addClass('up')
-            console.log('if?')
+            // console.log('if?')
         }else{ // 위로 스크롤
             $('header').removeClass('up')
-            console.log('eles?')
+            // console.log('eles?')
         }
         if(scrolling > 0){ // 스크롤 내림
             $('header').addClass('fixed')
