@@ -101,6 +101,23 @@ $(document).ready(function(){
         $('footer .f_util .family_site .family_wrap').slideUp()
     })
 
+    // family_site 연 후 영역 밖을 아무곳이나 클릭하면 닫기 - gpt
+    $(document).on('click', function(e){
+        const $familySite = $('footer .f_util .family_site');
+        
+        // family_site 영역 밖을 클릭한 경우 닫기
+        if ($familySite.hasClass('open') && !$familySite.is(e.target) && $familySite.has(e.target).length === 0) {
+            $familySite.removeClass('open');
+            $familySite.find('.family_wrap').slideUp();
+        }
+    });
+    $('footer .f_util .family_site .family_open').on('click', function(e){
+        e.stopPropagation(); // 문서 클릭 이벤트로 전파 방지
+        const $target = $('footer .f_util .family_site');
+        $target.addClass('open');
+        $target.find('.family_wrap').slideDown();
+    });
+
 
     /* top 버튼 클릭 시 상단으로 이동 */
     $('footer .f_util .top').on('click', function(){
