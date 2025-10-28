@@ -461,7 +461,7 @@ section .tit h2 {
 .news .ctrl_btn a {
     display: block;
     height: 41px;
-    line-height: 41px;
+    line-height: 38px;
     padding: 0 53px 0 22px;
     border: 1px solid rgba(68, 68, 68, 0.8);
     position: relative;
@@ -487,7 +487,17 @@ section .tit h2 {
 .news .ctrl_btn a:hover::after {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 9' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.00969 8.48063L6.21919 7.66725L9.08363 4.80281H0V3.67781H9.08363L6.21919 0.813375L7.00969 0L11.25 4.24031L7.00969 8.48063Z' fill-opacity='0.9'/%3E%3C/svg%3E%0A");
 }
-
+@media screen and (min-width:1025px) and (max-width:1280px) {
+    .news .list .swiper-slide a .date {
+        font-size: 3.4rem;
+    }
+    .news .list .swiper-slide a h3 {
+        font-size: 2.5rem;
+    }
+    .news .list .swiper-slide a p {
+        font-size: 1.6rem;
+    }
+}
 @media screen and (max-width:1024px) {
     .news {
         margin: 119.5px 0 0 0;
@@ -576,93 +586,164 @@ section .tit h2 {
 }/* @media */
 
 
-.service {
-    margin: 170px 0 0 0;
-}
-.service .list {
-    background: url(../images/main/service01.jpg) no-repeat center center / cover;
-    color: var(--color-white);
-    transition: 0.5s;
-}
+/* 1025 이상 - pc버전 */
+@media screen and (min-width:1025px){ 
+    .service {
+        margin: 170px 0 0 0;
+    }
+    .service .list {
+        background: url(../images/main/service01.jpg) no-repeat center center / cover;
+        color: var(--color-white);
+        transition: 0.5s;
+    }
 
-/* 속성 선택자
-<div class="list" data-bg="service01"> 이 요소를 선택 (대괄호를 사용) */
-.service .list[data-bg="service01"] {
-    background-image: url(../images/main/service02.jpg);
-}
-.service .list[data-bg="service02"] {
-    background-image: url(../images/main/service03.jpg);
-}
-.service .list[data-bg="service03"] {
-    background-image: url(../images/main/service04.jpg);
-}
-.service .list ul {
-    display: flex;
-}
-.service .list ul li {
-    width: 33.33%;
-    height: 438px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative; /* after 정렬 기준 */
-}
-.service .list ul li::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 179px;
-    width: 1px;
-    height: 80px;
-    background-color: var(--color-white30);
-}
-.service .list ul li:last-child::after {
-    display: none;
-}
-.service .list ul li a {
-    display: block;
-    transform: translateY(32.5px);
-    transition: transform 0.5s;
-}
-.service .list ul li:hover a {
-    transform: translateY(0);
-}
-.service .list ul li a h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 7px 0 0 0;
-}
-.service .list ul li a .more {
-    padding: 6px 53px 9px 22px;
-    border: 1px solid var(--color-white80);
-    margin: 24px 0 0 0;
-    position: relative;
-    display: inline-block;
-    opacity: 0;
-    transition: 0.5s;
-}
-.service .list ul li:hover a .more {
-    opacity: 1;
-}
-.service .list ul li a:hover .more {
-    background-color: var(--color-point);
-    border: 1px solid var(--color-point);
-}
-.service .list ul li a .more::after {
-    content: "";
-    position: absolute;
-    right: 20px;
-    top: 16px;
-    width: 11px;
-    height: 8px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 9' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.00969 8.48063L6.21919 7.66725L9.08363 4.80281H0V3.67781H9.08363L6.21919 0.813375L7.00969 0L11.25 4.24031L7.00969 8.48063Z' fill-opacity='0.9'/%3E%3C/svg%3E%0A");
-}
-
-
-footer {
-    margin: 1500px 0 0 0;
-}
+    /* 속성 선택자
+    <div class="list" data-bg="service01"> 이 요소를 선택 (대괄호를 사용) */
+    .service .list[data-bg="service01"] {
+        background-image: url(../images/main/service02.jpg);
+    }
+    .service .list[data-bg="service02"] {
+        background-image: url(../images/main/service03.jpg);
+    }
+    .service .list[data-bg="service03"] {
+        background-image: url(../images/main/service04.jpg);
+    }
+    .service .list ul {
+        display: flex;
+    }
+    .service .list ul li {
+        width: 33.33%;
+        height: 438px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative; /* after 정렬 기준 */
+    }
+    .service .list ul li::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 179px;
+        width: 1px;
+        height: 80px;
+        background-color: var(--color-white30);
+    }
+    .service .list ul li:last-child::after {
+        display: none;
+    }
+    .service .list ul li a {
+        display: block;
+        transform: translateY(32.5px);
+        transition: transform 0.5s;
+    }
+    .service .list ul li:hover a {
+        transform: translateY(0);
+    }
+    .service .list ul li a h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 7px 0 0 0;
+    }
+    .service .list ul li a .more {
+        padding: 6px 53px 9px 22px;
+        border: 1px solid var(--color-white80);
+        margin: 24px 0 0 0;
+        position: relative;
+        display: inline-block;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .service .list ul li:hover a .more {
+        opacity: 1;
+    }
+    .service .list ul li a:hover .more {
+        background-color: var(--color-point);
+        border: 1px solid var(--color-point);
+    }
+    .service .list ul li a .more::after {
+        content: "";
+        position: absolute;
+        right: 20px;
+        top: 16px;
+        width: 11px;
+        height: 8px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 9' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.00969 8.48063L6.21919 7.66725L9.08363 4.80281H0V3.67781H9.08363L6.21919 0.813375L7.00969 0L11.25 4.24031L7.00969 8.48063Z' fill-opacity='0.9'/%3E%3C/svg%3E%0A");
+    }
+}/* @media */
+@media screen and (max-width:1024px){
+    .service {
+        margin: 83px 0 0 0;
+    }
+    .service .list {
+        background: url(../images/main/service_mo.jpg) no-repeat center center / cover;
+        color: var(--color-white);
+        padding: 83px var(--wrapper-magine) 83px var(--wrapper-magine);
+    }
+    .service .list ul {
+        display: flex;
+        gap: 0 16px;
+    }
+    .service .list ul li {
+        width: 33.33%;
+        background-color: var(--color-white10);
+        backdrop-filter: blur(4px);
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+        /* margin: 0 0 16px 0; */
+    }
+    .service .list ul li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 60px 24px 72px 24px;
+        position: relative;
+    }
+    .service .list ul li a::after {
+        content: "";
+        position: absolute;
+        right: 14px;
+        top: 16px;
+        width: 13px;
+        height: 13px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 11' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.870209 10.3285L0 9.45833L8.20042 1.25H0.745208V0H10.3285V9.58333H9.07854V2.12813L0.870209 10.3285Z' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+    }
+    .service .list ul li a h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 3px 0 0 0;
+    }
+    .service .list ul li a .more {
+        display: none;  
+    }
+}/* @media */
+@media screen and (max-width:768px){
+    .service .list {
+        background: url(../images/main/service_mo.jpg) no-repeat center center / cover;
+        color: var(--color-white);
+        padding: 83px var(--wrapper-magine) 83px var(--wrapper-magine);
+    }
+    .service .list ul {
+        flex-direction: column;
+        gap: 16px 0;
+    }
+    .service .list ul li {
+        width: auto;
+    }
+    .service .list ul li a {
+        align-items: flex-start;
+        padding: 15px 24px 18px 24px;
+        position: relative;
+    }
+    .service .list ul li a h3 {
+        margin: 1px 0 0 0;
+    }
+}/* @media */
