@@ -658,6 +658,9 @@
         overflow-x: scroll;
         gap: 0 24px;
     }
+    .web_video .what .colgroup .video {
+        margin-top:30px;
+    }
 }
 @media screen and (max-width:768px){
     .web_video .tit { padding-bottom:200px; }
@@ -679,9 +682,7 @@
     .web_video .what .colgroup .program { margin:10px 0; }
     .web_video .what .colgroup .subject { font-size:20px; margin-top:20px; }
 
-    .web_video .how ul { display:block; }
-    .web_video .how ul li { width:auto; margin-bottom:20px; }
-    .web_video .how ul li img { max-width:100%; }
+    
     .web_video .portfolio .step { border-radius:10px; padding:20px 10px 20px 0; position:relative; }
     .web_video .portfolio .step ul { display:block; margin:0 15px 0 160px; }
     .web_video .portfolio .step ul li { width:auto; height:116px; }
@@ -701,6 +702,11 @@
     .web_video .advantage ul li::before { width:50px; height:60px; background-position:center top; }
     .web_video .advantage ul li strong { font-size:20px;}
 
+}
+@media screen and (max-width:475px){
+    .web_video .how ul { display:block; }       
+    .web_video .how ul li { width:auto; margin-bottom:20px; }
+    .web_video .how ul li img { max-width:100%; }
 }
 @media screen and (max-width:350px){
     .web_video .portfolio .step ul { margin-left:120px; }

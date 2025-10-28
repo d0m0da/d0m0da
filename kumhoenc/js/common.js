@@ -86,4 +86,27 @@ $(document).ready(function(){
         scroll_chk() // 스크롤 할 때마다 실행
     })
 
+
+    /*
+        footer .f_util .family_site .family_open 열기 클릭하면
+        footer .f_util .family_site 에 open 클래스 추가
+        footer .f_util .family_site .family_close 닫기 클릭하면 삭제
+    */
+    $('footer .f_util .family_site .family_open').on('click', function(){
+        $('footer .f_util .family_site').addClass('open')
+        $('footer .f_util .family_site.open .family_wrap').slideDown()
+    })
+    $('footer .f_util .family_site .family_close').on('click', function(){
+        $('footer .f_util .family_site').removeClass('open')
+        $('footer .f_util .family_site .family_wrap').slideUp()
+    })
+
+
+    /* top 버튼 클릭 시 상단으로 이동 */
+    $('footer .f_util .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+
 })// 맨끝
