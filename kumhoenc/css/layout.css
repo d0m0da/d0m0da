@@ -361,16 +361,39 @@ header.up:not(.menu_pc, .menu_mo) {
 }/* @media */
 
 /* 서브에서 이미 선택 되어있는 메뉴 디자인 */
+header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
+    font-weight: 700;
+}
+header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a > span {
+    position: relative;
+}
+header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a > span::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: 0;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: var(--color-tit);
+}
+
 @media screen and (min-width:1025px) {
     header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::before {
         content: "";
         position: absolute;
         left: 50%;
-        top: var(--header-h);
+        top: calc(var(--header-h) - 5px);
         transform: translateX(-50%);
         width: 50%;
         height: 5px;
         background-color: var(--color-white);
+    }
+    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
+        color: var(--color-point);
+    }
+    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::before {
+        background-color: var(--color-point);
     }
 }
 @media screen and (max-width:1024px) {
@@ -378,30 +401,18 @@ header.up:not(.menu_pc, .menu_mo) {
         background-color: var(--color-point);
         color: var(--color-white);
     }
-    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::before,
-    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after {
-        content: "";
-        position: absolute;
-        right: var(--wrapper-magine);
-        top: 50%;
-        width: 13px;
-        height: 2px;
-        background-color: var(--color-white);
-    }
-    /* header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::before {
-        transform: rotate(-270deg);
-    } */
     header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::before {
-        transform: rotate(0deg); /* 세로선 없애기 */
-        transition: transform 0.5s;
+        transform: rotate(0);
     }
     header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 {
         display: block;
     }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:has(.active) a {
-        font-weight: 700;
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a > span::before {
+        top: 3px;
+        background-color: var(--color-white);
     }
 }
+
 
 
 footer {
