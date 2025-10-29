@@ -418,7 +418,7 @@ footer .f_util .family_site .family_wrap {
     display: none;
     position: absolute;
     left: 0;
-    bottom: 2.7059em;
+    bottom: calc(2.7059em - 1px);
     width: 100%;
     background-color: var(--color-black);
     border: 1px solid var(--color-white80);
