@@ -598,6 +598,9 @@ footer .inner .copyright {
             그래서 감싸고 있는 family_site에 넓이를 주고 내부요소는 그에 100% 꽉 차게 줌 */
         position: relative; /* family_wrap 정렬 기준 */
     }
+    footer .f_util .family_site .family_wrap {
+        bottom: calc(2.7059em + 2px);
+    }
     footer .inner {
         margin: 0;
     }

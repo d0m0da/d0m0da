@@ -100,7 +100,7 @@
         height: 38dvh;
     }
     .ctn_ceo .ceo_head .ceo_txt p {
-        font-size: 2.4rem;
+        font-size: 4rem;
     }
     .ctn_ceo .ceo_cont .wrapper {
         display: block;
@@ -111,6 +111,9 @@
     .ctn_ceo .ceo_cont .inner {
         width: auto;
         margin: 35px 0 0 0;
+    }
+    .ctn_ceo .ceo_cont .inner p {
+        word-break: break-all; 
     }
     .ctn_ceo .ceo_cont .inner .sign {
         margin: 69px 0 0 0;
@@ -123,5 +126,10 @@
     .ctn_ceo .ceo_cont .inner .sign .sign_img {
         width: 100px;
         height: 47px;
+    }
+}
+@media screen and (max-width:768px){
+    .ctn_ceo .ceo_head .ceo_txt p {
+        font-size: 2.8rem;
     }
 }
