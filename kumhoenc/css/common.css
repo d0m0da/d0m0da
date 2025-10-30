@@ -29,18 +29,18 @@
     --color-black80: rgba(0, 0, 0, 0.8);
     --color-black90: rgba(0, 0, 0, 0.9);
     --header-h: 90px;
-    --wrapper-magine: 48px;
+    --wrapper-margin: 48px;
 }
 @media screen and (max-width:1024px){
     :root {
         --header-h: 70px;
-        --wrapper-magine: 32px;
+        --wrapper-margin: 32px;
     }
 }/* @media */
 @media screen and (max-width:768px){
     :root {
         --header-h: 50px;
-        --wrapper-magine: 16px;
+        --wrapper-margin: 16px;
     }
 }/* @media */
 
@@ -99,7 +99,7 @@ body {
 @media screen and (max-width:1356px){
     .wrapper {
         width: auto;
-        margin: 0 var(--wrapper-magine);
+        margin: 0 var(--wrapper-margin);
     }
 }/* @media */
 

@@ -17,7 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 var(--wrapper-magine);
+    padding: 0 var(--wrapper-margin);
     transition: transform 0.3s;
 }
 header .logo a {
@@ -252,7 +252,7 @@ header.up:not(.menu_pc, .menu_mo) {
     }
     header .gnb .gnb_wrap .gnb_logo {
         position: absolute; /* gnb_wrap 기준 정렬 */
-        left: var(--wrapper-magine);
+        left: var(--wrapper-margin);
         top: 0;
         width: 84.5px;
         height: calc(var(--header-h) - 8px );
@@ -266,7 +266,7 @@ header.up:not(.menu_pc, .menu_mo) {
     }
     header .gnb .gnb_wrap ul.depth1 > li > a {
         display: block;
-        padding: 16px 0 16px var(--wrapper-magine);
+        padding: 16px 0 16px var(--wrapper-margin);
         font-size: 2.0rem;
         font-weight: 700;
         line-height: 1.3;
@@ -277,7 +277,7 @@ header.up:not(.menu_pc, .menu_mo) {
     header .gnb .gnb_wrap ul.depth1 > li > a::after {
         content: "";
         position: absolute;
-        right: var(--wrapper-magine);
+        right: var(--wrapper-margin);
         top: 50%;
         width: 13px;
         height: 2px;
@@ -306,7 +306,7 @@ header.up:not(.menu_pc, .menu_mo) {
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
         display: block;
-        padding: 6px 0 6px calc(var(--wrapper-magine) * 2);
+        padding: 6px 0 6px calc(var(--wrapper-margin) * 2);
     }
     header .gnb .gnb_wrap .gnb_close {
         position: absolute;

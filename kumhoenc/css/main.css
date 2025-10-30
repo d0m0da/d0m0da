@@ -681,7 +681,7 @@ section .tit h2 {
     .service .list {
         background: url(../images/main/service_mo.jpg) no-repeat center center / cover;
         color: var(--color-white);
-        padding: 83px var(--wrapper-magine) 83px var(--wrapper-magine);
+        padding: 83px var(--wrapper-margin) 83px var(--wrapper-margin);
     }
     .service .list ul {
         display: flex;
@@ -729,7 +729,7 @@ section .tit h2 {
     .service .list {
         background: url(../images/main/service_mo.jpg) no-repeat center center / cover;
         color: var(--color-white);
-        padding: 83px var(--wrapper-magine) 83px var(--wrapper-magine);
+        padding: 83px var(--wrapper-margin) 83px var(--wrapper-margin);
     }
     .service .list ul {
         flex-direction: column;
