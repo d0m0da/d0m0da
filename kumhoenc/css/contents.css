@@ -96,13 +96,16 @@
 
 @media screen and (max-width:1024px){
     .ctn_ceo .ceo_head .ceo_txt {
-        height: 30dvh;
+        height: 38dvh;
     }
     .ctn_ceo .ceo_head .ceo_txt p {
         font-size: 2.4rem;
     }
     .ctn_ceo .ceo_cont .wrapper {
         display: block;
+    }
+    .ctn_ceo .ceo_cont h3 br {
+        display: none;
     }
     .ctn_ceo .ceo_cont .inner {
         width: auto;
@@ -115,5 +118,9 @@
         align-items: center;
         justify-content: flex-end;
         gap: 0 20px;
+    }
+    .ctn_ceo .ceo_cont .inner .sign .sign_img {
+        width: 100px;
+        height: 47px;
     }
 }
