@@ -99,7 +99,7 @@ header.up:not(.menu_pc, .menu_mo) {
         content: "";
         position: absolute;
         left: 0;
-        top: var(--header-h);
+        top: calc(var(--header-h) - 5px);
         width: 100%;
         height: 5px;
         background-color: var(--color-point);
@@ -389,11 +389,16 @@ header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a > 
         height: 5px;
         background-color: var(--color-white);
     }
-    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
+    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a,
+    header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
         color: var(--color-point);
     }
-    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::before {
+    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::before,
+    header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::before {
         background-color: var(--color-point);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
+        color: var(--color-tit);
     }
 }
 @media screen and (max-width:1024px) {
@@ -408,7 +413,7 @@ header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a > 
         display: block;
     }
     header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a > span::before {
-        top: 3px;
+        top: 1px;
         background-color: var(--color-white);
     }
 }

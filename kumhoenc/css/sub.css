@@ -20,6 +20,18 @@
     flex-direction: column;
     justify-content: flex-end;
 }
+.sub_visual.bg2 {
+    background-image: url(../images/sub/sub_visual02.jpg);
+}
+.sub_visual.bg3 {
+    background-image: url(../images/sub/sub_visual03.jpg);
+}
+.sub_visual.bg4 {
+    background-image: url(../images/sub/sub_visual04.jpg);
+}
+.sub_visual.bg5 {
+    background-image: url(../images/sub/sub_visual05.jpg);
+}
 .sub_visual .breadcrumb ol {
     display: flex;
     gap: 0 2.1765em;
@@ -86,10 +98,10 @@
 .snb ul li.active a span::before {
     content: "";
     position: absolute;
-    left: -7px;
-    top: 2px;
-    width: 5px;
-    height: 5px;
+    left: -5px;
+    top: 1px;
+    width: 3px;
+    height: 3px;
     border-radius: 50%;
     background-color: var(--color-white);
 }
