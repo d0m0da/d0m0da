@@ -35,3 +35,25 @@ button {
     box-sizing: border-box;
     /* padding과 width/height를 같이 주면 사이즈가 늘어나는 현상 막기 */
 }
+fieldset {
+    border: none;
+}
+legend {
+    display: none;
+}
+input, select, textarea {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+input[type="submit"] {
+    cursor: pointer;
+}
+table caption {
+    display: none;
+}
+.table_wrap table th {
+    font-weight: inherit;
+}

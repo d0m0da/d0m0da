@@ -167,3 +167,64 @@
     }
     
 }
+
+
+/* table 공통 스타일 */
+.table_wrap {
+    overflow-x: auto;
+}
+.table_wrap table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    /* 테이블에는 각 칸의 테두리를 th, td에 border로 줌
+    이때 각 칸과 칸 사이에 여백이 발생함 그 여백을 없애고
+    칸과 칸 사이에 선이 중첩되서 두배가 되는 현상도 막아줌
+    이건 오직 테이블에만 적용 가능한 속성 */
+    border-top: 2px solid var(--color-tit);
+}
+.table_wrap table th,
+.table_wrap table td {
+    border: 1px solid var(--color-line02);
+    padding: 20px 20px 18px 20px;
+}
+
+/*
+    <tr>
+        <th></th>  ------  th: first-child
+        <td></td>  ------  first-child 아님
+    <tr>
+    <tr>
+        <td></td>
+        <td></td>
+    <tr>
+*/
+
+.table_wrap table th:first-child,
+.table_wrap table td:first-child {
+    border-left: 0;
+}
+.table_wrap table th:last-child,
+.table_wrap table td:last-child {
+    border-right: 0;
+}
+.table_wrap table thead th,
+.table_wrap table thead td {
+    background-color: var(--color-background);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-tit);
+    text-align: center;
+}
+.table_wrap table tbody th {
+    font-weight: 700;
+    color: var(--color-tit);
+    text-align: left;   
+    padding-left: 36px;
+}
+.table_wrap table tbody td {
+    text-align: center;
+}
+.table_wrap.count table tbody td {
+    text-align: right;
+}
