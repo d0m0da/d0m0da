@@ -1,0 +1,55 @@
+@import url(common.css);
+@import url(default.css);
+@import url(fonts.css);
+@import url(layout.css);
+
+h2 {
+    font-size: 100px;
+    text-align: center;
+}
+.visual {
+    background-color: tomato;
+    color: var(--color-white);
+}
+.tree {
+
+}
+.work {
+    background-color: green;
+    color: white;
+}
+.news {
+
+}
+footer {
+    background-color: gold;
+    color: white;
+}
+
+/* 사이드 nav_bar */
+#fp-nav ul li {
+    width: auto;
+    height: auto;
+    margin: 13px 0;
+}
+#fp-nav ul li a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid yellowgreen;
+}
+#fp-nav ul li a span {
+    display: none;
+}
+#fp-nav ul li .fp-tooltip {
+    position: relative;
+    left: auto;
+    top: auto;
+    color: var(--color-white80);
+    font-size: inherit;
+    font-family: inherit;
+    max-width: 100%;
+    overflow: visible;
+    opacity: 1;
+    width: auto;
+}
