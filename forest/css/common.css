@@ -4,13 +4,14 @@
 :root {
     --color-tit: #1f1f1f;
     --color-basic: #4d4d4d;
-    --color-point01: #E44E29;
+    --color-point01: #e44e29;
     --color-point02: #446A37;
-    --color-background: #F5F5F0;
-    --color-footer: #F4EEE1;
-    --color-line: #EDEDED;
+    --color-background01: #f5f5f0;
+    --color-background02: #493628;
+    --color-footer: #f4eee1;
+    --color-line: #ededed;
     --color-line02: #cccccc;
-    --color-white: #FFFFFF;
+    --color-white: #ffffff;
     --color-white10: rgba(255, 255, 255, 0.1);
     --color-white20: rgba(255, 255, 255, 0.2);
     --color-white30: rgba(255, 255, 255, 0.3);
@@ -122,7 +123,7 @@ body {
 }/* @media */
 
 ::selection {
-    background-color: var(--color-point02);
+    background-color: var(--color-point01);
     color: var(--color-white);
 }
 
