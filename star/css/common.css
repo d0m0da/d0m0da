@@ -4,7 +4,8 @@
 :root {
     --color-tit: #111;
     --color-basic: #444;
-    --color-point: #711A20;
+    --color-point01: #735E96;
+    --color-point02: #162246;
     --color-background: #F7F7F7;
     --color-line: #EDEDED;
     --color-line02: #cccccc;
@@ -30,12 +31,12 @@
     --color-black80: rgba(0, 0, 0, 0.8);
     --color-black90: rgba(0, 0, 0, 0.9);
     --header-h: 90px;
-    --wrapper-margin: 48px;
+    --wrapper-margin: 40px;
 }
 @media screen and (max-width:1024px){
     :root {
         --header-h: 70px;
-        --wrapper-margin: 32px;
+        --wrapper-margin: 28px;
     }
 }/* @media */
 @media screen and (max-width:768px){
@@ -50,7 +51,7 @@ html {
 }
 
 body {
-    font-family: "Neuton", "Noto Sans KR", sans-serif;
+    font-family: "Paperozi", "Noto Sans KR", sans-serif;
     /* 영문폰트와 한글폰트를 쓸때
         반드시 영문폰트는 한글이 지원되는 폰트면 안됨 
         font-family에서 영문폰트를 먼저 선언하고 다음에 한글 폰트를 선언
@@ -85,19 +86,19 @@ body {
 }
 
 .wrapper {
-    width: 1260px;
+    width: 1320px;
     margin: 0 auto; /* 가운데정렬 */
 }
 /*
     계속(태블릿, 모바일) 좌우여백을 고정 값(px)을 적용
-    1260 + 48 + 48 = 1356
+    1320 + 40 + 40 = 1356
 
     좌우의 여백을 가변 %로 적용
     1260 * 0.1(5% + 5%) = 126 + 1260 = 1386
     1260 * 0.06(3% + 3%) = 75.6 + 1260 = 1335.6 
 */
 
-@media screen and (max-width:1356px){
+@media screen and (max-width:1400px){
     .wrapper {
         width: auto;
         margin: 0 var(--wrapper-margin);
@@ -116,7 +117,9 @@ body {
     }
 }/* @media */
 
-/* ::selection {
-    background-color: var(--color-point);
+::selection {
+    background-color: var(--color-point02);
     color: var(--color-white);
-} */
+}
+
+
