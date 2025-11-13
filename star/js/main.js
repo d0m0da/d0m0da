@@ -5,10 +5,10 @@ $(document).ready(function () {
         loop: true,
         effect: "fade",
         speed: 1000,
-        // autoplay: {
-        //     delay: 4000,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
     });
 
     // ② 진행바 관련 변수
