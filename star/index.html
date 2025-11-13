@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <!-- 내파일 -->
     <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <title>충북대학교 천문대</title>
 </head>
 <body>
     <div id="wrap">
-        <header class="menu_pc">
+        <header>
             <h1 class="logo"><a href="index.html"><span class="blind">충북대학교 천문대</span></a></h1>
             <nav class="gnb">
-                <button class="gnb_open"><span>메뉴열기</span></button>
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
                 <div class="gnb_wrap">
-                    <div class="gnb_logo"><span>충북대학교 천문대</span></div>
+                    <div class="gnb_logo"><span class="blind">충북대학교 천문대</span></div>
                     <ul class="depth1">
                         <li>
                             <a href="#n"><span>천문대소개</span></spa></a>
@@ -61,7 +62,9 @@
                             </ul>
                         </li>
                     </ul>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
                 </div>
+                <div class="gnb_bg"></div>
             </nav>
             <div class="util">
                 <div class="search">
@@ -94,8 +97,8 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="ctrl_btn">
-                        <div class="wrapper">
+                    <div class="wrapper">
+                        <div class="ctrl_btn">
                             <div class="paging">
                                 <div class="bar">
                                     <span></span>
@@ -107,8 +110,151 @@
                     </div>
                 </div>
             </section>
-            <section class="weather"></section>
-            <section class="program"></section>
+            <section class="weather">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>오늘의 하늘</h2>
+                        <a href="#n"><span>월별 해 / 달 출몰시각 바로가기</span></a>
+                    </div>
+                    <ul class="weather_wrap">
+                        <li class="weather_calendar">
+                            <div class="list icon_calendar">
+                                <p><span>양력</span> 11월 11일</p>
+                                <p class="sub-text"><span>음력</span> 09월 22일</p>
+                            </div>
+                        </li>
+                        <li class="weather_weather">
+                            <div class="list icon_sun">
+                                <p><span>12°C</span></p>
+                                <p class="sub-text">미세먼지 35㎍/㎥ 보통</p>
+                            </div>
+                        </li>
+                        <li class="weather_moon">
+                            <div class="list icon_moon">
+                                <p><span>달의 모양</span></p>
+                                <p class="sub-text">하현망간의 달</p>
+                            </div>
+                        </li>
+                        <li class="weather_sun">
+                            <div class="list icon_clock">
+                                <p><span>일출</span> 07시 04분 &nbsp; <span>일몰</span> 17시 24분</p>
+                                <p class="sub-text"><span>월출</span> 23시 03분 &nbsp; <span>월몰</span> 12시 53분</p>
+                            </div>
+                        </li>
+                        <div class="weather_header">
+                            <p class="status">오늘 야외 관측이 가능합니다</p>
+                            <p class="disclaimer">*실제 상황과 예보는 다를 수 있습니다</p>
+                        </div>
+                    </ul>
+                </div>
+            </section>
+            <section class="program">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>별을 따라 만나는 프로그램</h2>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/program01.jpg" alt="3월 올해의 천문현상 : 해 마다 찾아오는 우주쇼"></div>
+                                <div class="txt">
+                                    <strong>3월</strong>
+                                    <h3>올해의 천문현상</h3>
+                                    <p>올 한해 일어나는 천문 현상의 종류와 그 원리를 배워본다</p>
+                                    <span>실습 : 달력 만들기 <br>
+                                        이해 연령대 : 초등 3학년 이상</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/program02.jpg" alt="4월 태양계 : 수, 금, 지, 화, 목, 토, 천, 해"></div>
+                                <div class="txt">
+                                    <strong>4월</strong>
+                                    <h3>태양계</h3>
+                                    <p>우리가 살고 있는 태양계의 구성과 특징을 배워본다</p>
+                                    <span>실습 : 태양계 팔찌 만들기 <br>
+                                        이해 연령대 : 초등 3학년 이상</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/program03.jpg" alt="5월 별의 일생 : 별의 탄생부터 죽음까지"></div>
+                                <div class="txt">
+                                    <strong>5월</strong>
+                                    <h3>별의 일생</h3>
+                                    <p>별의 탄생부터 죽음까지 그 과정을 배워본다</p>
+                                    <span>실습 : 별의 일생 액자 만들기 <br>
+                                        이해 연령대 : 초등 3학년 이상</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/program04.jpg" alt="6월 망원경 : 우주 탐험을 위한 인류의 발명"></div>
+                                <div class="txt">
+                                    <strong>6월</strong>
+                                    <h3>망원경</h3>
+                                    <p>천체망원경의 역사와 원리, 종류에 대하여 배워본다</p>
+                                    <span>실습 : 망원경 무드등 만들기 <br>
+                                        이해 연령대 : 초등 1학년 이상</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/program05.jpg" alt="7월 은하 : 별들의 가장 큰 집단"></div>
+                                <div class="txt">
+                                    <strong>7월</strong>
+                                    <h3>은하</h3>
+                                    <p>별들의 가장 큰 집단인 은하의 종류와 특징을 배워본다</p>
+                                    <span>실습 : 은하 액자 만들기 <br>
+                                        이해 연령대 : 초등 3학년 이상</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/program06.jpg" alt="8월 외계인 : 지구 밖 또 다른 생명체"></div>
+                                <div class="txt">
+                                    <strong>8월</strong>
+                                    <h3>외계인</h3>
+                                    <p>외계 생명체가 살 수 있을 만한 환경에 대해 생각하는 시간을 가져본다</p>
+                                    <span>실습 : 외계인 키링 만들기 <br>
+                                        이해 연령대 : 초등 3학년 이상</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/program07.jpg" alt="9월 달 : 지구의 동반자"></div>
+                                <div class="txt">
+                                    <strong>9월</strong>
+                                    <h3>달</h3>
+                                    <p>달의 탄생 과정과 위상 변화 과정을 배워본다</p>
+                                    <span>실습 : 달 에코백 만들기 <br>
+                                        이해 연령대 : 초등 3학년 이상</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/program08.jpg" alt="10월 우주개발 : 지구 넘어 우주에 대한 인류의 호기심"></div>
+                                <div class="txt">
+                                    <strong>10월</strong>
+                                    <h3>우주개발</h3>
+                                    <p>우주 탐험의 역사와 현재 탐사중인 탐사선의 특징에 대해 배워본다</p>
+                                    <span>실습 : 우주선 키링 만들기 <br>
+                                        이해 연령대 : 초등 3학년 이상</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/program09.jpg" alt="11월 일상생활 속 천문학 : 생활 속에 숨어있는 천문학은 어떤 것이 있을까?"></div>
+                                <div class="txt">
+                                    <strong>11월</strong>
+                                    <h3>일상생활 속 천문학</h3>
+                                    <p>지구를 위협하는 지구 근접 천체에 대해 알아보고, 이로부터 지구를 지킬 방법을 생각해본다</p>
+                                    <span>실습 : 천문학 컵 만들기 <br>
+                                        이해 연령대 : 초등 1학년 이상</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="more">
+                            <a href="#n"><span class="blind">더보기</span></a>
+                    </div>
+                </div>
+            </section>
             <section class="community"></section>
         </div>
         <footer></footer>
