@@ -220,15 +220,15 @@ h2, h3, h4, h5 {
 .weather .weather_header p {
     padding: 0 24px;
 }
-.weather .weather_header p.status {
-    padding-left: 53px;
+.weather .weather_header p span {
     position: relative;
+    padding-left: 25px;
 }
-.weather .weather_header p.status::before {
+.weather .weather_header p span::before {
     content: "";
     position: absolute;
-    left: 24px;
-    top: 3px;
+    left: 0;
+    top: 0;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -264,7 +264,7 @@ h2, h3, h4, h5 {
 }
 @media screen and (max-width:1024px){
     .weather {
-        padding: 60px 0 60px 0;
+        padding: 80px 0 80px 0;
     }
     .weather .weather_wrap {
         flex-direction: column;
@@ -275,17 +275,17 @@ h2, h3, h4, h5 {
         padding-top: 59px;
         padding-left: 24px;
     }
-    
+    .weather .weather_header {
+        justify-content: center;
+    }
     .weather .weather_wrap .list p span {
         font-size: 1.6rem;
-    }
-    .weather .weather_header p {
-        padding: 0;
     }
     .weather .weather_header p.disclaimer {
         position: absolute;
         left: 0;
         bottom: -315px;
+        padding: 0;
     }
 }
 
@@ -301,23 +301,41 @@ h2, h3, h4, h5 {
 .program .tit h2 {
     font-size: 4rem;
     color: var(--color-tit);
+    width: calc(100% - 80px);
 }
 .program .tit span {
     display: inline-block;
 }
 .program .tit span::before {
-    display: inline-block;
     content: "";
     position: absolute;
-    left: 35%;
-    top: 32%;
-    width: 58%;
+    right: 85px;
+    top: 31%;
     height: 1px;
     background-color: var(--color-tit);
+    width: calc(100% - 550px);
+}
+.program .tit .more a {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--color-tit);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.79144 15.5833C7.59649 15.5833 7.43325 15.5174 7.30171 15.3856C7.17001 15.2539 7.10417 15.0906 7.10417 14.8958V8.47917H0.6875C0.492708 8.47917 0.329465 8.41324 0.197771 8.2814C0.0659237 8.14955 0 7.98623 0 7.79144C0 7.59649 0.0659237 7.43325 0.197771 7.30171C0.329465 7.17001 0.492708 7.10417 0.6875 7.10417H7.10417V0.6875C7.10417 0.492708 7.17009 0.329465 7.30194 0.197771C7.43378 0.0659237 7.5971 0 7.7919 0C7.98684 0 8.15008 0.0659237 8.28162 0.197771C8.41332 0.329465 8.47917 0.492708 8.47917 0.6875V7.10417H14.8958C15.0906 7.10417 15.2539 7.17009 15.3856 7.30194C15.5174 7.43378 15.5833 7.5971 15.5833 7.7919C15.5833 7.98684 15.5174 8.15008 15.3856 8.28162C15.2539 8.41332 15.0906 8.47917 14.8958 8.47917H8.47917V14.8958C8.47917 15.0906 8.41324 15.2539 8.2814 15.3856C8.14955 15.5174 7.98623 15.5833 7.79144 15.5833Z' /%3E%3C/svg%3E%0A");
+}
+.program .tit .more a:hover {
+    border: 1px solid var(--color-point02);
+    background-color: var(--color-point02);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.79144 15.5833C7.59649 15.5833 7.43325 15.5174 7.30171 15.3856C7.17001 15.2539 7.10417 15.0906 7.10417 14.8958V8.47917H0.6875C0.492708 8.47917 0.329465 8.41324 0.197771 8.2814C0.0659237 8.14955 0 7.98623 0 7.79144C0 7.59649 0.0659237 7.43325 0.197771 7.30171C0.329465 7.17001 0.492708 7.10417 0.6875 7.10417H7.10417V0.6875C7.10417 0.492708 7.17009 0.329465 7.30194 0.197771C7.43378 0.0659237 7.5971 0 7.7919 0C7.98684 0 8.15008 0.0659237 8.28162 0.197771C8.41332 0.329465 8.47917 0.492708 8.47917 0.6875V7.10417H14.8958C15.0906 7.10417 15.2539 7.17009 15.3856 7.30194C15.5174 7.43378 15.5833 7.5971 15.5833 7.7919C15.5833 7.98684 15.5174 8.15008 15.3856 8.28162C15.2539 8.41332 15.0906 8.47917 14.8958 8.47917H8.47917V14.8958C8.47917 15.0906 8.41324 15.2539 8.2814 15.3856C8.14955 15.5174 7.98623 15.5833 7.79144 15.5833Z' /%3E%3C/svg%3E%0A");
 }
 .program .list {
     margin: 80px 0 0 0;
-    position: relative;
 }
 .program .list .swiper-slide:nth-child(even) {
     margin-top: 100px;
@@ -360,35 +378,92 @@ h2, h3, h4, h5 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--color-tit);
-    padding: 5px 29px 4px 29px;
+    padding: 0.25em 1.45em 0.2em 1.45em;
     background-color: var(--color-point03);
     border-radius: 30px;
-    margin-top: 34px;
+    margin-top: 1.7em;
 }
 .program .list .swiper-slide .txt h3 {
-    margin-top: 93px;
+    margin-top: 2.9063em;
     font-size: 3.2rem;
     font-weight: 700;
 }
 .program .list .swiper-slide .txt p {
-    margin: 10px 0 0 0;
+    margin: 0.5em 0 0 0;
     font-size: 2rem;
 }
 .program .list .swiper-slide .txt span {
     position: absolute;
     bottom: 58px;
 }
-.program .list .more a {
-    display: block;
-    position: absolute;
-    right: calc((100% - 1320px)/2);
-    top: -30%;
-    width: 40px;
-    height: 40px;
-    background-color: var(--color-point02);
-    border-radius: 50%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 16px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.79144 15.5833C7.59649 15.5833 7.43325 15.5174 7.30171 15.3856C7.17001 15.2539 7.10417 15.0906 7.10417 14.8958V8.47917H0.6875C0.492708 8.47917 0.329465 8.41324 0.197771 8.2814C0.0659237 8.14955 0 7.98623 0 7.79144C0 7.59649 0.0659237 7.43325 0.197771 7.30171C0.329465 7.17001 0.492708 7.10417 0.6875 7.10417H7.10417V0.6875C7.10417 0.492708 7.17009 0.329465 7.30194 0.197771C7.43378 0.0659237 7.5971 0 7.7919 0C7.98684 0 8.15008 0.0659237 8.28162 0.197771C8.41332 0.329465 8.47917 0.492708 8.47917 0.6875V7.10417H14.8958C15.0906 7.10417 15.2539 7.17009 15.3856 7.30194C15.5174 7.43378 15.5833 7.5971 15.5833 7.7919C15.5833 7.98684 15.5174 8.15008 15.3856 8.28162C15.2539 8.41332 15.0906 8.47917 14.8958 8.47917H8.47917V14.8958C8.47917 15.0906 8.41324 15.2539 8.2814 15.3856C8.14955 15.5174 7.98623 15.5833 7.79144 15.5833Z' /%3E%3C/svg%3E%0A");
+
+
+@media screen and (max-width:1280px){
+    .program .tit span {
+        display: none;
+    }
+}
+@media screen and (max-width:1024px){
+    .program {
+        padding: 112px 0 81px 0;
+    }
+    .program .tit h2 {
+        font-size: 3.2rem;
+    }
+    .program .tit .more a {
+        width: 32px;
+        height: 32px;
+        background-size: 13px;
+        border: 1px solid var(--color-point02);
+        background-color: var(--color-point02);
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.79144 15.5833C7.59649 15.5833 7.43325 15.5174 7.30171 15.3856C7.17001 15.2539 7.10417 15.0906 7.10417 14.8958V8.47917H0.6875C0.492708 8.47917 0.329465 8.41324 0.197771 8.2814C0.0659237 8.14955 0 7.98623 0 7.79144C0 7.59649 0.0659237 7.43325 0.197771 7.30171C0.329465 7.17001 0.492708 7.10417 0.6875 7.10417H7.10417V0.6875C7.10417 0.492708 7.17009 0.329465 7.30194 0.197771C7.43378 0.0659237 7.5971 0 7.7919 0C7.98684 0 8.15008 0.0659237 8.28162 0.197771C8.41332 0.329465 8.47917 0.492708 8.47917 0.6875V7.10417H14.8958C15.0906 7.10417 15.2539 7.17009 15.3856 7.30194C15.5174 7.43378 15.5833 7.5971 15.5833 7.7919C15.5833 7.98684 15.5174 8.15008 15.3856 8.28162C15.2539 8.41332 15.0906 8.47917 14.8958 8.47917H8.47917V14.8958C8.47917 15.0906 8.41324 15.2539 8.2814 15.3856C8.14955 15.5174 7.98623 15.5833 7.79144 15.5833Z' /%3E%3C/svg%3E%0A");
+    }
+    .program .list {
+        margin: 50px 0 0 0;
+    }
+    .program .list .swiper-slide:nth-child(even) {
+        margin-top: 80px;
+    }
+    .program .list .swiper-slide {
+        width: 326px;
+    }
+    .program .list .swiper-slide .photo {
+        height: 326px;
+    }
+    .program .list .swiper-slide .txt strong {
+        font-size: 1.7rem;
+    }
+    .program .list .swiper-slide .txt h3 {
+        font-size: 2.4rem;
+    }
+    .program .list .swiper-slide .txt p {
+        font-size: 1.7rem;
+    }
+    .program .list .swiper-slide .txt span {
+        bottom: 3.4118em;
+    }
+}
+@media screen and (max-width:768px){
+    .program {
+        padding: 80px 0 60px 0;
+    }
+    .program .tit h2 {
+        font-size: 2.8rem;
+    }
+    .program .list {
+        margin: 20px 0 0 16px;
+    }
+    .program .list .swiper-slide:nth-child(even) {
+        margin-top: 0;
+    }
+    .program .list .swiper-slide {
+        width: 326px;
+    }
+    .program .list .swiper-slide .photo {
+        height: 326px;
+        border-radius: 15px;
+    }
+    .program .list .swiper-slide .txt {
+        border-radius: 15px;
+    }
 }
