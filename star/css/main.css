@@ -659,8 +659,8 @@ h2, h3, h4, h5 {
     margin-bottom: 22px;
 }
 .community .guide .list {
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
     border-radius: 15px;
 }
 .community .guide .list .map_area iframe {
