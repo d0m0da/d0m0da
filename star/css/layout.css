@@ -179,7 +179,7 @@ header.fixed {
     }
     header .gnb .gnb_wrap ul.depth1 > li > a {
         display: block;
-        padding: 18px 0 18px 24px;
+        padding: 18px var(--wrapper-margin);
         font-size: 1.7rem;
         color: var(--color-white);
         position: relative; /* before/after 정렬 기준 */
