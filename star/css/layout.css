@@ -238,3 +238,273 @@ header.fixed {
         right: 0;
     }
 }
+
+footer {
+    background-color: var(--color-black);
+    padding: 59px 0 57px 0;
+    color: var(--color-white80);
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    position: relative;
+}
+footer .f_logo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 235px;
+    height: 49px;
+    background: url(../images/common/logo_op.svg) no-repeat center center / contain;
+    margin-bottom: 10px;
+}
+footer .f_util .family_site {
+    width: 225px;
+    position: relative;
+}
+footer .f_util .family_site .family_open,
+footer .f_util .family_site .family_close {
+    display: block;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    text-align: left;
+    padding-left: 15px;
+    border-radius: 10px;
+    background-color: var(--color-basic);
+    position: relative;
+}
+footer .f_util .family_site .family_open::after,
+footer .f_util .family_site .family_close::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 13px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 13' fill='%23ffffff' fill-opacity='0.9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.75 7.25H0.75C0.5375 7.25 0.359417 7.17808 0.21575 7.03425C0.0719168 6.89042 0 6.71225 0 6.49975C0 6.28708 0.0719168 6.109 0.21575 5.9655C0.359417 5.82183 0.5375 5.75 0.75 5.75H5.75V0.75C5.75 0.5375 5.82192 0.359417 5.96575 0.21575C6.10958 0.0719168 6.28775 0 6.50025 0C6.71292 0 6.891 0.0719168 7.0345 0.21575C7.17817 0.359417 7.25 0.5375 7.25 0.75V5.75H12.25C12.4625 5.75 12.6406 5.82192 12.7843 5.96575C12.9281 6.10958 13 6.28775 13 6.50025C13 6.71292 12.9281 6.891 12.7843 7.0345C12.6406 7.17817 12.4625 7.25 12.25 7.25H7.25V12.25C7.25 12.4625 7.17808 12.6406 7.03425 12.7843C6.89042 12.9281 6.71225 13 6.49975 13C6.28708 13 6.109 12.9281 5.9655 12.7843C5.82183 12.6406 5.75 12.4625 5.75 12.25V7.25Z' /%3E%3C/svg%3E%0A");
+}
+footer .f_util .family_site .family_wrap {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 49px;
+    width: 100%;
+    padding: 20px 18px 19px 18px;
+    border-radius: 10px;
+    background-color: var(--color-basic);
+}
+footer .f_util .family_site .family_wrap ul li a {
+    display: block;
+    font-size: 1.4rem;
+    padding: 4px 0;
+}
+footer .f_util .family_site .family_wrap ul li a span {
+    position: relative;
+}
+footer .f_util .family_site .family_wrap ul li a span::after {
+    content: "";
+    position: absolute;
+    right: -19px;
+    top: 1px;
+    width: 16px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 11px;
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='%23ffffff' fill-opacity='0.7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.15853 10.8948C0.834785 10.8948 0.56076 10.7826 0.336456 10.5583C0.112152 10.334 0 10.06 0 9.73624V1.15853C0 0.834785 0.112152 0.56076 0.336456 0.336456C0.56076 0.112152 0.834785 0 1.15853 0H4.72016C4.85656 0 4.97079 0.0460357 5.06287 0.138107C5.15483 0.230072 5.20081 0.344254 5.20081 0.480652C5.20081 0.61705 5.15483 0.731232 5.06287 0.823196C4.97079 0.915268 4.85656 0.961304 4.72016 0.961304H1.15853C1.10918 0.961304 1.064 0.981865 1.02299 1.02299C0.981865 1.064 0.961304 1.10918 0.961304 1.15853V9.73624C0.961304 9.78559 0.981865 9.83077 1.02299 9.87179C1.064 9.91291 1.10918 9.93347 1.15853 9.93347H9.73624C9.78559 9.93347 9.83077 9.91291 9.87179 9.87179C9.91291 9.83077 9.93347 9.78559 9.93347 9.73624V6.17461C9.93347 6.03822 9.97951 5.92398 10.0716 5.83191C10.1635 5.73994 10.2777 5.69396 10.4141 5.69396C10.5505 5.69396 10.6647 5.73994 10.7567 5.83191C10.8487 5.92398 10.8948 6.03822 10.8948 6.17461V9.73624C10.8948 10.06 10.7826 10.334 10.5583 10.5583C10.334 10.7826 10.06 10.8948 9.73624 10.8948H1.15853ZM9.93347 1.63662L4.32346 7.24679C4.2347 7.33544 4.12314 7.38084 3.98877 7.38297C3.85451 7.385 3.74091 7.33961 3.64799 7.24679C3.55517 7.15386 3.50876 7.04128 3.50876 6.90905C3.50876 6.77682 3.55517 6.66424 3.64799 6.57131L9.25816 0.961304H7.20978C7.07338 0.961304 6.9592 0.915268 6.86723 0.823196C6.77516 0.731232 6.72913 0.61705 6.72913 0.480652C6.72913 0.344254 6.77516 0.230072 6.86723 0.138107C6.9592 0.0460357 7.07338 0 7.20978 0H10.3154C10.4807 0 10.6185 0.0552746 10.729 0.165825C10.8395 0.276268 10.8948 0.414108 10.8948 0.579345V3.685C10.8948 3.8214 10.8487 3.93558 10.7567 4.02754C10.6647 4.11961 10.5505 4.16565 10.4141 4.16565C10.2777 4.16565 10.1635 4.11961 10.0716 4.02754C9.97951 3.93558 9.93347 3.8214 9.93347 3.685V1.63662Z' /%3E%3C/svg%3E%0A");
+}
+footer .f_util .family_site .family_close {
+    display: none;
+}
+/* 열렸을 때 */
+footer .f_util .family_site.open .family_open {
+    display: none;
+}
+footer .f_util .family_site.open .family_close {
+    display: block;
+}
+footer .f_util .family_site.open .family_close::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 2' fill='%23ffffff' fill-opacity='0.9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.75 1.5C0.5375 1.5 0.359417 1.42808 0.21575 1.28425C0.0719168 1.14042 0 0.96225 0 0.74975C0 0.537083 0.0719168 0.359 0.21575 0.2155C0.359417 0.0718332 0.5375 0 0.75 0H10.25C10.4625 0 10.6406 0.0719168 10.7843 0.21575C10.9281 0.359583 11 0.53775 11 0.75025C11 0.962917 10.9281 1.141 10.7843 1.2845C10.6406 1.42817 10.4625 1.5 10.25 1.5H0.75Z' /%3E%3C/svg%3E%0A");
+    animation: family_btn 0.5s 1 forwards;
+}
+@keyframes family_btn {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(180deg); }
+}
+footer .f_inner .f_nav {
+    margin-top: 15px;
+}
+footer .f_inner .f_nav ul {
+    display: flex;
+    gap: 0 39px;
+}
+footer .f_inner .f_nav ul li {
+    position: relative;
+}
+footer .f_inner .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background-color: var(--color-white20);
+}
+footer .f_inner .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .f_inner .f_info {
+    margin: 34px 0 0 0;
+}
+footer .f_inner .f_info span,
+footer .f_inner .f_info address {
+    display: inline-block;
+    margin: 0 24px 7px 0;
+}
+footer .f_inner .copyright {
+    margin: 36px 0 7px 0;
+    font-size: 1.6rem;
+    color: var(--color-white60);
+}
+footer .f_inner .sns ul {
+    display: flex;
+    gap: 0 24px;
+}
+footer .f_inner .sns ul li a {
+    display: block;
+    padding-left: 23px;
+    position: relative;
+}
+footer .f_inner .sns ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+}
+footer .f_inner .sns ul li.blog a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3.75C0 1.67893 1.67893 0 3.75 0H11.25C13.3211 0 15 1.67893 15 3.75V11.25C15 13.3211 13.3211 15 11.25 15H3.75C1.67893 15 0 13.3211 0 11.25V3.75Z' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.60083 6.60706C5.03159 6.0176 5.64792 5.72266 6.44897 5.72266C6.98547 5.72268 7.46907 5.85148 7.89978 6.1084C8.33802 6.36532 8.68191 6.73162 8.93127 7.20764C9.18066 7.67618 9.30542 8.21661 9.30542 8.82874C9.30542 9.44842 9.18066 9.99631 8.93127 10.4724C8.68189 10.9409 8.33809 11.3037 7.89978 11.5607C7.46907 11.8176 6.98546 11.9458 6.44897 11.9458C6.03336 11.9458 5.66307 11.8664 5.33813 11.7078C5.01325 11.5491 4.74466 11.319 4.53308 11.0168V11.8665H3.12744V3.45581H4.60083V6.60706ZM6.21094 6.99219C5.73488 6.99219 5.34157 7.1584 5.03174 7.49084C4.72945 7.82336 4.57825 8.26951 4.57825 8.82874C4.57825 9.38791 4.72951 9.83755 5.03174 10.1776C5.34158 10.5101 5.73484 10.6763 6.21094 10.6763C6.6794 10.6762 7.06469 10.5101 7.36694 10.1776C7.67678 9.83754 7.83203 9.38796 7.83203 8.82874C7.83203 8.26951 7.67678 7.82336 7.36694 7.49084C7.06472 7.1585 6.67931 6.99223 6.21094 6.99219Z' fill='%2303C75A'/%3E%3Cpath d='M11.7712 11.8665H11.1462V3.12195H11.7712V11.8665Z' fill='%2303C75A'/%3E%3C/svg%3E%0A");
+}
+footer .f_inner .sns ul li.facebook a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_40_339)'%3E%3Cpath d='M11.2032 15H8.66232L7.50208 14.6174L6.35015 15H3.79678C1.70086 15 0 13.2991 0 11.2032V3.79678C0 1.70086 1.70086 0 3.79678 0H11.2032C13.2991 0 15 1.70086 15 3.79678V11.2032C15 13.2991 13.2991 15 11.2032 15Z' fill='%23337FFF'/%3E%3Cpath d='M6.34159 5.86774V7.4979H4.46191V9.63957H6.34159V14.9958H8.65792V9.63957H10.3837L10.7123 7.4979H8.65792V6.10893C8.65792 5.52257 8.94486 4.95285 9.86391 4.95285H10.7996V3.13139C10.7996 3.13139 9.95124 2.98584 9.14032 2.98584C7.44778 2.98584 6.34159 4.01301 6.34159 5.86774Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_40_339'%3E%3Crect width='15' height='15' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width:768px) {
+    footer {
+        padding: 65px 0 86px 0;
+    }
+    footer .wrapper {
+        flex-direction: column;
+    }
+    footer .f_logo {
+        position: static;
+        width: 190px;
+        display: block;
+        margin: 0 auto 30px auto;
+    }
+    footer .f_util .family_site {
+        width: 100%;
+    }
+    footer .f_inner .f_nav {
+        margin-top: 40px;
+    }
+    footer .f_inner .f_nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 26px;
+    }
+    footer .f_inner .f_nav ul li::after {
+        right: -14px;
+        top: 7px;
+        height: 10px;
+    }
+    footer .f_inner .f_info span,
+    footer .f_inner .f_info address {
+        display: inline-block;
+        margin: 4px 0;
+    }
+    footer .f_inner .copyright {
+        margin: 40px 0 7px 0;
+    }
+}
+
+
+.fixed_btns {
+    /* 화면 하단 우측에 고정 */
+    position: fixed;
+    right: 50px;
+    bottom: 60px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+.fixed_btns .top_btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: var(--color-white); /* 버튼 배경색 */
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    /* 스크롤 없으면 안보이게 처리 (JS에서 show/hide 처리 예정) */
+    opacity: 0;
+    pointer-events: none; /* 클릭 막기 */
+}
+.fixed_btns .top_btn::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 19px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 19' fill='%23162246' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.3122 3.2175L1.64871 9.88099C1.45707 10.0726 1.23277 10.1673 0.97582 10.1649C0.718867 10.1623 0.490381 10.0611 0.290361 9.86133C0.103662 9.66131 0.00698209 9.43486 0.000321931 9.18199C-0.00633823 8.92912 0.0903415 8.70268 0.290361 8.50266L8.46334 0.329677C8.58408 0.208935 8.71138 0.123857 8.84522 0.0744433C8.97907 0.0248144 9.12366 0 9.27899 0C9.43433 0 9.57892 0.0248144 9.71276 0.0744433C9.84661 0.123857 9.97391 0.208935 10.0946 0.329677L18.2676 8.50266C18.4462 8.68119 18.5375 8.90227 18.5416 9.16588C18.5456 9.42949 18.4543 9.66131 18.2676 9.86133C18.0676 10.0611 17.8379 10.161 17.5786 10.161C17.3191 10.161 17.0893 10.0611 16.8893 9.86133L10.2458 3.2175V17.8832C10.2458 18.1575 10.1532 18.3872 9.968 18.5722C9.78302 18.7574 9.55335 18.85 9.27899 18.85C9.00464 18.85 8.77497 18.7574 8.58999 18.5722C8.40479 18.3872 8.3122 18.1575 8.3122 17.8832V3.2175Z' /%3E%3C/svg%3E%0A");
+}
+.fixed_btns .top_btn.show {
+    opacity: 1;
+    pointer-events: auto; /* 클릭 가능 */
+}
+.fixed_btns .only_mobile_btn {
+    display: none; /* PC에서는 숨김 */
+    
+    /* 기본 스타일 */
+    padding: 7px 17px;
+    background-color: var(--color-point02); /* 강조 색상 */
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 1.6rem;
+}
+
+@media screen and (max-width:768px) {
+    .fixed_btns {
+        right: 16px;
+        bottom: 30px;
+    }
+    .fixed_btns .top_btn {
+        /* 모바일에서는 버튼 크기 조정 */
+        width: 40px;
+        height: 40px;
+    }
+    .fixed_btns .top_btn::before {
+        background-size: 15px;
+    }
+    .fixed_btns .only_mobile_btn {
+        display: block; /* 모바일에서 보이도록 설정 */
+    }
+}

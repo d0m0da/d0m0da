@@ -451,17 +451,28 @@ h2, h3, h4, h5 {
         font-size: 2.8rem;
     }
     .program .list {
-        margin: 20px 0 0 16px;
+        width: auto;
+        margin: 20px 16px 0 16px;
     }
     .program .list .swiper-slide:nth-child(even) {
         margin-top: 0;
     }
     .program .list .swiper-slide {
-        width: 326px;
+        width: 100%;
     }
     .program .list .swiper-slide .photo {
-        height: 326px;
+        height: 0;
+        padding-bottom: 100%;
+        position: relative;
         border-radius: 15px;
+    }
+    .program .list .swiper-slide .photo img {
+        position: absolute; /* photo 컨테이너를 기준으로 위치 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 이미지가 찌그러지지 않고 비율을 유지하며 컨테이너를 채웁니다. */
     }
     .program .list .swiper-slide .txt {
         border-radius: 15px;
@@ -848,7 +859,7 @@ h2, h3, h4, h5 {
         margin-top: 20px;
     }
 }
-@media screen and (max-width:350px){
+@media screen and (max-width:500px){
     .community .news .list .inner a .txt p {
         /* 두줄제한*/
         height: 3em;

@@ -2,6 +2,7 @@ $(document).ready(function(){
     let mobile_size = 1024 // 모바일 메뉴 시작 사이즈
     let window_w // 브라우저 넓이
     let device_status // 현재 pc인지 mobile인지 구분하는 값
+    const topBtn = document.getElementById("top");
 
     function device_chk(){
         window_w = $(window).outerWidth()
@@ -10,7 +11,7 @@ $(document).ready(function(){
         }else{
             device_status = 'mobile'
         }
-        console.log(device_status)
+        // console.log(device_status)
     }
 
     device_chk() // 문서가 로딩되었을때 1번 실행
@@ -99,4 +100,57 @@ $(document).ready(function(){
     $(window).scroll(function(){
         scroll_chk() // 스크롤 할 때마다 실행
     })
-})
+
+    /*
+        footer .f_util .family_site .family_open 열기 클릭하면
+        footer .f_util .family_site 에 open 클래스 추가
+        footer .f_util .family_site .family_close 닫기 클릭하면 삭제
+    */
+    $('footer .f_util .family_site .family_open').on('click', function(){
+        $('footer .f_util .family_site').addClass('open')
+        $('footer .f_util .family_site.open .family_wrap').slideDown()
+    })
+    $('footer .f_util .family_site .family_close').on('click', function(){
+        $('footer .f_util .family_site').removeClass('open')
+        $('footer .f_util .family_site .family_wrap').slideUp()
+    })
+
+    // family_site 연 후 영역 밖을 아무곳이나 클릭하면 닫기 - gpt
+    $(document).on('click', function(e){
+        const $familySite = $('footer .f_util .family_site');
+        
+        // family_site 영역 밖을 클릭한 경우 닫기
+        if ($familySite.hasClass('open') && !$familySite.is(e.target) && $familySite.has(e.target).length === 0) {
+            $familySite.removeClass('open');
+            $familySite.find('.family_wrap').slideUp();
+        }
+    });
+    $('footer .f_util .family_site .family_open').on('click', function(e){
+        e.stopPropagation(); // 문서 클릭 이벤트로 전파 방지
+        const $target = $('footer .f_util .family_site');
+        $target.addClass('open');
+        $target.find('.family_wrap').slideDown();
+    });
+
+    
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+          topBtn.classList.add("show");
+        } else {
+          topBtn.classList.remove("show");
+        }
+    });
+      
+    topBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+
+    /* top 버튼 클릭 시 상단으로 이동 */
+    $('.fixed_btns .top_btn').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+
+})// 맨끝
