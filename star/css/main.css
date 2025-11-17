@@ -123,6 +123,7 @@ h2, h3, h4, h5 {
 .weather .wrapper {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 .weather .tit {
     display: flex;
@@ -205,9 +206,9 @@ h2, h3, h4, h5 {
 }
 .weather .weather_header {
     position: absolute;
-    left: 0;
+    right: 0;
     top: 0;
-    width: 100%;
+    width: calc(100% - 300px);
     height: 37px;
     background-color: #3A3247;
     border-radius: 10px 10px 0 0;
@@ -258,6 +259,12 @@ h2, h3, h4, h5 {
     .weather .weather_wrap {
         width: auto;
         margin-top: 20px;
+    }
+    .weather .weather_header {
+        right: auto;
+        left: 0;
+        top: 83px;
+        width: 100%;
     }
 }
 @media screen and (max-width:1024px){
