@@ -12,7 +12,7 @@ h2, h3, h4, h5 {
 }
 .visual .swiper-slide {
     height: 100dvh;
-    min-height: 500px;
+    min-height: 550px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -275,7 +275,7 @@ h2, h3, h4, h5 {
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        gap: 18px 24px;
+        gap: 18px 0;
         height: 323px;
         padding-top: 59px;
         padding-left: 24px;
@@ -291,6 +291,11 @@ h2, h3, h4, h5 {
         left: 0;
         bottom: -315px;
         padding: 0;
+    }
+}
+@media screen and (max-width:340px){
+    .weather .weather_wrap {
+        padding-left: 14px;
     }
 }
 
