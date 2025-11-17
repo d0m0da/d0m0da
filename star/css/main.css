@@ -263,7 +263,7 @@ h2, h3, h4, h5 {
     .weather .weather_header {
         right: auto;
         left: 0;
-        top: 83px;
+        top: 79px;
         width: 100%;
     }
 }
@@ -291,6 +291,11 @@ h2, h3, h4, h5 {
         left: 0;
         bottom: -315px;
         padding: 0;
+    }
+}
+@media screen and (max-width:768px){
+    .weather .tit h2 {
+        font-size: 2.8rem;
     }
 }
 @media screen and (max-width:340px){
