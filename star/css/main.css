@@ -868,7 +868,7 @@ h2, h3, h4, h5 {
         margin-top: 20px;
     }
 }
-@media screen and (max-width:420px){
+@media screen and (max-width:450px){
     .community .guide .list .map_info .detail_btn {
         text-align: left;
     }

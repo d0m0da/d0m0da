@@ -446,7 +446,7 @@ footer .f_inner .sns ul li.facebook a::before {
     footer .f_inner .f_info span,
     footer .f_inner .f_info address {
         display: inline-block;
-        margin: 4px 0;
+        margin: 4px 16px 4px 0;
     }
     footer .f_inner .copyright {
         margin: 40px 0 7px 0;
