@@ -20,12 +20,20 @@ $(document).ready(function(){
     })
 
     /* pc 버전 메뉴 오버 */
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
         if(device_status == 'pc'){ // pc일때만 동작
             // console.log('오버함')
             $('header').addClass('menu_pc')
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
             $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').hide()
+            $(this).addClass('over')
+            $(this).find('.depth2').slideDown()
+        }   
+    })
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('focusin', function(){
+        if(device_status == 'pc'){ // pc일때만 동작
+            // console.log('오버함')
+            $('header').addClass('menu_pc')
             $(this).addClass('over')
             $(this).find('.depth2').slideDown()
         }   
@@ -36,12 +44,18 @@ $(document).ready(function(){
             $(this).find('.depth2').hide()
         }
     })
+    $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:last-child').on('focusout', function(){
+        if(device_status == 'pc'){ // pc일때만 동작
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').hide()
+        }
+    })
     $('header').on('mouseleave', function(){
         $(this).removeClass('menu_pc')
     })
 
     $('header .util .search .sh_open').on('focusin', function(){
-        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+        $('header').removeClass('menu_pc')
     })
 
 
