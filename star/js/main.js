@@ -7,7 +7,6 @@ $(document).ready(function () {
     const visual_swiper = new Swiper(".visual .swiper", {
         loop: true, // 루프 활성화
         effect: "fade", // 페이드 효과 사용
-        speed: 1000, // 슬라이드 전환 속도 (1초)
         autoplay: {
             delay: 4000, // 슬라이드당 딜레이 (4초)
             disableOnInteraction: false, // 사용자 조작 후에도 자동 재생 유지
@@ -62,28 +61,24 @@ $(document).ready(function () {
     const program_swiper = new Swiper('.program .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-        loop: true,
-
         breakpoints: {
             500: {    /* 640px 이상일때 적용 */
                 slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 16,
-                loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 
             },
             769: {    /* 640px 이상일때 적용 */
                 slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 34,
-                loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 
             },
             1025: {    /* 640px 이상일때 적용 */
                 slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 53,
-                loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
             },
         },
-        centeredSlides: false, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,
+        centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
         speed: 2000,
         autoplay: {  /* 팝업 자동 실행 */
             delay: 2000,
