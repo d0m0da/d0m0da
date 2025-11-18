@@ -273,13 +273,7 @@ h2, h3, h4, h5 {
         padding: 80px 0 80px 0;
     }
     .weather .weather_wrap {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 18px 0;
-        height: 323px;
-        padding-top: 59px;
-        padding-left: 24px;
+        gap: 0 25px;
     }
     .weather .weather_header {
         justify-content: center;
@@ -294,9 +288,18 @@ h2, h3, h4, h5 {
         padding: 0;
     }
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:900px){
     .weather .tit h2 {
         font-size: 2.8rem;
+    }
+    .weather .weather_wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 18px 0;
+        height: 323px;
+        padding-top: 59px;
+        padding-left: 24px;
     }
 }
 @media screen and (max-width:340px){

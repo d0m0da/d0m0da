@@ -468,7 +468,7 @@ footer .f_inner .sns ul li.facebook a::before {
     border-radius: 50%;
     background-color: var(--color-white); /* 버튼 배경색 */
     cursor: pointer;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     position: relative;
     /* 스크롤 없으면 안보이게 처리 (JS에서 show/hide 처리 예정) */
     opacity: 0;
@@ -496,11 +496,13 @@ footer .f_inner .sns ul li.facebook a::before {
     
     /* 기본 스타일 */
     padding: 7px 17px;
-    background-color: var(--color-point02); /* 강조 색상 */
-    color: #fff;
+    background-color: #FFE3A9;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    color: var(--color-point02);
     text-align: center;
     border-radius: 20px;
     font-size: 1.6rem;
+    font-weight: 700;
 }
 
 @media screen and (max-width:768px) {
