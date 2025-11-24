@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 라이브러리파일 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/aos.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- 내파일 -->
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>군산예술의전당</title>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide popup01">
+                            <div class="photo"><img src="images/popup01.jpg" alt="군산예술의전당 전경"></div>
+                            <div class="txt">
+                                <div class="wrapper">
+                                    <span>CULTURAL CANVAS</span>                        
+                                    <p>시민과 예술이 함께 채우는 공간</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup02">
+                            <div class="photo"><img src="images/popup02.jpg" alt="군산예술의전당 입구"></div>
+                            <div class="txt">
+                                <div class="wrapper">
+                                    <span>THE NEXT CURTAIN</span>
+                                    <p>예술의 감동이 시작되는 순간</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup03">
+                            <div class="photo"><img src="images/popup03.jpg" alt="군산예술의전당 야경"></div>
+                            <div class="txt">
+                                <div class="wrapper">
+                                    <span>ARTFUL EXPERIENCE</span>
+                                    <p>예술과 감동의 어울림 군산예술의전당</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                </div>
+            </section>
+            <section class="concerts"></section>
+            <section class="calendar"></section>
+            <section class="news"></section>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

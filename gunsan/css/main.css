@@ -1,0 +1,71 @@
+@import url(common.css);
+@import url(default.css);
+@import url(fonts.css);
+@import url(layout.css);
+
+h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* visual 전체: 화면에서 40px씩 떨어뜨린 크기 */
+.visual {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 80px);
+    margin: 40px;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-white);
+}
+/* swiper가 visual 영역을 100% 채우게 */
+.visual .swiper {
+    width: 100%;
+    height: 100%;
+}
+  /* 슬라이드 하나가 visual 영역 전체를 채우게 */
+.visual .swiper-slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+/* 이미지가 영역을 완전히 채우도록 */
+.visual .swiper-slide .photo {
+    width: 100%;
+    height: 100%;
+}
+.visual .swiper-slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* 사진 비율 깨짐 방지, 영역 꽉 채움 */
+}
+/* 텍스트 영역이 이미지 위 레이어로 올라오도록 */
+.visual .swiper-slide .txt {
+    position: absolute;
+    right: 0;
+    bottom: 15%;
+    width: 100%;
+    z-index: 3;
+    text-align: right;
+}
+.visual .swiper-slide .txt span {
+    font-size: 100px;
+    line-height: 1.2;
+}
+.visual .swiper-slide .txt p {
+    font-size: 24px;
+}
+/* 모든 bullet 기본 점 */
+.visual .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-white50);
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+/* 현재 슬라이드 bullet (길쭉한 원형) */
+.visual .swiper-pagination-bullet-active {
+    width: 30px;      /* 원하는 길이 */
+    border-radius: 20px;
+    background-color: var(--color-point02);
+}
