@@ -33,10 +33,16 @@
     --header-h: 110px;
     --wrapper-margin: 40px;
 }
+@media screen and (max-width:1280px){
+    :root {
+        --header-h: 96px;
+        --wrapper-margin: 32px;
+    }
+}/* @media */
 @media screen and (max-width:1024px){
     :root {
-        --header-h: 85px;
-        --wrapper-margin: 28px;
+        --header-h: 78px;
+        --wrapper-margin: 24px;
     }
 }/* @media */
 @media screen and (max-width:768px){
