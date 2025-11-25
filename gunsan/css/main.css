@@ -90,10 +90,6 @@ h2, h3, h4 {
     background-color: var(--color-point02);
 }
 
-@media screen and (max-width:1024px){
-
-}
-
 @media screen and (min-width:1025px){ 
     .visual .quick_btn {
         display: flex;
@@ -167,5 +163,104 @@ h2, h3, h4 {
 }
 
 .concerts {
-    margin-top: 1000px;
+    padding: 130px 0 100px 0;
+    background-color: var(--color-background);
+    position: relative;
+}
+.concerts::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 413px;
+    background-color: var(--color-white);
+}
+.concerts .list {
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.concerts .list .swiper-slide {
+     transform: translateY(-2%);
+    -webkit-transform: translateY(-2%);
+    -ms-transform: translateY(-2%);
+}
+.concerts .list .swiper-slide::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+.concerts .list .swiper-slide .poster {
+    width: 100%;
+    min-height: 332px;
+    position: relative;
+}
+.concerts .list .swiper-slide .poster > div {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    width: 100%;
+}
+.concerts .list .swiper-slide .poster .photo {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.concerts .list .swiper-slide .poster .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.concerts .list .swiper-slide .poster_info h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    opacity: 1;
+    margin-top: 13px;
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.concerts .list .swiper-slide .poster_info span {
+    display: none;
+}
+.concerts .list .swiper-slide-active .poster > div {
+    width: 100%;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.07);
+}
+
+@media screen and (min-width:1025px) {
+    .concerts .list .swiper-slide-active {
+        transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+        visibility: visible !important;
+        width: 50% !important;
+    }
+    .concerts .list .swiper-slide-active .poster,
+    .concerts .list .swiper-slide-active .poster_info {
+        float: left;
+    }
+    .concerts .list .swiper-slide-active .poster {
+        width: 38%;
+        min-height: auto;
+    }
+    .concerts .list .swiper-slide-active .poster > div {
+        position: static;
+    }
+    .concerts .list .swiper-slide-active .poster_info {
+        width: 62%;
+        padding: 12px 0 0 32px;
+    }
+    .concerts .list .swiper-slide-active .poster_info h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 2.8rem;
+        text-align: left;
+    }
+    .concerts .list .swiper-slide-active .poster_info span {
+        display: block;
+    }
 }

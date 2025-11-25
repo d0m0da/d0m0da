@@ -191,6 +191,7 @@ header .util .mypage a {
         width: 15px;
         height: 2px;
         background-color: var(--color-tit);
+        transition: transform 0.3s;
     }
     header .gnb .gnb_wrap ul.depth1 > li > a::before {
         transform: rotate(90deg);

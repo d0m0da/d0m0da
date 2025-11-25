@@ -55,11 +55,31 @@ $(document).ready(function(){
         }
     });
 
+    // header에 menu_mo 클래스 추가
     $('header .gnb .gnb_open').on('click', function(){
         $('header').addClass('menu_mo')
     })
     $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
         $('header').removeClass('menu_mo')
+    })
+
+    // li에 open 클래스
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault()
+            
+            if($(this).parent().hasClass('open') == true){ // 열려있는 메뉴를 다시 클릭했을때
+                // console.log('열림')
+                $(this).parent().removeClass('open') // li에 open 클래스 삭제
+                $(this).next().slideUp() // 2차메뉴를 슬라이드로 닫기
+            }else{ // 열려있지 않은 다른 메뉴를 여는 것
+                // console.log('닫힘')
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open') // 모든 li의 open 클래스 삭제
+                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp() // 모든 2차메뉴 닫기
+                $(this).parent().addClass('open')
+                $(this).next().slideDown() // 2차메뉴를 슬라이드로 열기
+            }
+        }
     })
 
 });
