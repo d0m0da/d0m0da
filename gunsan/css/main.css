@@ -166,15 +166,15 @@ h2, h3, h4 {
     padding: 130px 0 100px 0;
     background-color: var(--color-background);
     position: relative;
-    margin-bottom: 80px;
 }
 .concerts::before {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
+    z-index: 1;
     width: 100%;
-    height: 40%;
+    height: 410px;
     background-color: var(--color-white);
 }
 .concerts .tit h2 {
@@ -183,196 +183,40 @@ h2, h3, h4 {
 }
 .concerts .list {
     max-width: calc(50% + 696px);
-    margin: 0 0 0 calc((100% - 1392px) / 2);
-    position: relative;
-    min-height: 400px;
-    height: 450px;
-    display: flex;
-    align-items: flex-end;
+    padding: 50px 0 0 calc((100% - 1392px) / 2);
 }
-
 .concerts .list .swiper-slide {
     width: 168px;
-    flex-shrink: 0;
 }
-.concerts .list .swiper-slide > a {
+.concerts .list .swiper-slide a {
     display: block;
+}
+.concerts .list ul li a img {
     width: 100%;
     height: 100%;
-    position: relative;
+    object-fit: cover;
 }
-.concerts .list .swiper-slide .poster {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end; /* 아래 맞춤 */
-    justify-content: center; /* 가로 중앙 */
-    overflow: hidden;
-}
-.concerts .list .swiper-slide .poster .photo {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.concerts .list .swiper-slide .poster .photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.concerts .list .swiper-slide .poster_info .spacetime {
-    position: absolute;
-    left: 44.5%;
-    bottom: 94px;
-}
-.concerts .list .swiper-slide .poster_info .more {
-    position: absolute;
-    left: 41%;
-    bottom: 0;
-}
-.concerts .list .swiper-slide .poster_info span {
-    display: none;
-    position: relative;
-}
-
-.concerts .list .swiper-slide-active .poster > div {
-    width: 100%;
-    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.07);
-}
-@media screen and (max-width:1432px) {
-    .concerts .list {
-        max-width: calc(100% - var(--wrapper-margin));
-        margin: 0 0 0 var(--wrapper-margin);
-    }
-}
-@media screen and (min-width:1025px) {
-    .concerts .list .swiper-wrapper {
-        align-items: flex-end;
-    }
-    .concerts .list .swiper-slide .poster_info h3 {
-        font-size: 1.8rem;
-        text-align: center;
-        opacity: 1;
-        margin-top: 13px;
-        /* 1줄 제한 */
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .concerts .list .swiper-slide-active {
-        width: 50% !important;
-    }
-    .concerts .list .swiper-slide-active > a {
-        display: flex; 
-        align-items: flex-start;
-        gap: 36px;
-        height: auto;
-        min-height: 280px;
-    }
-    .concerts .list .swiper-slide-active .poster {
-        width: 38%;
-        height: auto;
-    }
-    .concerts .list .swiper-slide-active .poster_info {
-        width: 62%;
-        margin-top: 24px;
-    }
-    .concerts .list .swiper-slide-active .poster_info h3 {
-        margin-top: 0;
-        margin-bottom: 8px;
-        font-size: 2.8rem;
-        text-align: left;
-
-        /* 1줄 제한 풀기 */
-        white-space: normal;
-        overflow: visible;
-        text-overflow: clip;
-        word-break: keep-all;
-    }
-    .concerts .list .swiper-slide-active .poster_info span {
-        display: block;
-    }
-    .concerts .list .swiper-slide-active .poster_info .more {
-        display: block;
-    }
-    .concerts .list .swiper-slide .poster_info .spacetime .space::before {
-        content: "";
-        position: absolute;
-        left: -26px;
-        top: 0;
-        width: 24px;
-        height: 24px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 16px;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 19' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.54975 9.36525C8.04725 9.36525 8.47258 9.18808 8.82575 8.83375C9.17908 8.47942 9.35575 8.0535 9.35575 7.556C9.35575 7.0585 9.17858 6.63308 8.82425 6.27975C8.46992 5.92658 8.04392 5.75 7.54625 5.75C7.04875 5.75 6.62342 5.92717 6.27025 6.2815C5.91692 6.63583 5.74025 7.06183 5.74025 7.5595C5.74025 8.057 5.91742 8.48233 6.27175 8.8355C6.62608 9.18867 7.05208 9.36525 7.54975 9.36525ZM7.548 17.0135C9.50433 15.2622 11.0014 13.5823 12.0393 11.974C13.0771 10.3657 13.596 8.957 13.596 7.748C13.596 5.925 13.0168 4.42633 11.8585 3.252C10.7002 2.07767 9.26333 1.4905 7.548 1.4905C5.83267 1.4905 4.39583 2.07767 3.2375 3.252C2.07917 4.42633 1.5 5.925 1.5 7.748C1.5 8.957 2.01892 10.3657 3.05675 11.974C4.09458 13.5823 5.59167 15.2622 7.548 17.0135ZM7.548 19.0095C5.03133 16.8288 3.14417 14.7994 1.8865 12.9212C0.628833 11.0429 0 9.3185 0 7.748C0 5.44033 0.746417 3.57208 2.23925 2.14325C3.73225 0.714416 5.50183 0 7.548 0C9.59417 0 11.3637 0.714416 12.8567 2.14325C14.3496 3.57208 15.096 5.44033 15.096 7.748C15.096 9.3185 14.4672 11.0429 13.2095 12.9212C11.9518 14.7994 10.0647 16.8288 7.548 19.0095Z'/%3E%3C/svg%3E%0A");
-    }
-    .concerts .list .swiper-slide .poster_info .spacetime .date {
-        margin-top: 2px;
-    }
-    .concerts .list .swiper-slide .poster_info .spacetime .date::before {
-        content: "";
-        position: absolute;
-        left: -26px;
-        top: 2px;
-        width: 24px;
-        height: 24px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 16px;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 17 20' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.80775 19.1152C1.30258 19.1152 0.875 18.9403 0.525 18.5903C0.175 18.2402 0 17.8127 0 17.3075V3.923C0 3.41783 0.175 2.99025 0.525 2.64025C0.875 2.29025 1.30258 2.11525 1.80775 2.11525H3.19225V0H4.73075V2.11525H12.3077V0H13.8077V2.11525H15.1923C15.6974 2.11525 16.125 2.29025 16.475 2.64025C16.825 2.99025 17 3.41783 17 3.923V17.3075C17 17.8127 16.825 18.2402 16.475 18.5903C16.125 18.9403 15.6974 19.1152 15.1923 19.1152H1.80775ZM1.80775 17.6152H15.1923C15.2692 17.6152 15.3398 17.5832 15.4038 17.519C15.4679 17.455 15.5 17.3845 15.5 17.3075V7.923H1.5V17.3075C1.5 17.3845 1.53208 17.455 1.59625 17.519C1.66025 17.5832 1.73075 17.6152 1.80775 17.6152ZM1.5 6.423H15.5V3.923C15.5 3.846 15.4679 3.7755 15.4038 3.7115C15.3398 3.64733 15.2692 3.61525 15.1923 3.61525H1.80775C1.73075 3.61525 1.66025 3.64733 1.59625 3.7115C1.53208 3.7755 1.5 3.846 1.5 3.923V6.423ZM8.5 11.6922C8.25517 11.6922 8.0465 11.606 7.874 11.4335C7.70167 11.2612 7.6155 11.0525 7.6155 10.8075C7.6155 10.5627 7.70167 10.354 7.874 10.1815C8.0465 10.0092 8.25517 9.923 8.5 9.923C8.74483 9.923 8.9535 10.0092 9.126 10.1815C9.29833 10.354 9.3845 10.5627 9.3845 10.8075C9.3845 11.0525 9.29833 11.2612 9.126 11.4335C8.9535 11.606 8.74483 11.6922 8.5 11.6922ZM4.5 11.6922C4.25517 11.6922 4.0465 11.606 3.874 11.4335C3.70167 11.2612 3.6155 11.0525 3.6155 10.8075C3.6155 10.5627 3.70167 10.354 3.874 10.1815C4.0465 10.0092 4.25517 9.923 4.5 9.923C4.74483 9.923 4.9535 10.0092 5.126 10.1815C5.29833 10.354 5.3845 10.5627 5.3845 10.8075C5.3845 11.0525 5.29833 11.2612 5.126 11.4335C4.9535 11.606 4.74483 11.6922 4.5 11.6922ZM12.5 11.6922C12.2552 11.6922 12.0465 11.606 11.874 11.4335C11.7017 11.2612 11.6155 11.0525 11.6155 10.8075C11.6155 10.5627 11.7017 10.354 11.874 10.1815C12.0465 10.0092 12.2552 9.923 12.5 9.923C12.7448 9.923 12.9535 10.0092 13.126 10.1815C13.2983 10.354 13.3845 10.5627 13.3845 10.8075C13.3845 11.0525 13.2983 11.2612 13.126 11.4335C12.9535 11.606 12.7448 11.6922 12.5 11.6922ZM8.5 15.6152C8.25517 15.6152 8.0465 15.529 7.874 15.3565C7.70167 15.1842 7.6155 14.9756 7.6155 14.7308C7.6155 14.4858 7.70167 14.2771 7.874 14.1047C8.0465 13.9322 8.25517 13.846 8.5 13.846C8.74483 13.846 8.9535 13.9322 9.126 14.1047C9.29833 14.2771 9.3845 14.4858 9.3845 14.7308C9.3845 14.9756 9.29833 15.1842 9.126 15.3565C8.9535 15.529 8.74483 15.6152 8.5 15.6152ZM4.5 15.6152C4.25517 15.6152 4.0465 15.529 3.874 15.3565C3.70167 15.1842 3.6155 14.9756 3.6155 14.7308C3.6155 14.4858 3.70167 14.2771 3.874 14.1047C4.0465 13.9322 4.25517 13.846 4.5 13.846C4.74483 13.846 4.9535 13.9322 5.126 14.1047C5.29833 14.2771 5.3845 14.4858 5.3845 14.7308C5.3845 14.9756 5.29833 15.1842 5.126 15.3565C4.9535 15.529 4.74483 15.6152 4.5 15.6152ZM12.5 15.6152C12.2552 15.6152 12.0465 15.529 11.874 15.3565C11.7017 15.1842 11.6155 14.9756 11.6155 14.7308C11.6155 14.4858 11.7017 14.2771 11.874 14.1047C12.0465 13.9322 12.2552 13.846 12.5 13.846C12.7448 13.846 12.9535 13.9322 13.126 14.1047C13.2983 14.2771 13.3845 14.4858 13.3845 14.7308C13.3845 14.9756 13.2983 15.1842 13.126 15.3565C12.9535 15.529 12.7448 15.6152 12.5 15.6152Z' /%3E%3C/svg%3E%0A");
-    }
-    .concerts .list .swiper-slide .poster_info .more {
-        display: none;
-        width: 50px;
-        height: 50px;
-        border-radius: 5px;
-        background-color: var(--color-point01);
-    }
-    .concerts .list .swiper-slide .poster_info .more::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 30px;
-        height: 30px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 20px;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.375 20V10.625H0V9.375H9.375V0H10.625V9.375H20V10.625H10.625V20H9.375Z'/%3E%3C/svg%3E%0A");
-    }
-}
-
-
 .concerts .list .control {
-    position: absolute;
-    left: 0;
-    bottom: -100px;
+    margin: 0 var(--wrapper-margin) 0 0;
+    position: relative;
     z-index: 2;
-}
-.concerts .list .control .wrapper {
-    display: flex;  
+
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 0 66px;
 }
-/* progress bar */
-.concerts .progressbar {
-    width: 100%;
-    height: 4px;
-    background: #e5e5e5;
-    overflow: hidden;
+.concerts .list .control .progressbar {
+    width: calc(100% - 182px);
+    height: 3px;
+    background-color: var(--color-background);
     position: relative;
 }
-.concerts .progressbar span {
+.concerts .list .control .progressbar span {
     display: block;
     height: 100%;
     width: 0%;
-    background: var(--color-point01); /* 포인트 컬러 */
-    transition: width 0.3s ease;
+    background-color: var(--color-point01);
 }
-/* next / prev */
 .concerts .ctrl_btn {
     display: flex;
     gap: 16px;
@@ -404,39 +248,335 @@ h2, h3, h4 {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 24' fill='%232A2A2A' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.32918 23.2694L12.9639 11.6347L1.32918 0L-0.00019455 1.32937L10.3051 11.6347L-0.00019455 21.94L1.32918 23.2694Z' /%3E%3C/svg%3E%0A");
 }
 
-@media screen and (max-width:1280px) {
-    .concerts .list .swiper-slide-active .poster_info h3 {
-        font-size: 2.4rem;
+/* wrapper가 깨지는 구간 */
+@media screen and (max-width:1432px) {
+    .concerts .list {
+        max-width: calc(100% - var(--wrapper-margin));
+        margin: 0 0 0 var(--wrapper-margin);
     }
 }
-@media screen and (max-width:1024px) {
-    .concerts .list .swiper-slide .poster_info h3 {
-        font-size: 1.6rem;
-    }
-    .concerts .list .swiper-slide-active .poster_info h3 {
-        font-size: 1.6rem;
-    }
 
+/* 1025이상 pc버전 */
+@media screen and (min-width:1025px) {
+    .concerts .list .swiper {
+        min-height: 550px;
+    }
+    .concerts .list .swiper-wrapper {
+        align-items: flex-end;
+    }
+    .concerts .list ul li.swiper-slide-active {
+        width: 700px;
+    }
+    .concerts .list ul li.swiper-slide-active a {
+        display: flex;
+        gap: 36px;
+        width: 100%;
+        height: 100%;
+        padding-right: 30px;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster {
+        width: 55%;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+    .concerts .list .swiper-slide a .poster_info h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-align: center;
+        /* 1줄 제한 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .concerts .list .swiper-slide a .poster_info .spacetime,
+    .concerts .list .swiper-slide a .poster_info .more {
+        display: none;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info h3 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        text-align: left;
+        margin-top: 24px;
+        /* 1줄 제한 해제 */
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info .spacetime,
+    .concerts .list ul li.swiper-slide-active a .poster_info .more {
+        display: block;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info .spacetime {
+        position: absolute;
+        left: 0;
+        bottom: 67px;
+
+        display: flex;
+        flex-direction: column;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info .spacetime span {
+        padding-left: 29px;
+        position: relative;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info .spacetime span::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 24px;
+        height: 24px;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info .spacetime span.space {
+        margin-bottom: 2px;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info .spacetime span.space::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 19' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.54975 9.36525C8.04725 9.36525 8.47258 9.18808 8.82575 8.83375C9.17908 8.47942 9.35575 8.0535 9.35575 7.556C9.35575 7.0585 9.17858 6.63308 8.82425 6.27975C8.46992 5.92658 8.04392 5.75 7.54625 5.75C7.04875 5.75 6.62342 5.92717 6.27025 6.2815C5.91692 6.63583 5.74025 7.06183 5.74025 7.5595C5.74025 8.057 5.91742 8.48233 6.27175 8.8355C6.62608 9.18867 7.05208 9.36525 7.54975 9.36525ZM7.548 17.0135C9.50433 15.2622 11.0014 13.5823 12.0393 11.974C13.0771 10.3657 13.596 8.957 13.596 7.748C13.596 5.925 13.0168 4.42633 11.8585 3.252C10.7002 2.07767 9.26333 1.4905 7.548 1.4905C5.83267 1.4905 4.39583 2.07767 3.2375 3.252C2.07917 4.42633 1.5 5.925 1.5 7.748C1.5 8.957 2.01892 10.3657 3.05675 11.974C4.09458 13.5823 5.59167 15.2622 7.548 17.0135ZM7.548 19.0095C5.03133 16.8288 3.14417 14.7994 1.8865 12.9212C0.628833 11.0429 0 9.3185 0 7.748C0 5.44033 0.746417 3.57208 2.23925 2.14325C3.73225 0.714416 5.50183 0 7.548 0C9.59417 0 11.3637 0.714416 12.8567 2.14325C14.3496 3.57208 15.096 5.44033 15.096 7.748C15.096 9.3185 14.4672 11.0429 13.2095 12.9212C11.9518 14.7994 10.0647 16.8288 7.548 19.0095Z' /%3E%3C/svg%3E%0A");
+        background-size: 16px;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info .spacetime span.date::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 17 20' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.80775 19.1152C1.30258 19.1152 0.875 18.9403 0.525 18.5903C0.175 18.2402 0 17.8127 0 17.3075V3.923C0 3.41783 0.175 2.99025 0.525 2.64025C0.875 2.29025 1.30258 2.11525 1.80775 2.11525H3.19225V0H4.73075V2.11525H12.3077V0H13.8077V2.11525H15.1923C15.6974 2.11525 16.125 2.29025 16.475 2.64025C16.825 2.99025 17 3.41783 17 3.923V17.3075C17 17.8127 16.825 18.2402 16.475 18.5903C16.125 18.9403 15.6974 19.1152 15.1923 19.1152H1.80775ZM1.80775 17.6152H15.1923C15.2692 17.6152 15.3398 17.5832 15.4038 17.519C15.4679 17.455 15.5 17.3845 15.5 17.3075V7.923H1.5V17.3075C1.5 17.3845 1.53208 17.455 1.59625 17.519C1.66025 17.5832 1.73075 17.6152 1.80775 17.6152ZM1.5 6.423H15.5V3.923C15.5 3.846 15.4679 3.7755 15.4038 3.7115C15.3398 3.64733 15.2692 3.61525 15.1923 3.61525H1.80775C1.73075 3.61525 1.66025 3.64733 1.59625 3.7115C1.53208 3.7755 1.5 3.846 1.5 3.923V6.423ZM8.5 11.6922C8.25517 11.6922 8.0465 11.606 7.874 11.4335C7.70167 11.2612 7.6155 11.0525 7.6155 10.8075C7.6155 10.5627 7.70167 10.354 7.874 10.1815C8.0465 10.0092 8.25517 9.923 8.5 9.923C8.74483 9.923 8.9535 10.0092 9.126 10.1815C9.29833 10.354 9.3845 10.5627 9.3845 10.8075C9.3845 11.0525 9.29833 11.2612 9.126 11.4335C8.9535 11.606 8.74483 11.6922 8.5 11.6922ZM4.5 11.6922C4.25517 11.6922 4.0465 11.606 3.874 11.4335C3.70167 11.2612 3.6155 11.0525 3.6155 10.8075C3.6155 10.5627 3.70167 10.354 3.874 10.1815C4.0465 10.0092 4.25517 9.923 4.5 9.923C4.74483 9.923 4.9535 10.0092 5.126 10.1815C5.29833 10.354 5.3845 10.5627 5.3845 10.8075C5.3845 11.0525 5.29833 11.2612 5.126 11.4335C4.9535 11.606 4.74483 11.6922 4.5 11.6922ZM12.5 11.6922C12.2552 11.6922 12.0465 11.606 11.874 11.4335C11.7017 11.2612 11.6155 11.0525 11.6155 10.8075C11.6155 10.5627 11.7017 10.354 11.874 10.1815C12.0465 10.0092 12.2552 9.923 12.5 9.923C12.7448 9.923 12.9535 10.0092 13.126 10.1815C13.2983 10.354 13.3845 10.5627 13.3845 10.8075C13.3845 11.0525 13.2983 11.2612 13.126 11.4335C12.9535 11.606 12.7448 11.6922 12.5 11.6922ZM8.5 15.6152C8.25517 15.6152 8.0465 15.529 7.874 15.3565C7.70167 15.1842 7.6155 14.9756 7.6155 14.7308C7.6155 14.4858 7.70167 14.2771 7.874 14.1047C8.0465 13.9322 8.25517 13.846 8.5 13.846C8.74483 13.846 8.9535 13.9322 9.126 14.1047C9.29833 14.2771 9.3845 14.4858 9.3845 14.7308C9.3845 14.9756 9.29833 15.1842 9.126 15.3565C8.9535 15.529 8.74483 15.6152 8.5 15.6152ZM4.5 15.6152C4.25517 15.6152 4.0465 15.529 3.874 15.3565C3.70167 15.1842 3.6155 14.9756 3.6155 14.7308C3.6155 14.4858 3.70167 14.2771 3.874 14.1047C4.0465 13.9322 4.25517 13.846 4.5 13.846C4.74483 13.846 4.9535 13.9322 5.126 14.1047C5.29833 14.2771 5.3845 14.4858 5.3845 14.7308C5.3845 14.9756 5.29833 15.1842 5.126 15.3565C4.9535 15.529 4.74483 15.6152 4.5 15.6152ZM12.5 15.6152C12.2552 15.6152 12.0465 15.529 11.874 15.3565C11.7017 15.1842 11.6155 14.9756 11.6155 14.7308C11.6155 14.4858 11.7017 14.2771 11.874 14.1047C12.0465 13.9322 12.2552 13.846 12.5 13.846C12.7448 13.846 12.9535 13.9322 13.126 14.1047C13.2983 14.2771 13.3845 14.4858 13.3845 14.7308C13.3845 14.9756 13.2983 15.1842 13.126 15.3565C12.9535 15.529 12.7448 15.6152 12.5 15.6152Z' /%3E%3C/svg%3E%0A");
+        background-size: 16px;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info .more {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: var(--color-point01);
+        position: relative;
+    }
+    .concerts .list ul li.swiper-slide-active a .poster_info .more::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.375 20V10.625H0V9.375H9.375V0H10.625V9.375H20V10.625H10.625V20H9.375Z'/%3E%3C/svg%3E%0A");
+    }
+}
+
+@media screen and (max-width:1024px) {
     .concerts {
-        padding: 83px 0 70px 0;
-        margin-bottom: 0;
+        padding: 105px 0 85px 0;
     }
     .concerts::before {
         height: 50%;
     }
     .concerts .tit h2 {
+        font-size: 4.5rem;
+    }
+    .concerts .list {
+        margin: 50px 0 0 var(--wrapper-margin);
+        min-height: 100%;
+    }
+    .concerts .list .swiper-slide a .poster_info h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-top: 10px;
+        /* 2줄 제한 */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .concerts .list .swiper-slide a .poster_info .spacetime {
+        line-height: 1.2;
+        font-size: 1.4rem;
+        margin-top: 6px;
+        word-break: break-all;
+    }
+    .concerts .list .control {
+        margin: 48px var(--wrapper-margin) 0 0;
+    }
+    .concerts .list .control .progressbar {
+        width: calc(100% - 120px);
+    }
+    .concerts .list .swiper-slide a .poster_info .spacetime span.date {
+        display: none;
+    }
+    .concerts .ctrl_btn {
+        gap: 8px;
+    }
+    .concerts .ctrl_btn button {
+        width: 40px;
+        height: 40px;
+    }
+    .concerts .ctrl_btn button::before {
+        background-size: 10px;
+    }
+}
+@media screen and (max-width:768px) {
+    .concerts {
+        padding: 83px 0 70px 0;
+    }
+    .concerts .tit h2 {
         font-size: 3rem;
     }
     .concerts .list {
-        margin: 49px 0 0 var(--wrapper-margin);
-        min-height: 100%;
-        height: auto;
-        display: block;
+        margin: 30px 0 0 var(--wrapper-margin);
     }
     .concerts .list .swiper-slide {
         width: 130px;
     }
-    .concerts .list .swiper-slide .poster {
-        display: block;
+    .concerts .list .swiper-slide a .poster_info h3 {
+        font-size: 1.6rem;
+        margin-top: 8px;
     }
+    .concerts .list .control {
+        margin: 30px var(--wrapper-margin) 0 0;
+    }
+    .concerts .list .control .progressbar {
+        width: calc(100% - 100px);
+    }
+    .concerts .ctrl_btn {
+        gap: 8px;
+    }
+    .concerts .ctrl_btn button {
+        width: 30px;
+        height: 30px;
+    }
+    .concerts .ctrl_btn button::before {
+        background-size: 8px;
+    }
+}
+
+
+.calendar_bar {
+    background-color: var(--color-point01); 
+    color: var(--color-white);
+    padding: 20px 0;
+    
+    /* 캘린더 바에 기준점 지정 (필수) */
+    position: relative;
+}
+.calendar_bar .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* 월 표시 영역 */
+.month_display {
+    font-size: 4.5rem;
+    font-weight: 700;
+    flex-shrink: 0; 
+    margin-right: 50px;
+}
+/* 날짜 스크롤 컨테이너 */
+.date_scroll_container {
+    flex-grow: 1; /* 남은 공간을 최대한 차지 */
+    overflow-x: auto; /* 가로 스크롤 허용 */
+    white-space: nowrap; /* 내부 요소 줄바꿈 방지 */
+    scroll-behavior: smooth; /* 부드러운 스크롤 */
+    
+    /* 스크롤바 숨기기 (선택 사항) */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.date_scroll_container::-webkit-scrollbar {
+    display: none;
+}
+/* 날짜 리스트 (모든 날짜 요소를 한 줄에 나열) */
+.date_list {
+    display: flex;
+    align-items: center;
+    gap: 0 7px;
+}
+/* 개별 날짜 아이템 스타일 */
+.date_item {
+    display: inline-block; 
+    text-align: center;
+    margin: 0 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.date_item .day {
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+.date_item .num {
+    display: block;
+    font-weight: 700;
+}
+/* 활성화된 오늘 날짜 스타일 */
+.date_item.active .num {
+    background-color: var(--color-point02); 
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    margin: 0 auto;
+}
+/* 버튼 스타일 */
+.view_all_btn {
+    background-color: var(--color-background);
+    color: var(--color-tit);
+    border: none;
+    padding: 9px 24px 8px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-left: 50px;
+}
+
+/* 1. 말풍선 기본 스타일 및 위치 기준 */
+.date_event_bubble {
+    position: absolute;
+    left: 16%;
+    top: 92px;
+    z-index: 10000;
+
+    padding: 12px;
+    background-color: var(--color-background);
+    border-radius: 5px;
+    border: 1px solid var(--color-point01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    min-width: 250px;
+    text-align: left;
+    color: var(--color-tit);
+}
+
+/* 2. 말풍선 꼬리 (위쪽 삼각형) */
+.event_display_area::before {
+    content: '';
+    position: absolute;
+    top: -10px;             /* 말풍선 본체 위쪽으로 띄웁니다. */
+    left: 50%;              /* 중앙 정렬의 시작점 */
+    transform: translateX(-50%); /* 꼬리 너비의 절반만큼 이동시켜 중앙에 맞춥니다. */
+    border-width: 0 10px 10px 10px; /* 위쪽 삼각형 모양 */
+    border-style: solid;
+    border-color: transparent transparent #333 transparent; /* 본체 색상과 동일 */
+    z-index: 20;
+}
+
+/* 3. 내용 스타일 */
+#selectedDateTitle {
+    font-weight: bold;
+    display: block;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+#eventList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#eventList li p {
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+
+.news {
+    margin-top: 1000px;
 }

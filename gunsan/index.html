@@ -126,8 +126,8 @@
             <section class="concerts">
                 <div class="tit">
                     <div class="wrapper">
-                    <h2>Concerts</h2>
-                </div>
+                        <h2>Concerts</h2>
+                    </div>
                 </div>
                 <div class="list">
                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
@@ -285,20 +285,33 @@
                         </ul>
                     </div>
                     <div class="control">
-                        <div class="wrapper">
-                            <div class="progressbar">
-                                <span></span>
-                            </div>
-                            <div class="ctrl_btn">
-                                <button class="btn_prev"><span class="blind">이전버튼</span></button>
-                                <button class="btn_next"><span class="blind">다음버튼</span></button>
-                            </div>
+                        <div class="progressbar">
+                            <span></span>
+                        </div>
+                        <div class="ctrl_btn">
+                            <button class="btn_prev"><span class="blind">이전버튼</span></button>
+                            <button class="btn_next"><span class="blind">다음버튼</span></button>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="calendar"></section>
-            <section class="news"></section>
+            <section class="calendar_bar">
+                <div class="wrapper">
+                    <div class="month_display" id="currentMonthYear"></div>
+                    <div class="date_scroll_container">
+                        <div class="date_list"></div>
+                    </div>
+                    <button class="view_all_btn">전체보기</button>
+                </div>
+                <div id="tooltipBubble" class="event_display_area">
+                    <span id="selectedDateTitle"></span>
+                    <ul id="eventList">
+                    </ul>
+                </div>
+            </section>
+            <section class="news">
+
+            </section>
         </main>
         <footer></footer>
         <!-- <div class="quick_btn">
