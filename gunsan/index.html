@@ -299,18 +299,232 @@
                 <div class="wrapper">
                     <div class="month_display" id="currentMonthYear"></div>
                     <div class="date_scroll_container">
-                        <div class="date_list"></div>
+                        <div class="date_wrap">
+                            <div class="date_list"></div>
+                        </div>
+                        <div class="date_more"></div>
                     </div>
                     <button class="view_all_btn">전체보기</button>
                 </div>
-                <div id="tooltipBubble" class="event_display_area">
-                    <span id="selectedDateTitle"></span>
-                    <ul id="eventList">
-                    </ul>
-                </div>
             </section>
             <section class="news">
-
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>News</h2>
+                        <div class="tap_list">
+                            <ul>
+                                <li class="notice active" data-tab="item1"><button>공지사항<span class="blind">선택됨</span></button></li>
+                                <li class="application" data-tab="item2"><button>대관공고/신청서<span class="blind"></span></button></li>
+                                <li class="board" data-tab="item3"><button>자유게시판<span class="blind"></span></button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tap_contents">
+                        <div class="tab_item item1 active" title="선택됨">
+                            <h3 class="blind">공지사항</h3>
+                            <div class="list">
+                                <ul>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>군산시립교향악단 제161회 정기연주회 [쇼스타코비치 in 군산] 공연안내</h4>
+                                            <span>2025-02-24</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>군산시립교향악단 제75회 기획연주회 [뮤지컬 VS 영화] 공연 안내</h4>
+                                            <span>2024-09-25</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>군산시립교향악단 제74회 특별기획연주회 [Young Artist Concert] 안내</h4>
+                                            <span>2024-09-19</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>군산예술의전당 공연장 안전관리원(House Usher) 모집공고</h4>
+                                            <span>2024-08-22</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                        </div>
+                        <div class="tab_item item2">
+                            <h3 class="blind">대관공고/신청서</h3>
+                            <div class="list">
+                                <ul>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>2026년도 군산예술의전당 정기대관 공고</h4>
+                                            <span>2025-11-17</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>(★필독★)2026년도 군산예술의전당 정기대관 신청안내</h4>
+                                            <span>2025-11-17</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>2025년도 군산예술의전당 수시대관(11차) 접수안내</h4>
+                                            <span>2025-10-28</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>2025년도 군산예술의전당 수시대관(10차) 접수 안내</h4>
+                                            <span>2025-09-29</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                        </div>
+                        <div class="tab_item item3">
+                            <h3 class="blind">자유게시판</h3>
+                            <div class="list">
+                                <ul>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>[한국문화예술교육진흥원] 2025 늘봄예술학교x문화예술교육 전문인력 연수 안내 (여름방학)</h4>
+                                            <span>2025-07-10</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>쉿!크릿 콘서트를 보고 그냥 있을 수가 없어서...</h4>
+                                            <span>2025-05-17</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>2024년 제1회 태조 이성계 전승기념 오목대잔치</h4>
+                                            <span>2024-10-22</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <h4>설명 필요합니다.</h4>
+                                            <span>2024-09-28</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="more"><a href="#n"><span class="blind">더보기</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="gallery">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>Gallery</h2>
+                        <div class="tap_list">
+                            <ul>
+                                <li class="photo active" data-tab="item1"><button>Photo<span class="blind">선택됨</span></button></li>
+                                <li class="video" data-tab="item2"><button>Video<span class="blind"></span></button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tap_contents">
+                        <div class="tab_item item1 active" title="선택됨">
+                            <h3 class="blind">Photo</h3>
+                            <div class="list">
+                                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/photo01.jpg" alt="11월 무장애 창극 지지지"></div>
+                                                <span>11월 무장애 창극 지지지</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/photo02.jpg" alt="10월 트래블 콘서트 (비포선라이즈)"></div>
+                                                <span>10월 트래블 콘서트 (비포선라이즈)</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/photo03.jpg" alt="10월 발레 헨젤과 그레텔"></div>
+                                                <span>10월 발레 헨젤과 그레텔</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/photo04.jpg" alt="연극 장녀들"></div>
+                                                <span>연극 장녀들</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/photo05.jpg" alt=""></div>
+                                                <span>9월 트래블 콘서트 (나의살던 고향은 - 대한민국편)</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/photo06.jpg" alt="연극 하이타이"></div>
+                                                <span>연극 하이타이</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="more"><a href="#n"><span>더보기</span></a></div>
+                        </div>
+                        <div class="tab_item item2">
+                            <h3 class="blind">Video</h3>
+                            <div class="list">
+                                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/video01.jpg" alt="연극 장녀들"></div>
+                                                <span>연극 장녀들</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/video02.jpg" alt="연극 신구, 박근형의 고도를 기다리며"></div>
+                                                <span>연극 신구, 박근형의 고도를 기다리며</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/video03.jpg" alt="연극 오백에 삼십"></div>
+                                                <span>연극 오백에 삼십</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/video04.jpg" alt="뮤지컬 광화문 연가"></div>
+                                                <span>뮤지컬 광화문 연가</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/video05.jpg" alt="젠틀맨스 가이드"></div>
+                                                <span>젠틀맨스 가이드</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/video06.jpg" alt="[개관 10주년 기념전] 뚜벅뚜벅 10년의 발걸음전, 과거에서 현재로 현재에서 과거로"></div>
+                                                <span>[개관 10주년 기념전] 뚜벅뚜벅 10년의 발걸음전, 과거에서 현재로 현재에서 과거로</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="more"><a href="#n"><span>더보기</span></a></div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
         <footer></footer>

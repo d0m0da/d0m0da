@@ -457,8 +457,6 @@ h2, h3, h4 {
     color: var(--color-white);
     padding: 20px 0;
     
-    /* 캘린더 바에 기준점 지정 (필수) */
-    position: relative;
 }
 .calendar_bar .wrapper {
     display: flex;
@@ -466,50 +464,52 @@ h2, h3, h4 {
     justify-content: space-between;
 }
 /* 월 표시 영역 */
-.month_display {
+.calendar_bar .month_display {
     font-size: 4.5rem;
     font-weight: 700;
-    flex-shrink: 0; 
-    margin-right: 50px;
 }
 /* 날짜 스크롤 컨테이너 */
-.date_scroll_container {
-    flex-grow: 1; /* 남은 공간을 최대한 차지 */
-    overflow-x: auto; /* 가로 스크롤 허용 */
-    white-space: nowrap; /* 내부 요소 줄바꿈 방지 */
+.calendar_bar .date_scroll_container {
+    position: relative;
+    max-width: calc(100% - 350px);
+    text-align: center;
+}
+.calendar_bar .date_scroll_container .date_wrap {
+    overflow-y: visible;
+    overflow: hidden;
     scroll-behavior: smooth; /* 부드러운 스크롤 */
     
     /* 스크롤바 숨기기 (선택 사항) */
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-.date_scroll_container::-webkit-scrollbar {
+.calendar_bar .date_scroll_container .date_wrap::-webkit-scrollbar {
     display: none;
 }
 /* 날짜 리스트 (모든 날짜 요소를 한 줄에 나열) */
-.date_list {
-    display: flex;
+.calendar_bar .date_scroll_container .date_list {
+    display: inline-flex;
     align-items: center;
     gap: 0 7px;
 }
 /* 개별 날짜 아이템 스타일 */
-.date_item {
+.calendar_bar .date_scroll_container .date_list .date_item {
     display: inline-block; 
     text-align: center;
     margin: 0 12px;
     cursor: pointer;
-    flex-shrink: 0;
+    position: relative;
 }
-.date_item .day {
+.calendar_bar .date_scroll_container .date_list .date_item .day {
     font-size: 1.2rem;
     opacity: 0.7;
 }
-.date_item .num {
+.calendar_bar .date_scroll_container .date_list .date_item .num {
     display: block;
     font-weight: 700;
 }
 /* 활성화된 오늘 날짜 스타일 */
-.date_item.active .num {
+.calendar_bar .date_scroll_container .date_list .date_item.show .num {
     background-color: var(--color-point02); 
     border-radius: 50%;
     width: 24px;
@@ -517,66 +517,309 @@ h2, h3, h4 {
     line-height: 24px;
     margin: 0 auto;
 }
+.calendar_bar .date_scroll_container .detail {
+    display: none;
+}
+.calendar_bar .date_scroll_container .date_more {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 66px;
+    padding: 18px;
+    background-color: var(--color-background);
+    border-radius: 5px;
+    border: 1px solid var(--color-point01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    min-width: 350px;
+    text-align: left;
+    color: var(--color-tit);
+    transform: translateX(-18px);
+}
+.calendar_bar .date_scroll_container .date_more::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--color-background) transparent;
+    z-index: 10000;
+}
+
+.calendar_bar .date_scroll_container .date_more .detail_item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+.calendar_bar .date_scroll_container .date_more .detail_item:last-child {
+    margin-bottom: 0;
+}
+.calendar_bar .date_scroll_container .date_more .detail_item strong {
+    padding: 2px 5px;
+    background-color: #F9ECA8;
+    border: 1px solid var(--color-black20);
+    border-radius: 5px;
+    font-size: 1.4rem;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+.calendar_bar .date_scroll_container .date_more .detail_item span {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+
 /* 버튼 스타일 */
-.view_all_btn {
+.calendar_bar .view_all_btn {
     background-color: var(--color-background);
     color: var(--color-tit);
     border: none;
     padding: 9px 24px 8px 24px;
     border-radius: 5px;
     cursor: pointer;
-    flex-shrink: 0;
-    margin-left: 50px;
 }
+.calendar_bar .date_list .date_item {
+    position: relative;
+} 
 
-/* 1. 말풍선 기본 스타일 및 위치 기준 */
-.date_event_bubble {
-    position: absolute;
-    left: 16%;
-    top: 92px;
-    z-index: 10000;
-
-    padding: 12px;
-    background-color: var(--color-background);
-    border-radius: 5px;
-    border: 1px solid var(--color-point01);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    min-width: 250px;
-    text-align: left;
-    color: var(--color-tit);
+@media screen and (max-width:1024px) {
+    .calendar_bar {
+        padding: 33px 0;
+    }
+    .calendar_bar .wrapper {
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+        gap: 3px 0;
+    }
+    /* 월 표시 영역 */
+    .calendar_bar .month_display {
+        font-size: 3.6rem;
+    }
+    /* 날짜 스크롤 컨테이너 */
+    .calendar_bar .date_scroll_container {
+        max-width: 100%;
+    }
+    .calendar_bar .date_scroll_container .date_more {
+        padding: 15px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        min-width: 300px;
+    }
+    
+    /* 버튼 스타일 */
+    .calendar_bar .view_all_btn {
+        position: absolute;
+        right: 0;
+        top: 8px;
+        padding: 6px 12px;
+    }
 }
-
-/* 2. 말풍선 꼬리 (위쪽 삼각형) */
-.event_display_area::before {
-    content: '';
-    position: absolute;
-    top: -10px;             /* 말풍선 본체 위쪽으로 띄웁니다. */
-    left: 50%;              /* 중앙 정렬의 시작점 */
-    transform: translateX(-50%); /* 꼬리 너비의 절반만큼 이동시켜 중앙에 맞춥니다. */
-    border-width: 0 10px 10px 10px; /* 위쪽 삼각형 모양 */
-    border-style: solid;
-    border-color: transparent transparent #333 transparent; /* 본체 색상과 동일 */
-    z-index: 20;
-}
-
-/* 3. 내용 스타일 */
-#selectedDateTitle {
-    font-weight: bold;
-    display: block;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-}
-#eventList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-#eventList li p {
-    margin: 3px 0;
-    font-size: 14px;
+@media screen and (max-width:768px) {
+    .calendar_bar {
+        padding: 30px 0;
+    }
+    /* 월 표시 영역 */
+    .calendar_bar .month_display {
+        font-size: 2.8rem;
+    }
+    /* 버튼 스타일 */
+    .calendar_bar .view_all_btn {
+        padding: 4px 10px;
+    }
 }
 
 
 .news {
-    margin-top: 1000px;
+    margin: 130px 0 125px 0;
 }
+.news .wrapper {
+    position: relative;
+}
+.news .tit {
+    display: flex;
+    align-items: flex-end;
+    gap: 0 36px;
+}
+.news .tit h2 {
+    font-size: 6rem;
+}
+.news .tit .tap_list ul {
+    display: flex;
+    gap: 0 12px;
+}
+.news .tit .tap_list ul li button {
+    display: block;
+    padding: 8px 18px;
+    border-radius: 5px;
+    background-color: var(--color-black10);
+    color: var(--color-black20);
+    font-size: 2rem;
+    font-weight: 700;
+}
+.news .tit .tap_list ul li.active button {
+    background-color: var(--color-point01);
+    color: var(--color-white);
+}
+.news .tap_contents {
+    margin-top: 36px;
+}
+.news .tap_contents .tab_item {
+    display: none;
+}
+.news .tap_contents .tab_item.active {
+    display: block;
+}
+.news .tap_contents .tab_item .list {
+    border-top: 2px solid var(--color-black80);
+    border-bottom: 1px solid var(--color-black20);
+    position: relative;
+}
+.news .tap_contents .tab_item .list::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-black20);
+}
+.news .tap_contents .tab_item .list ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.news .tap_contents .tab_item .list ul li {
+    width: 50%;
+}
+.news .tap_contents .tab_item .list ul li:nth-child(odd){
+    padding: 62px 50px 62px 24px;
+}
+.news .tap_contents .tab_item .list ul li:nth-child(even){
+    padding: 62px 24px 62px 50px;
+}
+.news .tap_contents .tab_item .list ul li a {
+    display: block;
+}
+.news .tap_contents .tab_item .list ul li a h4 {
+    font-size: 2.8rem;
+    margin-bottom: 32px;
+    /* 2줄 제한 */
+    line-height: 1.2;
+    height: 2.4em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.news .tap_contents .tab_item .list ul li a span {
+    padding-left: 25px;
+    position: relative;
+}
+.news .tap_contents .tab_item .list ul li a span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 17 20' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.80775 19.1152C1.30258 19.1152 0.875 18.9403 0.525 18.5903C0.175 18.2402 0 17.8127 0 17.3075V3.923C0 3.41783 0.175 2.99025 0.525 2.64025C0.875 2.29025 1.30258 2.11525 1.80775 2.11525H3.19225V0H4.73075V2.11525H12.3077V0H13.8077V2.11525H15.1923C15.6974 2.11525 16.125 2.29025 16.475 2.64025C16.825 2.99025 17 3.41783 17 3.923V17.3075C17 17.8127 16.825 18.2402 16.475 18.5903C16.125 18.9403 15.6974 19.1152 15.1923 19.1152H1.80775ZM1.80775 17.6152H15.1923C15.2692 17.6152 15.3398 17.5832 15.4038 17.519C15.4679 17.455 15.5 17.3845 15.5 17.3075V7.923H1.5V17.3075C1.5 17.3845 1.53208 17.455 1.59625 17.519C1.66025 17.5832 1.73075 17.6152 1.80775 17.6152ZM1.5 6.423H15.5V3.923C15.5 3.846 15.4679 3.7755 15.4038 3.7115C15.3398 3.64733 15.2692 3.61525 15.1923 3.61525H1.80775C1.73075 3.61525 1.66025 3.64733 1.59625 3.7115C1.53208 3.7755 1.5 3.846 1.5 3.923V6.423ZM8.5 11.6922C8.25517 11.6922 8.0465 11.606 7.874 11.4335C7.70167 11.2612 7.6155 11.0525 7.6155 10.8075C7.6155 10.5627 7.70167 10.354 7.874 10.1815C8.0465 10.0092 8.25517 9.923 8.5 9.923C8.74483 9.923 8.9535 10.0092 9.126 10.1815C9.29833 10.354 9.3845 10.5627 9.3845 10.8075C9.3845 11.0525 9.29833 11.2612 9.126 11.4335C8.9535 11.606 8.74483 11.6922 8.5 11.6922ZM4.5 11.6922C4.25517 11.6922 4.0465 11.606 3.874 11.4335C3.70167 11.2612 3.6155 11.0525 3.6155 10.8075C3.6155 10.5627 3.70167 10.354 3.874 10.1815C4.0465 10.0092 4.25517 9.923 4.5 9.923C4.74483 9.923 4.9535 10.0092 5.126 10.1815C5.29833 10.354 5.3845 10.5627 5.3845 10.8075C5.3845 11.0525 5.29833 11.2612 5.126 11.4335C4.9535 11.606 4.74483 11.6922 4.5 11.6922ZM12.5 11.6922C12.2552 11.6922 12.0465 11.606 11.874 11.4335C11.7017 11.2612 11.6155 11.0525 11.6155 10.8075C11.6155 10.5627 11.7017 10.354 11.874 10.1815C12.0465 10.0092 12.2552 9.923 12.5 9.923C12.7448 9.923 12.9535 10.0092 13.126 10.1815C13.2983 10.354 13.3845 10.5627 13.3845 10.8075C13.3845 11.0525 13.2983 11.2612 13.126 11.4335C12.9535 11.606 12.7448 11.6922 12.5 11.6922ZM8.5 15.6152C8.25517 15.6152 8.0465 15.529 7.874 15.3565C7.70167 15.1842 7.6155 14.9756 7.6155 14.7308C7.6155 14.4858 7.70167 14.2771 7.874 14.1047C8.0465 13.9322 8.25517 13.846 8.5 13.846C8.74483 13.846 8.9535 13.9322 9.126 14.1047C9.29833 14.2771 9.3845 14.4858 9.3845 14.7308C9.3845 14.9756 9.29833 15.1842 9.126 15.3565C8.9535 15.529 8.74483 15.6152 8.5 15.6152ZM4.5 15.6152C4.25517 15.6152 4.0465 15.529 3.874 15.3565C3.70167 15.1842 3.6155 14.9756 3.6155 14.7308C3.6155 14.4858 3.70167 14.2771 3.874 14.1047C4.0465 13.9322 4.25517 13.846 4.5 13.846C4.74483 13.846 4.9535 13.9322 5.126 14.1047C5.29833 14.2771 5.3845 14.4858 5.3845 14.7308C5.3845 14.9756 5.29833 15.1842 5.126 15.3565C4.9535 15.529 4.74483 15.6152 4.5 15.6152ZM12.5 15.6152C12.2552 15.6152 12.0465 15.529 11.874 15.3565C11.7017 15.1842 11.6155 14.9756 11.6155 14.7308C11.6155 14.4858 11.7017 14.2771 11.874 14.1047C12.0465 13.9322 12.2552 13.846 12.5 13.846C12.7448 13.846 12.9535 13.9322 13.126 14.1047C13.2983 14.2771 13.3845 14.4858 13.3845 14.7308C13.3845 14.9756 13.2983 15.1842 13.126 15.3565C12.9535 15.529 12.7448 15.6152 12.5 15.6152Z' /%3E%3C/svg%3E%0A");
+}
+.news .tap_contents .tab_item .more a {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+}
+.news .tap_contents .tab_item .more a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 34px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='%232A2A2A' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.625 33.3333V17.7083H0V15.625H15.625V0H17.7083V15.625H33.3333V17.7083H17.7083V33.3333H15.625Z' /%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px) {
+    .news {
+        margin: 100px 0 80px 0;
+    }
+    .news .tit h2 {
+        font-size: 4.5rem;
+    }
+    .news .tit .tap_list ul {
+        gap: 0 10px;
+    }
+    .news .tit .tap_list ul li button {
+        padding: 7px 16px;
+        font-size: 1.8rem;
+    }
+    .news .tap_contents {
+        margin-top: 28px;
+    }
+    .news .tap_contents .tab_item .list ul li:nth-child(odd){
+        padding: 50px 40px 50px 20px;
+    }
+    .news .tap_contents .tab_item .list ul li:nth-child(even){
+        padding: 50px 20px 50px 40px;
+    }
+    .news .tap_contents .tab_item .list ul li a h4 {
+        font-size: 2.4rem;
+        margin-bottom: 24px;
+    }
+    .news .tap_contents .tab_item .list ul li a span::before {
+        background-size: 13px;
+    }
+    .news .tap_contents .tab_item .more a::before {
+        background-size: 26px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='%232A2A2A' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.625 33.3333V17.7083H0V15.625H15.625V0H17.7083V15.625H33.3333V17.7083H17.7083V33.3333H15.625Z' /%3E%3C/svg%3E%0A");
+    }
+}
+@media screen and (max-width:768px) {
+    .news {
+        margin: 83px 0 63px 0;
+    }
+    .news .tit {
+        display: block;
+    }
+    .news .tit h2 {
+        font-size: 3rem;
+    }
+    .news .tit .tap_list {
+        margin-top: 24px;
+    }
+    .news .tit .tap_list ul {
+        gap: 0;
+    }
+    .news .tit .tap_list ul li button {
+        padding: 7px 16px;
+        font-size: 1.8rem;
+    }
+    .news .tap_contents {
+        margin-top: 28px;
+    }
+    .news .tap_contents .tab_item .list ul li:nth-child(odd){
+        padding: 50px 40px 50px 20px;
+    }
+    .news .tap_contents .tab_item .list ul li:nth-child(even){
+        padding: 50px 20px 50px 40px;
+    }
+    .news .tap_contents .tab_item .list ul li a h4 {
+        font-size: 2.4rem;
+        margin-bottom: 24px;
+    }
+    .news .tap_contents .tab_item .list ul li a span::before {
+        background-size: 13px;
+    }
+    .news .tap_contents .tab_item .more a::before {
+        background-size: 26px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='%232A2A2A' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.625 33.3333V17.7083H0V15.625H15.625V0H17.7083V15.625H33.3333V17.7083H17.7083V33.3333H15.625Z' /%3E%3C/svg%3E%0A");
+    }
+}
+
