@@ -739,7 +739,7 @@ h2, h3, h4 {
     content: "";
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 0;
     width: 100%;
     height: 100%;
     background-position: center center;
@@ -840,8 +840,162 @@ h2, h3, h4 {
         background-size: 13px;
     }
     .news .tap_contents .tab_item .more a::before {
-        top: 0;
         background-size: 20px;
     }
 }
 
+
+.gallery {
+    margin: 130px 0 125px 0;
+}
+.gallery .wrapper {
+    position: relative;
+}
+.gallery .tit {
+    display: flex;
+    align-items: flex-end;
+    gap: 0 36px;
+}
+.gallery .tit h2 {
+    font-size: 6rem;
+}
+.gallery .tit .tap_list ul {
+    display: flex;
+    gap: 0 12px;
+}
+.gallery .tit .tap_list ul li button {
+    display: block;
+    padding: 8px 18px;
+    border-radius: 5px;
+    background-color: var(--color-black10);
+    color: var(--color-black20);
+    font-size: 2rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.gallery .tit .tap_list ul li.active button {
+    background-color: var(--color-point01);
+    color: var(--color-white);
+}
+.gallery .tap_contents {
+    margin-top: 36px;
+}
+.gallery .tap_contents .tab_item {
+    display: none;
+}
+.gallery .tap_contents .tab_item.active {
+    display: block;
+}
+.gallery .tap_contents .tab_item .list .swiper-slide a .photo {
+    height: clamp(187px, 24vw, 312px);
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+.gallery .tap_contents .tab_item .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallery .tap_contents .tab_item .list .swiper-slide a h4 {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.gallery .tap_contents .tab_item .more a {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+}
+.gallery .tap_contents .tab_item .more a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 34px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='%232A2A2A' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.625 33.3333V17.7083H0V15.625H15.625V0H17.7083V15.625H33.3333V17.7083H17.7083V33.3333H15.625Z' /%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px) {
+    .gallery {
+        margin: 100px 0 80px 0;
+    }
+    .gallery .tit h2 {
+        font-size: 4.5rem;
+    }
+    .gallery .tit .tap_list ul {
+        gap: 0 10px;
+    }
+    .gallery .tit .tap_list ul li button {
+        padding: 7px 16px;
+        font-size: 1.8rem;
+    }
+    .gallery .tap_contents {
+        margin-top: 28px;
+    }
+    .gallery .tap_contents .tab_item .list .swiper-slide a .photo {
+        margin-bottom: 10px;
+    }
+    .gallery .tap_contents .tab_item .list .swiper-slide a h4 {
+        font-size: 2rem;
+    }
+    .gallery .tap_contents .tab_item .more a::before {
+        background-size: 26px;
+    }
+}
+@media screen and (max-width:768px) {
+    .gallery {
+        margin: 83px 0 63px 0;
+    }
+    .gallery .tit {
+        display: block;
+    }
+    .gallery .tit h2 {
+        font-size: 3rem;
+    }
+    .gallery .tit .tap_list {
+        margin-top: 24px;
+    }
+    .gallery .tit .tap_list ul {
+        gap: 0;
+    }
+    .gallery .tit .tap_list ul li {
+        width: 100%;
+    }
+    .gallery .tit .tap_list ul li button {
+        width: 100%;
+        height: 41px;
+        padding: 0 5px;
+        font-size: 1.6rem;
+    }
+    .gallery .tit .tap_list ul li:first-child button {
+        border-radius: 5px 0 0 5px;
+    }
+    .gallery .tit .tap_list ul li:last-child button {
+        border-radius: 0 5px 5px 0;
+    }
+    .gallery .tap_contents {
+        margin-top: 22px;
+    }
+    .gallery .tap_contents .tab_item .list .swiper-slide {
+        width: 269px;
+    }
+    .gallery .tap_contents .tab_item .list .swiper-slide a .photo {
+        margin-bottom: 8px;
+    }
+    .gallery .tap_contents .tab_item .list .swiper-slide a h4 {
+        font-size: 1.8rem;
+    }
+    .gallery .tap_contents .tab_item .more a::before {
+        background-size: 20px;
+    }
+}
