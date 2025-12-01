@@ -318,7 +318,7 @@ header .util .mypage a {
     .footer_line .layout .family_site .family_site_info ul li a {
         display: block;
         font-size: 1.6rem;
-        margin-bottom: 5px;
+        margin-bottom: 11px;
     }
 }
 @media screen and (max-width:1279px) {
