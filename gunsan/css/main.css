@@ -773,6 +773,10 @@ h2, h3, h4 {
     top: 0;
     width: 50px;
     height: 50px;
+    transition: transform 0.5s;
+}
+.news .tap_contents .tab_item .more a:hover {
+    transform: rotate(90deg);
 }
 .news .tap_contents .tab_item .more a::before {
     content: "";
@@ -956,6 +960,10 @@ h2, h3, h4 {
     top: 0;
     width: 50px;
     height: 50px;
+    transition: transform 0.5s;
+}
+.gallery .tap_contents .tab_item .more a:hover {
+    transform: rotate(90deg);
 }
 .gallery .tap_contents .tab_item .more a::before {
     content: "";
