@@ -1,10 +1,10 @@
 $(document).ready(function(){
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
-        autoplay: {  /* 팝업 자동 실행 */
-            delay: 3000,
-            disableOnInteraction: true,
-        },
+        // autoplay: {  /* 팝업 자동 실행 */
+        //     delay: 3000,
+        //     disableOnInteraction: true,
+        // },
 
         //effect: "fade", /* fade 효과 */
 
@@ -19,36 +19,6 @@ $(document).ready(function(){
             },
         },
     });
-
-    const quickBtn = document.querySelector('.quick_btn');
-    const visualSection = document.querySelector('.visual'); // visual 구간
-
-    function checkQuickBtn() {
-        const scrollY = window.scrollY;
-        const visualTop = visualSection.offsetTop;
-        const visualBottom = visualTop + visualSection.offsetHeight;
-
-        if(window.innerWidth > 768){
-            // PC일 때 visual 구간 안이면 숨기고, visual 구간 안이면 보여줌
-            if(scrollY >= visualTop && scrollY < visualBottom){
-                quickBtn.style.display = 'flex';
-            } else {
-                quickBtn.style.display = 'none';
-            }
-        } else {
-            // 모바일일 때는 항상 보여줌
-            quickBtn.style.display = 'flex';
-        }
-    }
-
-    // 초기 체크
-    checkQuickBtn();
-
-    // 스크롤 시 체크
-    window.addEventListener('scroll', checkQuickBtn);
-
-    // 화면 크기 변경 시 체크
-    window.addEventListener('resize', checkQuickBtn);
 
     const concerts_swiper = new Swiper('.concerts .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 'auto', /* css에서 slide의 넓이ㅓ 지정 */
