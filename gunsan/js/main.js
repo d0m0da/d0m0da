@@ -1,10 +1,10 @@
 $(document).ready(function(){
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
-        // autoplay: {  /* 팝업 자동 실행 */
-        //     delay: 3000,
-        //     disableOnInteraction: true,
-        // },
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: 3000,
+            disableOnInteraction: true,
+        },
 
         //effect: "fade", /* fade 효과 */
 
@@ -19,6 +19,36 @@ $(document).ready(function(){
             },
         },
     });
+
+    const quickBtn = document.querySelector('.quick_btn');
+    const visualSection = document.querySelector('.visual'); // visual 구간
+
+    function checkQuickBtn() {
+        const scrollY = window.scrollY;
+        const visualTop = visualSection.offsetTop;
+        const visualBottom = visualTop + visualSection.offsetHeight;
+
+        if(window.innerWidth > 768){
+            // PC일 때 visual 구간 안이면 숨기고, visual 구간 안이면 보여줌
+            if(scrollY >= visualTop && scrollY < visualBottom){
+                quickBtn.style.display = 'flex';
+            } else {
+                quickBtn.style.display = 'none';
+            }
+        } else {
+            // 모바일일 때는 항상 보여줌
+            quickBtn.style.display = 'flex';
+        }
+    }
+
+    // 초기 체크
+    checkQuickBtn();
+
+    // 스크롤 시 체크
+    window.addEventListener('scroll', checkQuickBtn);
+
+    // 화면 크기 변경 시 체크
+    window.addEventListener('resize', checkQuickBtn);
 
     const concerts_swiper = new Swiper('.concerts .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 'auto', /* css에서 slide의 넓이ㅓ 지정 */
@@ -257,6 +287,22 @@ $(document).ready(function(){
         return html;
     }
 
+    $(document).ready(function() {
+        const $todayItem = $('.date_item.active'); // 오늘 날짜 아이템
+        const $more = $('.calendar_bar .date_scroll_container .date_more');
+    
+        // 오늘 날짜만 상세 내용 표시
+        if ($todayItem.length) {
+            const todayContent = $todayItem.find('.detail').html();
+            $more.html(todayContent).show();
+        }
+    
+        // 모바일에서는 다른 날짜 클릭 막기
+        if ($(window).width() <= 768) {
+            $('.date_item:not(.active)').off('click'); // 다른 날짜 클릭 이벤트 제거
+        }
+    });
+
 
     // 5. 초기 로드 시 오늘 날짜 자동 클릭 (일정 바로 표시)
     const $todayItem = $('.date_item.active');
@@ -342,13 +388,9 @@ $(document).ready(function(){
         },
         //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-        // autoplay: {  /* 팝업 자동 실행 */
-        //     delay: 5000,
-        //     disableOnInteraction: true,
-        // },
-        navigation: {
-            nextEl: '.gallery .btn_next',
-            prevEl: '.gallery .btn_prev',
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: 5000,
+            disableOnInteraction: true,
         },
     });
 

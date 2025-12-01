@@ -82,4 +82,51 @@ $(document).ready(function(){
         }
     })
 
+
+    // 기본 a 태그 막기
+    $("a").click(function(e) {
+        var href = $(this).attr("href");
+        if (href == "#none" || href == "#" || href == "") {
+            e.preventDefault();
+        }
+    });
+
+    // 클릭 오픈 시작
+    $(".clickOpen > a").attr("title","닫힘");
+
+    $(".clickOpen > a").on("click", function(e) {
+        e.preventDefault();
+        
+        let $parent = $(this).parent();
+        let isOn = $parent.hasClass("on");
+
+        // 다른 모든 clickOpen 닫기
+        $(".clickOpen").not($parent).removeClass("on").find("> a").attr("title","닫힘");
+
+        // 현재 클릭한 것 토글
+        if (isOn) {
+            $parent.removeClass("on");
+            $(this).attr("title","닫힘");
+        } else {
+            $parent.addClass("on");
+            $(this).attr("title","열림");
+        }
+    });
+
+    // 외부 클릭 시 모두 닫기
+    $(document).on("click", function(e) {
+        // clickOpen 영역 안에 클릭했다면 무시
+        if ($(e.target).closest(".clickOpen").length) return;
+
+        // 외부 클릭 → 전체 닫기
+        $(".clickOpen").removeClass("on").find("> a").attr("title", "닫힘");
+    });
+
+    /* top 버튼 클릭 시 상단으로 이동 */
+    $('footer .f_util .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+
 });
