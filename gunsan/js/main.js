@@ -363,9 +363,10 @@ $(document).ready(function(){
         //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
         autoplay: {  /* 팝업 자동 실행 */
-            delay: 5000,
+            delay: 4500,
             disableOnInteraction: true,
         },
+        
     });
 
     $('.gallery .tit .tap_list ul li').on('click', function(){
