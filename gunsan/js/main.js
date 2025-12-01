@@ -126,13 +126,13 @@ $(document).ready(function(){
     // 🗓 1. 이벤트 데이터 정의 (JS 코드 시작 부분)
     const eventData = [
         // 현재 날짜 11월 27일 (목)을 기준으로 예시 데이터 설정
-        '<div class="detail_item"><strong>제1전시실</strong><span>[대관] 제35회 대한민국새만금서예문인화대전 초대작가전</span></div><div class="detail_item"><strong>전시실 2,3</strong><span>[대관] 제35회 대한민국새만금서예문인화대전 공모전</span></div>',
+        '<div class="detail_item"><strong>제1전시실</strong><span>[대관] 제35회 대한민국새만금서예문인화대전 초대작가전</span></div><div class="detail_item"><strong>전시실 2,3</strong><span>[대관] 제35회 대한민국새만금서예문인화대전 공모전</span></div>'
         ,
         '<div class="detail_item"><strong>제1전시실</strong><span>[대관] 제35회 대한민국새만금서예문인화대전 초대작가전</span></div><div class="detail_item"><strong>전시실 2,3</strong><span>[대관] 제35회 대한민국새만금서예문인화대전 공모전</span></div><div class="detail_item"><strong>소공연장</strong><span>[기획] 연희 줄타는 아이와 아프리카 도마뱀</span></div><div class="detail_item"><strong>대공연장</strong><span>[대관] 리얼공룡쇼 &lt;포켓다이노&gt;</span></div>'
         ,
         '<div class="detail_item"><strong>제1전시실</strong><span>[대관] 제35회 대한민국새만금서예문인화대전 초대작가전</span></div><div class="detail_item"><strong>전시실 2,3</strong><span>[대관] 제35회 대한민국새만금서예문인화대전 공모전</span></div><div class="detail_item"><strong>어린이공연장</strong><span>[대관] 피노키오</span></div><div class="detail_item"><strong>소공연장</strong><span>[대관] 월산(고)최관수명창 12주기 추모공연</span></div>'
         ,
-        '<div class="detail_item"><strong>제1전시실</strong><span>[대관] 조향순 개인전시회</span></div><div class="detail_item"><strong>전시실 2,3</strong><span>[대관] 군산누드크로키전</span></div>',
+        '<div class="detail_item"><strong>제1전시실</strong><span>[대관] 조향순 개인전시회</span></div><div class="detail_item"><strong>전시실 2,3</strong><span>[대관] 군산누드크로키전</span></div>'
         ,
         '<div class="detail_item"><strong>제1전시실</strong><span>[대관] 제35회 대한민국새만금서예문인화대전 초대작가전</span></div><div class="detail_item"><strong>전시실 2,3</strong><span>[대관] 제35회 대한민국새만금서예문인화대전 공모전</span></div><div class="detail_item"><strong>어린이공연장</strong><span>[기획] 바비의 호두까기 인형</span></div>'
         ,
@@ -228,17 +228,16 @@ $(document).ready(function(){
             const isToday = d.toDateString() === today.toDateString();
             const day = dayNames[d.getDay()];
             const num = String(d.getDate()).padStart(2, '0');
-            
+            count++
             return `
                 <div class="date_item" data-date="${fullDate}"> 
                     <span class="day">${day}</span>
                     <span class="num">${num}</span>
                     <div class="detail">
-                        ${eventData[count]}
+                        ${eventData[count-1]}
                     </div>
                 </div>                
             `;
-            count++
         }).join('');
     
         $list.html(dateItemsHtml);
@@ -330,9 +329,14 @@ $(document).ready(function(){
         if (!wasShown) { 
             let more_left = $(this).position().left
             let more_cont = $(this).find('.detail').html()
+
+            if(more_left > ($(window).width() - 250)){
+                $('.calendar_bar .date_scroll_container .date_more').css('right', 0)
+            }else{
+                $('.calendar_bar .date_scroll_container .date_more').css('left', more_left)
+            }
             
             $('.calendar_bar .date_scroll_container .date_more').html(more_cont)
-            $('.calendar_bar .date_scroll_container .date_more').css('left', more_left)
             $('.calendar_bar .date_scroll_container .date_more').show()
             
             // 열기 상태 설정 (show 클래스가 CSS에 의해 중앙 말풍선을 보이게 합니다)

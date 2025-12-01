@@ -559,8 +559,7 @@ h2, h3, h4 {
 .calendar_bar {
     background-color: var(--color-point01); 
     color: var(--color-white);
-    padding: 20px 0;
-    
+    padding: 20px 0 15px 0;
 }
 .calendar_bar .wrapper {
     display: flex;
@@ -580,7 +579,7 @@ h2, h3, h4 {
 }
 .calendar_bar .date_scroll_container .date_wrap {
     overflow-y: visible;
-    overflow: hidden;
+    overflow-x: auto;
     scroll-behavior: smooth; /* 부드러운 스크롤 */
     
     /* 스크롤바 숨기기 (선택 사항) */
@@ -603,9 +602,18 @@ h2, h3, h4 {
     margin: 0 12px;
     cursor: pointer;
     position: relative;
+    padding: 10px 0 20px 0;
 }
-.calendar_bar .date_scroll_container .date_list .date_item:last-child {
-    pointer-events: none;
+.calendar_bar .date_scroll_container .date_list .date_item.show::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--color-background) transparent;
+    z-index: 10000;
 }
 .calendar_bar .date_scroll_container .date_list .date_item .day {
     font-size: 1.2rem;
@@ -630,8 +638,7 @@ h2, h3, h4 {
 .calendar_bar .date_scroll_container .date_more {
     display: none;
     position: absolute;
-    left: 0;
-    top: 66px;
+    top: 76px;
     z-index: 100;
     width: 250px;
     padding: 10px;
@@ -645,14 +652,7 @@ h2, h3, h4 {
     word-break: break-all;
 }
 .calendar_bar .date_scroll_container .date_more::before {
-    content: '';
-    position: absolute;
-    left: 30px;
-    top: -8px;
-    border-width: 0 10px 10px 10px;
-    border-style: solid;
-    border-color: transparent transparent var(--color-background) transparent;
-    z-index: 10000;
+    
 }
 
 .calendar_bar .date_scroll_container .date_more .detail_item {
@@ -693,7 +693,7 @@ h2, h3, h4 {
 
 @media screen and (max-width:1024px) {
     .calendar_bar {
-        padding: 33px 0;
+        padding: 30px 0 25px 0;
     }
     .calendar_bar .wrapper {
         align-items: flex-start;
@@ -725,7 +725,7 @@ h2, h3, h4 {
 }
 @media screen and (max-width:768px) {
     .calendar_bar {
-        padding: 30px 0;
+        padding: 28px 0 23px 0;
     }
     /* 월 표시 영역 */
     .calendar_bar .month_display {
