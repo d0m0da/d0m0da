@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Gyeonggi";
+    src: url('../fonts/Title_Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: "NexonLv2";
+    src: url('../fonts/NEXON\ Lv2\ Gothic.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "NexonLv2";
+    src: url('../fonts/NEXON\ Lv2\ Gothic\ Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
